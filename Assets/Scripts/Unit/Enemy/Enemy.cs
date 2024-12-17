@@ -17,8 +17,8 @@ namespace ShootEmUp
         protected override void Init()
         {
             base.Init();
-            _enemyPool = DIContainer.Get<EnemyPool>();
-            _characterController = DIContainer.Get<CharacterController>();
+            _enemyPool = ServiceLocator.Get<EnemyPool>();
+            _characterController = ServiceLocator.Get<CharacterController>();
         }
 
         public void StartAttack(Vector2 destination) => 

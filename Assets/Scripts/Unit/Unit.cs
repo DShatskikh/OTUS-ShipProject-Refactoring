@@ -24,7 +24,7 @@ namespace ShootEmUp
 
         protected virtual void Init()
         {
-            _levelBounds = DIContainer.Get<LevelBounds>();
+            _levelBounds = ServiceLocator.Get<LevelBounds>();
             _weaponComponent.Init(); 
         }
         

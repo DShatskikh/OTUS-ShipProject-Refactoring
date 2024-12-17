@@ -25,7 +25,7 @@ namespace ShootEmUp
         
         private void Awake()
         {
-            _levelBounds = DIContainer.Get<LevelBounds>();
+            _levelBounds = ServiceLocator.Get<LevelBounds>();
             
             for (var i = 0; i < _initialCount; i++)
             {

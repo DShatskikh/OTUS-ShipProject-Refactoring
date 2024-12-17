@@ -24,7 +24,7 @@ namespace ShootEmUp
 
         private void Awake()
         {
-            _bulletSystem = DIContainer.Get<BulletSystem>();
+            _bulletSystem = ServiceLocator.Get<BulletSystem>();
         }
 
         private void OnTriggerEnter2D(Collider2D other)

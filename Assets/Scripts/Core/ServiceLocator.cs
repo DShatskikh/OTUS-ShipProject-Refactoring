@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ShootEmUp
 {
-    public static class DIContainer
+    public static class ServiceLocator
     {
         private static Dictionary<Type, object> _container = new();
 

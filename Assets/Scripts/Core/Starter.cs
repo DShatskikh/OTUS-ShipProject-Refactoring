@@ -33,11 +33,11 @@ namespace ShootEmUp
 
         private void Register()
         {
-            DIContainer.Register(_characterController);
-            DIContainer.Register(_gameManager);
-            DIContainer.Register(_levelBounds);
-            DIContainer.Register(_bulletSystem);
-            DIContainer.Register(_enemyPool);
+            ServiceLocator.Register(_characterController);
+            ServiceLocator.Register(_gameManager);
+            ServiceLocator.Register(_levelBounds);
+            ServiceLocator.Register(_bulletSystem);
+            ServiceLocator.Register(_enemyPool);
         }
     }
 }

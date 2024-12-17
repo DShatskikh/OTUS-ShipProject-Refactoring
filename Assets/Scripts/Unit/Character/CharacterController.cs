@@ -12,7 +12,7 @@ namespace ShootEmUp
         protected override void Init()
         {
             base.Init();
-            _gameManager = DIContainer.Get<GameManager>();
+            _gameManager = ServiceLocator.Get<GameManager>();
         }
 
         //ToDo: Делаю мощный выстрел при долгом зажатии пробела

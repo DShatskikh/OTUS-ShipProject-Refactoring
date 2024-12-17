@@ -16,7 +16,7 @@ namespace ShootEmUp
         
         public void Init()
         {
-            _bulletSystem = DIContainer.Get<BulletSystem>();
+            _bulletSystem = ServiceLocator.Get<BulletSystem>();
         }
 
         public void OnFlyBullet(EntityType entityType, Vector2 direction)

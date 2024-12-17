@@ -9,7 +9,7 @@ namespace ShootEmUp
 
         private void Awake()
         {
-            _characterController = DIContainer.Get<CharacterController>();
+            _characterController = ServiceLocator.Get<CharacterController>();
         }
 
         private void Update()
