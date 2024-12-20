@@ -2,17 +2,21 @@ using UnityEngine;
 
 namespace ShootEmUp
 {
-    public sealed class Bullet : MonoBehaviour
+    public sealed class Bullet : MonoBehaviour, ICrashBullet
     {
         [SerializeField]
         private Rigidbody2D _rigidbody2D;
 
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
-
+        
+        private BulletSystem _bulletSystem;
+        
         private EntityType _entityType;
         private int _damage;
-        private BulletSystem _bulletSystem;
+
+        public EntityType GetEntityType => _entityType;
+        public int GetDamage => _damage;
 
         public struct Data
         {
@@ -22,29 +26,16 @@ namespace ShootEmUp
             public EntityType EntityType;
         }
 
-        private void Awake()
-        {
-            _bulletSystem = ServiceLocator.Get<BulletSystem>();
-        }
-
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.TryGetComponent(out Bullet bullet))
+            if (other.TryGetComponent(out ICrashBullet crashBullet))
             {
+                crashBullet.Crash(this);
                 _bulletSystem.RemoveBullet(this);
-                _bulletSystem.RemoveBullet(bullet);
-            }
-            else if (other.TryGetComponent(out Unit unit))
-            {
-                if (_entityType != unit.GetEntityType)
-                {
-                    unit.TakeDamage(_damage);   
-                    _bulletSystem.RemoveBullet(this);
-                }
             }
         }
 
-        public void Init(Data data)
+        public void Init(Data data, BulletSystem bulletSystem)
         {
             _rigidbody2D.velocity = data.Velocity;
             gameObject.layer = (int)data.Config.PhysicsLayer;
@@ -52,6 +43,12 @@ namespace ShootEmUp
             _spriteRenderer.color = data.Config.Color;
             _damage = data.Config.Damage;
             _entityType = data.EntityType;
+            _bulletSystem = bulletSystem;
+        }
+
+        public void Crash(Bullet bullet)
+        {
+            _bulletSystem.RemoveBullet(bullet);
         }
     }
 }

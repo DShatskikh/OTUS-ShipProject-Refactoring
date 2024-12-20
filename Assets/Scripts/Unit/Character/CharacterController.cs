@@ -1,32 +1,42 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ShootEmUp
 {
     public sealed class CharacterController : Unit
     {
-        private GameManager _gameManager;
+        [SerializeField]
+        private GameStateController _gameStateController;
 
-        public override EntityType GetEntityType =>
+        [SerializeField]
+        private InputManager _inputManager;
+
+        [SerializeField]
+        private BulletSystem _bulletSystem;
+
+        [SerializeField]
+        private LevelBounds _bounds;
+
+        protected override EntityType GetEntityType =>
             EntityType.Character;
-        
-        protected override void Init()
-        {
-            base.Init();
-            _gameManager = ServiceLocator.Get<GameManager>();
-        }
 
-        //ToDo: Делаю мощный выстрел при долгом зажатии пробела
-        public void ReadyFire()
+        private void Awake()
         {
+            _inputManager.Fire += Fire;
+            _inputManager.Move += Move;
             
+            Init(_bulletSystem, _bounds);
         }
 
-        public override void Fire(Vector2 direction)
+        private void OnDestroy()
         {
-            base.Fire(direction);
+            _inputManager.Fire -= Fire;
+            _inputManager.Move -= Move;
         }
 
-        protected override void Die() => 
-            _gameManager.FinishGame();
+        protected override void Die()
+        {
+            _gameStateController.FinishGame();
+        }
     }
 }

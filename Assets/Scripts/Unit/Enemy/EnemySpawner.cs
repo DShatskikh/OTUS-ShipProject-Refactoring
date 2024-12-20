@@ -8,6 +8,9 @@ namespace ShootEmUp
         [SerializeField]
         private EnemyPool _enemyPool;
 
+        [SerializeField]
+        private float _spawnInterval = 1f;
+        
         public void StartSpawn()
         {
             StartCoroutine(AwaitSpawn());
@@ -17,8 +20,8 @@ namespace ShootEmUp
         {
             while (true)
             {
-                yield return new WaitForSeconds(1);
-                _enemyPool.SpawnEnemy();
+                yield return new WaitForSeconds(_spawnInterval);
+                _enemyPool.TrySpawnEnemy(out Enemy enemy);
             }
         }
     }

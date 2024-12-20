@@ -265,6 +265,7 @@ MonoBehaviour:
   _container: {fileID: 1831741369}
   _prefab: {fileID: 201757604187811891, guid: 5fe72886874b4e445b06cf777ca4920d, type: 3}
   _worldTransform: {fileID: 1683128698}
+  _levelBounds: {fileID: 2572952653776768186}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPool: {fileID: 562298207}
+  _spawnInterval: 1
 --- !u!114 &562298207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +433,10 @@ MonoBehaviour:
   _worldTransform: {fileID: 1683128698}
   _container: {fileID: 178513672}
   _prefab: {fileID: 3654309539281737599, guid: 003258a298f9cc04888a58630ff3a33c, type: 3}
+  _poolSize: 7
+  _characterController: {fileID: 3722884905626723181}
+  _bulletSystem: {fileID: 363245577}
+  _levelBounds: {fileID: 2572952653776768186}
 --- !u!1 &883274639
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,11 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88ec7d5bd6144669df108ca5134b111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterController: {fileID: 3722884905626723181}
-  _levelBounds: {fileID: 2572952653776768186}
-  _bulletSystem: {fileID: 363245577}
   _enemySpawner: {fileID: 562298205}
-  _enemyPool: {fileID: 562298207}
 --- !u!4 &2102160806
 Transform:
   m_ObjectHideFlags: 0
@@ -1149,6 +1151,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9032667428635295403, guid: 61e40650aeb47a143a84f308fe958b9e,
+        type: 3}
+      propertyPath: _bounds
+      value: 
+      objectReference: {fileID: 2572952653776768186}
+    - target: {fileID: 9032667428635295403, guid: 61e40650aeb47a143a84f308fe958b9e,
+        type: 3}
+      propertyPath: _gameManager
+      value: 
+      objectReference: {fileID: 3951702117947426123}
+    - target: {fileID: 9032667428635295403, guid: 61e40650aeb47a143a84f308fe958b9e,
+        type: 3}
+      propertyPath: _levelBounds
+      value: 
+      objectReference: {fileID: 2572952653776768186}
+    - target: {fileID: 9032667428635295403, guid: 61e40650aeb47a143a84f308fe958b9e,
+        type: 3}
+      propertyPath: _bulletSystem
+      value: 
+      objectReference: {fileID: 363245577}
+    - target: {fileID: 9032667428635295403, guid: 61e40650aeb47a143a84f308fe958b9e,
+        type: 3}
+      propertyPath: _inputManager
+      value: 
+      objectReference: {fileID: 1134805361}
+    - target: {fileID: 9032667428635295403, guid: 61e40650aeb47a143a84f308fe958b9e,
+        type: 3}
+      propertyPath: gameStateController
+      value: 
+      objectReference: {fileID: 3951702117947426123}
+    - target: {fileID: 9032667428635295403, guid: 61e40650aeb47a143a84f308fe958b9e,
+        type: 3}
+      propertyPath: _gameStateController
+      value: 
+      objectReference: {fileID: 3951702117947426123}
+    - target: {fileID: 9032667428635295403, guid: 61e40650aeb47a143a84f308fe958b9e,
+        type: 3}
+      propertyPath: _weaponComponent._bulletSystem
+      value: 
+      objectReference: {fileID: 363245577}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e40650aeb47a143a84f308fe958b9e, type: 3}
 --- !u!4 &3722884905626723179 stripped
@@ -1245,6 +1287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3951702117947426122}
+  - component: {fileID: 3951702117947426123}
   m_Layer: 0
   m_Name: '[GAME_SYSTEM]'
   m_TagString: Untagged
@@ -1270,6 +1313,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3951702117947426123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951702117947426121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697fe7ba192e484db495320b9c01bcd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &4162873433806880330
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -11,14 +11,14 @@ namespace ShootEmUp
         
         [SerializeField]
         private Transform _firePoint;
-
-        private BulletSystem _bulletSystem;
         
-        public void Init()
-        {
-            _bulletSystem = ServiceLocator.Get<BulletSystem>();
-        }
+        private BulletSystem _bulletSystem;
 
+        public void Init(BulletSystem bulletSystem)
+        {
+            _bulletSystem = bulletSystem;
+        }
+        
         public void OnFlyBullet(EntityType entityType, Vector2 direction)
         {
             _bulletSystem.FlyBulletByArgs(new Bullet.Data()

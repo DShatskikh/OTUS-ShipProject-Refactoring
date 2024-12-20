@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ShootEmUp
 {
-    public sealed class GameManager
+    public sealed class GameStateController : MonoBehaviour
     {
         public void FinishGame()
         {

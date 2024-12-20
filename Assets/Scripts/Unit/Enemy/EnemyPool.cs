@@ -19,30 +19,47 @@ namespace ShootEmUp
         [SerializeField]
         private Enemy _prefab;
 
+        [SerializeField]
+        private int _poolSize = 7;
+
+        [Header("Enemy")]
+        [SerializeField]
+        private CharacterController _characterController;
+        
+        [SerializeField]
+        private BulletSystem _bulletSystem;
+
+        [SerializeField]
+        private LevelBounds _levelBounds;
+        
         private readonly Queue<Enemy> _enemyPool = new();
         
         private void Awake()
         {
-            for (var i = 0; i < 7; i++)
+            for (var i = 0; i < _poolSize; i++)
             {
                 var enemy = Instantiate(_prefab, _container);
+                enemy.Init(this, _characterController, _bulletSystem, _levelBounds);
                 _enemyPool.Enqueue(enemy);
             }
         }
 
-        public Enemy SpawnEnemy()
+        public bool TrySpawnEnemy(out Enemy enemy)
         {
-            if (!_enemyPool.TryDequeue(out var enemy))
-                return null;
+            enemy = null;
+            
+            if (!_enemyPool.TryDequeue(out var result))
+                return false;
 
-            enemy.transform.SetParent(_worldTransform);
+            result.transform.SetParent(_worldTransform);
 
             var spawnPosition = _enemyPositions.RandomSpawnPosition();
-            enemy.transform.position = spawnPosition.position;
+            result.transform.position = spawnPosition.position;
             
             var attackPosition = _enemyPositions.RandomAttackPosition();
-            enemy.StartAttack(attackPosition.position);
-            return enemy;
+            result.StartWork(attackPosition.position);
+            enemy = result;
+            return true;
         }
 
         public void UnspawnEnemy(Enemy enemy)

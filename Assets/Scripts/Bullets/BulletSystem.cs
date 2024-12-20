@@ -17,16 +17,15 @@ namespace ShootEmUp
         [SerializeField]
         private Transform _worldTransform;
         
+        [SerializeField]
+        private LevelBounds _levelBounds;
+        
         private readonly Queue<Bullet> _bulletPool = new();
         private readonly HashSet<Bullet> _activeBullets = new();
         private readonly List<Bullet> _cache = new();
-        
-        private LevelBounds _levelBounds;
-        
+
         private void Awake()
         {
-            _levelBounds = ServiceLocator.Get<LevelBounds>();
-            
             for (var i = 0; i < _initialCount; i++)
             {
                 var bullet = Instantiate(_prefab, _container);
@@ -51,21 +50,25 @@ namespace ShootEmUp
         public void FlyBulletByArgs(Bullet.Data data)
         {
             if (_bulletPool.TryDequeue(out var bullet))
+            {
                 bullet.transform.SetParent(_worldTransform);
+            }
             else
+            {
                 bullet = Instantiate(_prefab, _worldTransform);
+            }
 
-            bullet.Init(data);
+            bullet.Init(data, this);
             _activeBullets.Add(bullet);
         }
 
         public void RemoveBullet(Bullet bullet)
         {
-            if (_activeBullets.Remove(bullet))
-            {
-                bullet.transform.SetParent(_container);
-                _bulletPool.Enqueue(bullet);
-            }
+            if (!_activeBullets.Remove(bullet))
+                return;
+            
+            bullet.transform.SetParent(_container);
+            _bulletPool.Enqueue(bullet);
         }
     }
 }
