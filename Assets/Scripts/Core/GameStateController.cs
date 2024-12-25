@@ -15,6 +15,8 @@ namespace ShootEmUp
     {
         private GameState _gameState;
         private List<IGameListener> _listeners = new ();
+        private List<IGameUpdateListener> _updateListeners = new ();
+        private List<IGameFixedUpdateListener> _fixedUpdateListeners = new ();
         
         public GameState GetState => _gameState;
 
@@ -23,9 +25,9 @@ namespace ShootEmUp
             if (_gameState != GameState.PLAYING)
                 return;
 
-            for (int i = 0; i < _listeners.Count; i++)
+            for (int i = 0; i < _updateListeners.Count; i++)
             {
-                if (_listeners[i] is IGameUpdateListener updateListener)
+                if (_updateListeners[i] is IGameUpdateListener updateListener)
                     updateListener.OnUpdate();
             }
         }
@@ -35,9 +37,9 @@ namespace ShootEmUp
             if (_gameState != GameState.PLAYING)
                 return;
 
-            for (int i = 0; i < _listeners.Count; i++)
+            for (int i = 0; i < _fixedUpdateListeners.Count; i++)
             {
-                if (_listeners[i] is IGameFixedUpdateListener updateListener)
+                if (_fixedUpdateListeners[i] is IGameFixedUpdateListener updateListener)
                     updateListener.OnFixedUpdate();
             }
         }
@@ -46,7 +48,13 @@ namespace ShootEmUp
         {
             if (listener == null)
                 return;
+            
+            if (listener is IGameUpdateListener updateListener) 
+                _updateListeners.Add(updateListener);
 
+            if (listener is IGameFixedUpdateListener fixedUpdateListener)
+                _fixedUpdateListeners.Add(fixedUpdateListener);
+            
             _listeners.Add(listener);
         }
 
