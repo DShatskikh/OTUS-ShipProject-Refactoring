@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ShootEmUp
 {
-    public sealed class CharacterController : Unit
+    public sealed class CharacterController : Unit, IGameStartListener, IGamePauseListener, IGameResumeListener, IGameFinishListener
     {
         [SerializeField]
         private GameStateController _gameStateController;
@@ -20,7 +19,7 @@ namespace ShootEmUp
         protected override EntityType GetEntityType =>
             EntityType.Character;
 
-        private void Awake()
+        public void OnStartGame()
         {
             _inputManager.Fire += Fire;
             _inputManager.Move += Move;
@@ -28,7 +27,19 @@ namespace ShootEmUp
             Init(_bulletSystem, _bounds);
         }
 
-        private void OnDestroy()
+        public void OnPauseGame()
+        {
+            _inputManager.Fire -= Fire;
+            _inputManager.Move -= Move;
+        }
+
+        public void OnResumeGame()
+        {
+            _inputManager.Fire += Fire;
+            _inputManager.Move += Move;
+        }
+
+        public void OnFinishGame()
         {
             _inputManager.Fire -= Fire;
             _inputManager.Move -= Move;

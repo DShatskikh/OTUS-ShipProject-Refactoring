@@ -3,15 +3,15 @@ using UnityEngine;
 
 namespace ShootEmUp
 {
-    public sealed class EnemySpawner : MonoBehaviour
+    public sealed class EnemySpawner : MonoBehaviour, IGameStartListener
     {
         [SerializeField]
         private EnemyPool _enemyPool;
 
         [SerializeField]
         private float _spawnInterval = 1f;
-        
-        public void StartSpawn()
+
+        public void OnStartGame()
         {
             StartCoroutine(AwaitSpawn());
         }

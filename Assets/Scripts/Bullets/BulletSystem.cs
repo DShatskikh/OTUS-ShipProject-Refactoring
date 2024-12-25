@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ShootEmUp
 {
-    public sealed class BulletSystem : MonoBehaviour
+    public sealed class BulletSystem : MonoBehaviour, IGameFixedUpdateListener
     {
         [SerializeField]
         private int _initialCount = 50;
@@ -32,8 +32,8 @@ namespace ShootEmUp
                 _bulletPool.Enqueue(bullet);
             }
         }
-        
-        private void FixedUpdate()
+
+        public void OnFixedUpdate()
         {
             _cache.Clear();
             _cache.AddRange(_activeBullets);

@@ -9,12 +9,16 @@ namespace ShootEmUp
 
         public Action<Vector2> Fire;
         public Action<Vector2> Move;
+        public Action Pause;
 
         private void Update()
         {
             if (Input.GetKeyUp(KeyCode.Space)) 
                 Fire?.Invoke(Vector3.up);
 
+            if (Input.GetKeyUp(KeyCode.Escape)) 
+                Pause?.Invoke();
+            
             _horizontalDirection = Input.GetAxisRaw("Horizontal");
         }
         

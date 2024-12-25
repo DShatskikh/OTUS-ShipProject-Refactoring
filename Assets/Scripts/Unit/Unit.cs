@@ -23,14 +23,6 @@ namespace ShootEmUp
                 TakeDamage(bullet.GetDamage);
         }
 
-        private void TakeDamage(int damage)
-        {
-            _health -= damage;
-            
-            if (_health <= 0)
-                Die();
-        }
-
         protected void Init(BulletSystem bulletSystem, LevelBounds levelBounds)
         {
             _levelBounds = levelBounds;
@@ -45,9 +37,17 @@ namespace ShootEmUp
             _moveComponent.MoveByRigidbodyVelocity(direction);
         }
 
-        protected abstract void Die();
-
         protected void Fire(Vector2 direction) => 
             _weaponComponent.OnFlyBullet(GetEntityType, direction);
+
+        protected abstract void Die();
+
+        private void TakeDamage(int damage)
+        {
+            _health -= damage;
+            
+            if (_health <= 0)
+                Die();
+        }
     }
 }
