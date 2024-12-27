@@ -1,9 +1,8 @@
-using System.Collections;
 using UnityEngine;
 
 namespace ShootEmUp
 {
-    public sealed class EnemySpawner : MonoBehaviour, IGameStartListener
+    public sealed class EnemySpawner : MonoBehaviour, IGameUpdateListener
     {
         [SerializeField]
         private EnemyPool _enemyPool;
@@ -11,17 +10,20 @@ namespace ShootEmUp
         [SerializeField]
         private float _spawnInterval = 1f;
 
-        public void OnStartGame()
-        {
-            StartCoroutine(AwaitSpawn());
-        }
+        [SerializeField]
+        private GameStateController _gameStateController;
+        
+        private float _currentSpawnCounter;
 
-        private IEnumerator AwaitSpawn()
+        public void OnUpdate()
         {
-            while (true)
+            _currentSpawnCounter += Time.deltaTime;
+
+            if (_currentSpawnCounter >= _spawnInterval)
             {
-                yield return new WaitForSeconds(_spawnInterval);
+                _currentSpawnCounter = 0;
                 _enemyPool.TrySpawnEnemy(out Enemy enemy);
+                _gameStateController.AddListener(enemy);
             }
         }
     }

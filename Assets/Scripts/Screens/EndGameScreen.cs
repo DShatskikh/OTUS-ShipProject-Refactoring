@@ -18,7 +18,6 @@ namespace ShootEmUp
         {
             base.Show();
             _restartButton.onClick.AddListener(RestartGame);
-            Time.timeScale = 0;
         }
 
         public override void Hide()
@@ -29,7 +28,6 @@ namespace ShootEmUp
 
         private void RestartGame()
         {
-            Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ShootEmUp
 {
-    public sealed class Bullet : MonoBehaviour, ICrashBullet
+    public sealed class Bullet : MonoBehaviour, ICrashBullet, IGameResumeListener, IGamePauseListener, IGameFinishListener
     {
         [SerializeField]
         private Rigidbody2D _rigidbody2D;
@@ -14,6 +14,7 @@ namespace ShootEmUp
         
         private EntityType _entityType;
         private int _damage;
+        private Vector2 _beforePauseVelocity;
 
         public EntityType GetEntityType => _entityType;
         public int GetDamage => _damage;
@@ -49,6 +50,23 @@ namespace ShootEmUp
         public void Crash(Bullet bullet)
         {
             _bulletSystem.RemoveBullet(bullet);
+        }
+
+        public void OnResumeGame()
+        {
+            _rigidbody2D.velocity = _beforePauseVelocity;
+        }
+
+        public void OnPauseGame()
+        {
+            _beforePauseVelocity = _rigidbody2D.velocity;
+            _rigidbody2D.velocity = Vector2.zero;
+        }
+
+        public void OnFinishGame()
+        {
+            if (_bulletSystem)
+                _bulletSystem.RemoveBullet(this);
         }
     }
 }

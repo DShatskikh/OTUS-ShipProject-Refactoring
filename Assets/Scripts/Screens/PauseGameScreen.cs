@@ -23,19 +23,18 @@ namespace ShootEmUp
         {
             Show();
             _inputManager.Pause += Resume;
-            Time.timeScale = 0;
         }
 
         public void OnResumeGame()
         {
             Hide();
             _inputManager.Pause += Pause;
-            Time.timeScale = 1;
         }
 
         public void OnFinishGame()
         {
             _inputManager.Pause -= Pause;
+            Hide();
         }
 
         public override void Show()

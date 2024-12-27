@@ -20,6 +20,9 @@ namespace ShootEmUp
         [SerializeField]
         private LevelBounds _levelBounds;
         
+        [SerializeField]
+        private GameStateController _gameStateController;
+        
         private readonly Queue<Bullet> _bulletPool = new();
         private readonly HashSet<Bullet> _activeBullets = new();
         private readonly List<Bullet> _cache = new();
@@ -30,6 +33,7 @@ namespace ShootEmUp
             {
                 var bullet = Instantiate(_prefab, _container);
                 _bulletPool.Enqueue(bullet);
+                _gameStateController.AddListener(bullet);
             }
         }
 
@@ -56,6 +60,7 @@ namespace ShootEmUp
             else
             {
                 bullet = Instantiate(_prefab, _worldTransform);
+                _gameStateController.AddListener(bullet);
             }
 
             bullet.Init(data, this);
