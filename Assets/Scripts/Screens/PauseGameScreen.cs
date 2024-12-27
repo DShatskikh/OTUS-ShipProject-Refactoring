@@ -11,9 +11,6 @@ namespace ShootEmUp
         [SerializeField]
         private Button _resumeButton;
 
-        [SerializeField]
-        private InputManager _inputManager;
-
         public void OnPauseGame()
         {
             Show();
