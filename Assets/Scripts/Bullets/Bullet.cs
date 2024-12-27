@@ -65,8 +65,7 @@ namespace ShootEmUp
 
         public void OnFinishGame()
         {
-            if (_bulletSystem)
-                _bulletSystem.RemoveBullet(this);
+            _rigidbody2D.velocity = Vector2.zero;
         }
     }
 }

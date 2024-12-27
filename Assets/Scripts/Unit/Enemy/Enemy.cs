@@ -13,7 +13,8 @@ namespace ShootEmUp
         private EnemyPool _enemyPool;
         private CharacterController _characterController;
         private bool _isPause;
-        
+        private Coroutine _workCoroutine;
+
         protected override EntityType GetEntityType =>
             EntityType.Enemy;
 
@@ -42,12 +43,15 @@ namespace ShootEmUp
 
         public void StartWork(Vector2 destination)
         {
-            var c = StartCoroutine(AwaitWork(destination));
+            _workCoroutine = StartCoroutine(AwaitWork(destination));
         }
 
         protected override void Die()
         {
             _enemyPool.UnspawnEnemy(this);
+            
+            if (_workCoroutine != null)
+                StopCoroutine(_workCoroutine);
         }
 
         private IEnumerator AwaitWork(Vector2 destination)
