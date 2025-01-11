@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace ShootEmUp
 {
     public class PauseGameScreen : ScreenBase, IGamePauseListener, IGameResumeListener, IGameFinishListener
     {
         [SerializeField]
-        private GameStateController _gameStateController;
-
-        [SerializeField]
         private Button _resumeButton;
 
+        private GameStateController _gameStateController;
+
+        [Inject]
+        private void Construct(GameStateController gameStateController)
+        {
+            _gameStateController = gameStateController;
+        }
+        
         public void OnPauseGame()
         {
             Show();

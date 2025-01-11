@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
@@ -9,9 +10,14 @@ namespace ShootEmUp
         [SerializeField]
         private TMP_Text _reverseReportLabel;
 
-        [SerializeField]
         private GameStateController _gameStateController;
 
+        [Inject]
+        private void Construct(GameStateController gameStateController)
+        {
+            _gameStateController = gameStateController;
+        }
+        
         public override void Show()
         {
             base.Show();

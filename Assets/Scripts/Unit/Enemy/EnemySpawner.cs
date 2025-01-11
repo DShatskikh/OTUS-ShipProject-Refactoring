@@ -1,19 +1,20 @@
+using System;
 using UnityEngine;
 
 namespace ShootEmUp
 {
-    public sealed class EnemySpawner : MonoBehaviour, IGameUpdateListener
+    [Serializable]
+    public sealed class EnemySpawner : IGameUpdateListener
     {
-        [SerializeField]
-        private EnemyPool _enemyPool;
-
-        [SerializeField]
-        private float _spawnInterval = 1f;
-
-        [SerializeField]
-        private GameStateController _gameStateController;
-        
+        private readonly float _spawnInterval = 1f;
+        private readonly Enemy.Pool _enemyPool;
         private float _currentSpawnCounter;
+
+        private EnemySpawner(Enemy.Pool enemyPool, float spawnInterval)
+        {
+            _enemyPool = enemyPool;
+            _spawnInterval = spawnInterval;
+        }
 
         public void OnUpdate()
         {
@@ -22,8 +23,7 @@ namespace ShootEmUp
             if (_currentSpawnCounter >= _spawnInterval)
             {
                 _currentSpawnCounter = 0;
-                _enemyPool.TrySpawnEnemy(out Enemy enemy);
-                _gameStateController.AddListener(enemy);
+                _enemyPool.Spawn();
             }
         }
     }

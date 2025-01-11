@@ -1,18 +1,23 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
     public sealed class Starter : MonoBehaviour
     {
         [SerializeField]
-        private GameStateController _gameStateController;
-        
-        [SerializeField]
         private Transform[] _roots;
 
         [SerializeField]
         private StartGameScreen _startGameScreen;
+
+        private GameStateController _gameStateController;
+
+        [Inject]
+        private void Construct(GameStateController gameStateController)
+        {
+            _gameStateController = gameStateController;
+        }
         
         private void Awake()
         {

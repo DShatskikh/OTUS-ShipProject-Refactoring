@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
@@ -10,17 +11,18 @@ namespace ShootEmUp
         [SerializeField]
         private float _countdownFire = 1f;
         
-        private EnemyPool _enemyPool;
-        private CharacterController _characterController;
+        private Pool _enemyPool;
+        private ICharacter _characterController;
         private bool _isPause;
         private Coroutine _workCoroutine;
 
         protected override EntityType GetEntityType =>
             EntityType.Enemy;
 
-        public void Init(EnemyPool enemyPool, CharacterController characterController, BulletSystem bulletSystem, LevelBounds levelBounds)
+        [Inject]
+        private void Construct(Pool pool, CharacterController characterController, BulletSystem bulletSystem, LevelBounds levelBounds)
         {
-            _enemyPool = enemyPool;
+            _enemyPool = pool;
             _characterController = characterController;
             
             Init(bulletSystem, levelBounds);
@@ -48,7 +50,7 @@ namespace ShootEmUp
 
         protected override void Die()
         {
-            _enemyPool.UnspawnEnemy(this);
+            _enemyPool.Despawn(this);
             
             if (_workCoroutine != null)
                 StopCoroutine(_workCoroutine);
@@ -84,9 +86,50 @@ namespace ShootEmUp
             if (_isPause)
                 yield break;
             
-            var direction = (transform.position - _characterController.transform.position).normalized;
+            var direction = ((Vector2)transform.position - _characterController.GetPosition).normalized;
             Fire(direction);
             yield return new WaitForSeconds(_countdownFire);
+        }
+        
+        public class Pool : MemoryPool<Enemy>
+        {
+            private readonly Transform _worldTransform;
+            private readonly Transform _container;
+            private readonly EnemyPositions _enemyPositions;
+            private readonly GameStateController _gameStateController;
+
+            public Pool(GameStateController gameStateController, EnemyPositions enemyPositions, Transform worldTransform, Transform container)
+            {
+                _gameStateController = gameStateController;
+                _enemyPositions = enemyPositions;
+                _worldTransform = worldTransform;
+                _container = container;
+            }
+            
+            protected override void OnCreated(Enemy item)
+            {
+                base.OnCreated(item);
+                item.transform.SetParent(_container);
+                _gameStateController.AddListener(item);
+            }
+
+            protected override void OnSpawned(Enemy item)
+            {
+                base.OnSpawned(item);
+                item.transform.SetParent(_worldTransform);
+
+                var spawnPosition = _enemyPositions.RandomSpawnPosition();
+                item.transform.position = spawnPosition.position;
+            
+                var attackPosition = _enemyPositions.RandomAttackPosition();
+                item.StartWork(attackPosition.position);
+            }
+
+            protected override void OnDespawned(Enemy item)
+            {
+                base.OnDespawned(item);
+                item.transform.SetParent(_container);
+            }
         }
     }
 }

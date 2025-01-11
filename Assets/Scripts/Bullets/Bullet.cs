@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
@@ -11,32 +14,30 @@ namespace ShootEmUp
         private SpriteRenderer _spriteRenderer;
         
         private BulletSystem _bulletSystem;
-        
         private EntityType _entityType;
         private int _damage;
         private Vector2 _beforePauseVelocity;
+        private Pool _pool;
 
         public EntityType GetEntityType => _entityType;
         public int GetDamage => _damage;
 
-        public struct Data
+        [Inject]
+        private void Construct(Pool pool)
         {
-            public Vector2 Position;
-            public Vector2 Velocity;
-            public BulletConfig Config;
-            public EntityType EntityType;
+            _pool = pool;
         }
-
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.TryGetComponent(out ICrashBullet crashBullet))
             {
                 crashBullet.Crash(this);
-                _bulletSystem.RemoveBullet(this);
+                _pool.TryDespawned(this);
             }
         }
 
-        public void Init(Data data, BulletSystem bulletSystem)
+        public void Init(Data data)
         {
             _rigidbody2D.velocity = data.Velocity;
             gameObject.layer = (int)data.Config.PhysicsLayer;
@@ -44,12 +45,12 @@ namespace ShootEmUp
             _spriteRenderer.color = data.Config.Color;
             _damage = data.Config.Damage;
             _entityType = data.EntityType;
-            _bulletSystem = bulletSystem;
         }
 
         public void Crash(Bullet bullet)
         {
-            _bulletSystem.RemoveBullet(bullet);
+            _pool.TryDespawned(bullet);
+            _pool.TryDespawned(this);
         }
 
         public void OnResumeGame()
@@ -66,6 +67,63 @@ namespace ShootEmUp
         public void OnFinishGame()
         {
             _rigidbody2D.velocity = Vector2.zero;
+        }
+        
+        public struct Data
+        {
+            public Vector2 Position;
+            public Vector2 Velocity;
+            public BulletConfig Config;
+            public EntityType EntityType;
+        }
+
+        public sealed class Pool : MemoryPool<Bullet>
+        {
+            private readonly Transform _inactiveContainer;
+            private readonly Transform _activateContainer;
+            private readonly List<Bullet> _activateBullets = new();
+            private readonly GameStateController _gameStateController;
+
+            public IEnumerable<Bullet> ActivateBullets => _activateBullets;
+
+            public Pool(GameStateController gameStateController, Transform inactiveContainer, Transform activateContainer)
+            {
+                _gameStateController = gameStateController;
+                _inactiveContainer = inactiveContainer;
+                _activateContainer = activateContainer;
+            }
+
+            protected override void OnCreated(Bullet item)
+            {
+                base.OnCreated(item);
+                _gameStateController.AddListener(item);
+                item.transform.SetParent(_inactiveContainer);
+            }
+
+            protected override void OnSpawned(Bullet item)
+            {
+                base.OnSpawned(item);
+                item.transform.SetParent(_activateContainer);
+                _activateBullets.Add(item);
+            }
+
+            protected override void OnDespawned(Bullet item)
+            {
+                base.OnDespawned(item);
+                item.transform.SetParent(_inactiveContainer);
+                _activateBullets.Remove(item);
+            }
+
+            public bool TryDespawned(Bullet bullet)
+            {
+                if (_activateBullets.Any(item => item == bullet))
+                {
+                    Despawn(bullet);
+                    return true;
+                }
+
+                return false;
+            }
         }
     }
 }

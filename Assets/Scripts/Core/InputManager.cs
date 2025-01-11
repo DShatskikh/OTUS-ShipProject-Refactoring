@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ShootEmUp
 {
-    public sealed class InputManager : MonoBehaviour, IGameUpdateListener, IGameFixedUpdateListener
+    public sealed class InputManager : IGameUpdateListener, IGameFixedUpdateListener
     {
         private float _horizontalDirection;
 

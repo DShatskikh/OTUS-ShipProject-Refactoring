@@ -1,79 +1,38 @@
-using System.Collections.Generic;
-using UnityEngine;
+using System;
+using System.Linq;
 
 namespace ShootEmUp
 {
-    public sealed class BulletSystem : MonoBehaviour, IGameFixedUpdateListener
+    [Serializable]
+    public sealed class BulletSystem : IGameFixedUpdateListener
     {
-        [SerializeField]
-        private int _initialCount = 50;
-        
-        [SerializeField]
-        private Transform _container;
-        
-        [SerializeField]
-        private Bullet _prefab;
-        
-        [SerializeField]
-        private Transform _worldTransform;
-        
-        [SerializeField]
-        private LevelBounds _levelBounds;
-        
-        [SerializeField]
-        private GameStateController _gameStateController;
-        
-        private readonly Queue<Bullet> _bulletPool = new();
-        private readonly HashSet<Bullet> _activeBullets = new();
-        private readonly List<Bullet> _cache = new();
+        private readonly LevelBounds _levelBounds;
+        private readonly Bullet.Pool _pool;
 
-        private void Awake()
+        private BulletSystem(LevelBounds levelBounds, Bullet.Pool pool)
         {
-            for (var i = 0; i < _initialCount; i++)
-            {
-                var bullet = Instantiate(_prefab, _container);
-                _bulletPool.Enqueue(bullet);
-                _gameStateController.AddListener(bullet);
-            }
+            _levelBounds = levelBounds;
+            _pool = pool;
         }
 
         public void OnFixedUpdate()
         {
-            _cache.Clear();
-            _cache.AddRange(_activeBullets);
-
-            for (int i = 0, count = _cache.Count; i < count; i++)
+            for (int i = 0; i < _pool.ActivateBullets.Count(); i++)
             {
-                var bullet = _cache[i];
-                
-                if (!_levelBounds.InBounds(bullet.transform.position)) 
-                    RemoveBullet(bullet);
+                var bullet = _pool.ActivateBullets.ToArray()[i];
+
+                if (!_levelBounds.InBounds(bullet.transform.position))
+                {
+                    _pool.Despawn(bullet);
+                    break;
+                }
             }
         }
 
         public void FlyBulletByArgs(Bullet.Data data)
         {
-            if (_bulletPool.TryDequeue(out var bullet))
-            {
-                bullet.transform.SetParent(_worldTransform);
-            }
-            else
-            {
-                bullet = Instantiate(_prefab, _worldTransform);
-                _gameStateController.AddListener(bullet);
-            }
-
-            bullet.Init(data, this);
-            _activeBullets.Add(bullet);
-        }
-
-        public void RemoveBullet(Bullet bullet)
-        {
-            if (!_activeBullets.Remove(bullet))
-                return;
-            
-            bullet.transform.SetParent(_container);
-            _bulletPool.Enqueue(bullet);
+            var bullet = _pool.Spawn();
+            bullet.Init(data);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
@@ -11,7 +12,7 @@ namespace ShootEmUp
         FINISHED = 3,
     }
     
-    public sealed class GameStateController : MonoBehaviour
+    public sealed class GameStateController : ITickable, IFixedTickable
     {
         private GameState _gameState;
         private List<IGameListener> _listeners = new ();
@@ -20,28 +21,31 @@ namespace ShootEmUp
         
         public GameState GetState => _gameState;
 
-        private void Update()
+        [Inject]
+        private void Construct(IEnumerable<IGameListener> listeners)
         {
-            if (_gameState != GameState.PLAYING)
-                return;
-
-            for (int i = 0; i < _updateListeners.Count; i++)
+            foreach (var listener in listeners)
             {
-                if (_updateListeners[i] is IGameUpdateListener updateListener)
-                    updateListener.OnUpdate();
+                AddListener(listener);
             }
         }
         
-        private void FixedUpdate()
+        public void Tick()
         {
             if (_gameState != GameState.PLAYING)
                 return;
 
-            for (int i = 0; i < _fixedUpdateListeners.Count; i++)
-            {
-                if (_fixedUpdateListeners[i] is IGameFixedUpdateListener updateListener)
-                    updateListener.OnFixedUpdate();
-            }
+            for (int i = 0; i < _updateListeners.Count; i++) 
+                _updateListeners[i].OnUpdate();
+        }
+
+        public void FixedTick()
+        {
+            if (_gameState != GameState.PLAYING)
+                return;
+
+            for (int i = 0; i < _fixedUpdateListeners.Count; i++) 
+                _fixedUpdateListeners[i].OnFixedUpdate();
         }
         
         public void AddListener(IGameListener listener) 
