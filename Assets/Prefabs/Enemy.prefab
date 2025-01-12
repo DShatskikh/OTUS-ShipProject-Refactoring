@@ -98,7 +98,7 @@ MonoBehaviour:
   - {fileID: 3930468379679512862}
   _installerPrefabs: []
   _autoRun: 1
-  _kernel: {fileID: 0}
+  _kernel: {fileID: 2759328508482542038}
 --- !u!114 &3654309539281737599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +127,18 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 4532541102184837691}
   _firePoint: {fileID: 1989376954054215951}
   _unitConfig: {fileID: 11400000, guid: ead190529636c7e4dbfa5aadf345f81c, type: 2}
+--- !u!114 &2759328508482542038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3460380751770072125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0065b85220401f9c7120ad6bc90ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &4532541102184837691 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1889878588286592061, guid: 17c1613a86fcf2c45b007a717c7f602a,

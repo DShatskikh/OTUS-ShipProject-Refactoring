@@ -35,6 +35,9 @@ namespace Zenject
         [SerializeField]
         ZenjectSettings _settings = null;
 
+        [SerializeField]
+        private MonoKernel _monoKernel;
+        
         DiContainer _container;
 
         public override DiContainer Container
@@ -282,8 +285,16 @@ namespace Zenject
 
             _container.Bind<Context>().FromInstance(this);
 
-            _container.Bind(typeof(ProjectKernel), typeof(MonoKernel))
-                .To<ProjectKernel>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
+            if (_monoKernel)
+            {
+                _container.Bind(typeof(MonoKernel))
+                    .FromInstance(_monoKernel).AsSingle().NonLazy();
+            }
+            else
+            {
+                _container.Bind(typeof(ProjectKernel), typeof(MonoKernel))
+                    .To<ProjectKernel>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
+            }
 
             _container.Bind<SceneContextRegistry>().AsSingle();
 
