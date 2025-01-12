@@ -24,6 +24,10 @@ namespace ShootEmUp
         [Inject]
         private void Construct(IEnumerable<IGameListener> listeners)
         {
+            _listeners = new List<IGameListener>();
+            _updateListeners = new List<IGameUpdateListener>();
+            _fixedUpdateListeners = new List<IGameFixedUpdateListener>();
+            
             foreach (var listener in listeners)
             {
                 AddListener(listener);

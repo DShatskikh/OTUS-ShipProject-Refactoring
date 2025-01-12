@@ -24,8 +24,6 @@ namespace ShootEmUp
         {
             _enemyPool = pool;
             _characterController = characterController;
-            
-            Init(bulletSystem, levelBounds);
         }
 
         public void OnPauseGame()

@@ -30,7 +30,7 @@ namespace ShootEmUp
                 .FromComponentInNewPrefab(_prefab)
                 .AsCached();
 
-            Container.BindInterfacesAndSelfTo<EnemySpawner>().AsSingle().WithArguments(_spawnInterval);
+            Container.BindInterfacesAndSelfTo<EnemySpawner>().AsSingle().WithArguments(_spawnInterval).NonLazy();
         }
     }
 }

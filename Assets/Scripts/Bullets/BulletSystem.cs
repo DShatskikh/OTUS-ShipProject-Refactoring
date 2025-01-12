@@ -21,11 +21,11 @@ namespace ShootEmUp
             {
                 var bullet = _pool.ActivateBullets.ToArray()[i];
 
-                if (!_levelBounds.InBounds(bullet.transform.position))
-                {
-                    _pool.Despawn(bullet);
-                    break;
-                }
+                if (_levelBounds.InBounds(bullet.transform.position))
+                    continue;
+                
+                _pool.TryDespawned(bullet);
+                return;
             }
         }
 

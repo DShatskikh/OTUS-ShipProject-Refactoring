@@ -81,6 +81,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2656244781115889158}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2624823049605879112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3460380751770072125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 3930468379679512862}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
 --- !u!114 &3654309539281737599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,14 +111,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5f0cbd86ea4cb0ac2a5b4f931ebbf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 5
-  _moveComponent:
-    _rigidbody2D: {fileID: 4532541102184837691}
-    _speed: 5
-  _weaponComponent:
-    _bulletConfig: {fileID: 11400000, guid: 5b1b05b86f12edc4e88771f69e354578, type: 2}
-    _firePoint: {fileID: 1989376954054215951}
   _countdownFire: 1
+--- !u!114 &3930468379679512862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3460380751770072125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b1091de8f54678b793ad91008e4f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 4532541102184837691}
+  _firePoint: {fileID: 1989376954054215951}
+  _unitConfig: {fileID: 11400000, guid: ead190529636c7e4dbfa5aadf345f81c, type: 2}
 --- !u!50 &4532541102184837691 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1889878588286592061, guid: 17c1613a86fcf2c45b007a717c7f602a,

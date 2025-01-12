@@ -1,32 +1,30 @@
 ﻿using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
     public abstract class Unit : MonoBehaviour, ICrashBullet
     {
-        [SerializeField]
-        protected int _health = 5;
-
-        [SerializeField]
+        private int _health = 5;
         private MoveComponent _moveComponent;
-        
-        [SerializeField]
         private WeaponComponent _weaponComponent;
-        
         private LevelBounds _levelBounds;
 
         protected abstract EntityType GetEntityType { get; }
+
+        [Inject]
+        private void Init(LevelBounds levelBounds, MoveComponent moveComponent, WeaponComponent weaponComponent, IUnitConfig unitConfig)
+        {
+            _levelBounds = levelBounds;
+            _moveComponent = moveComponent;
+            _health = unitConfig.Health;
+            _weaponComponent = weaponComponent;
+        }
 
         public void Crash(Bullet bullet)
         {
             if (bullet.GetEntityType != GetEntityType) 
                 TakeDamage(bullet.GetDamage);
-        }
-
-        protected void Init(BulletSystem bulletSystem, LevelBounds levelBounds)
-        {
-            _levelBounds = levelBounds;
-            _weaponComponent.Init(bulletSystem);
         }
 
         protected void Move(Vector2 direction)

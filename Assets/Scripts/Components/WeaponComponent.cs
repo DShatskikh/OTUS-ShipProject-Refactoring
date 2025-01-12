@@ -1,22 +1,20 @@
-using System;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp
 {
-    [Serializable]
     public sealed class WeaponComponent
     {
-        [SerializeField]
         private BulletConfig _bulletConfig;
-        
-        [SerializeField]
         private Transform _firePoint;
-        
         private BulletSystem _bulletSystem;
 
-        public void Init(BulletSystem bulletSystem)
+        [Inject]
+        public WeaponComponent(BulletSystem bulletSystem, Transform firePoint, IUnitConfig unitConfig)
         {
             _bulletSystem = bulletSystem;
+            _bulletConfig = unitConfig.BulletConfig;
+            _firePoint = firePoint;
         }
         
         public void OnFlyBullet(EntityType entityType, Vector2 direction)

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -7,30 +8,24 @@ namespace ShootEmUp
     {
         private GameStateController _gameStateController;
         private InputManager _inputManager;
-        private BulletSystem _bulletSystem;
-        private LevelBounds _bounds;
 
         protected override EntityType GetEntityType =>
             EntityType.Character;
 
         public Vector2 GetPosition => transform.position;
-        
+        public event Action OnDeath;
+
         [Inject]
-        private void Construct(GameStateController gameStateController, InputManager inputManager,
-            BulletSystem bulletSystem, LevelBounds levelBounds)
+        private void Construct(GameStateController gameStateController, InputManager inputManager)
         {
             _gameStateController = gameStateController;
             _inputManager = inputManager;
-            _bulletSystem = bulletSystem;
-            _bounds = levelBounds;
         }
         
         public void OnStartGame()
         {
             _inputManager.Fire += Fire;
             _inputManager.Move += Move;
-            
-            Init(_bulletSystem, _bounds);
         }
 
         public void OnPauseGame()
@@ -53,7 +48,7 @@ namespace ShootEmUp
 
         protected override void Die()
         {
-            _gameStateController.FinishGame();
+            OnDeath?.Invoke();
         }
     }
 }
