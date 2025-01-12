@@ -12,7 +12,7 @@ namespace GameCycle
     {
         [Inject]
         private GameStateController _gameStateController;
-
+        
         [InjectLocal]
         private List<IGameListener> _listeners;
 

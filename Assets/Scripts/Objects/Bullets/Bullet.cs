@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using GameCycle;
@@ -19,14 +20,16 @@ namespace ShootEmUp
         private int _damage;
         private Vector2 _beforePauseVelocity;
         private Pool _pool;
+        private GameStateController _gameStateController;
 
         public EntityType GetEntityType => _entityType;
         public int GetDamage => _damage;
 
         [Inject]
-        private void Construct(Pool pool)
+        private void Construct(Pool pool, GameStateController gameStateController)
         {
             _pool = pool;
+            _gameStateController = gameStateController;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -36,6 +39,11 @@ namespace ShootEmUp
                 crashBullet.Crash(this);
                 _pool.TryDespawned(this);
             }
+        }
+
+        private void OnDestroy()
+        {
+            _gameStateController.RemoveListener(this);
         }
 
         public void SetData(Data data)
