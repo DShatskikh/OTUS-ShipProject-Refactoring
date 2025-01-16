@@ -29,6 +29,7 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
+    - Zenject
     - Atomic.UI
     - Assets
     - UniTask
@@ -42,6 +43,8 @@ MonoBehaviour:
     - Assembly-CSharp
     - BehaviourTree
     - Atomic
+    - UniRx
+    - Zenject-IntegrationTests
     - Windows
     - Atomic.Elements
     - Products
@@ -62,6 +65,7 @@ MonoBehaviour:
     - GameSystem
     - Entities
     - AICommands
+    - UniRx.Examples
     - Atomic.Entities.Stubs
     - Blackboards
     - CustomAnimations
@@ -85,13 +89,10 @@ MonoBehaviour:
     - UniTask.TextMeshPro
     - Input
     - Atomic.Elements.Tests.PlayMode
-    - Zenject
-    - Zenject-IntegrationTests
-    - UniRx
-    - UniRx.Examples
     - Atomic.Contexts.Tests
     - Atomic.Elements.Tests.EditMode
     - PPv2URPConverters
+    - Zenject-TestFramework
     - GOAP (EditMode)
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - UniTask.Editor
@@ -105,7 +106,6 @@ MonoBehaviour:
     - InventorySystem (EditMode)
     - SimpleFolderIcon
     - Pathfinding (EditMode)
-    - Zenject-TestFramework
     showAdvancedSettings: 1
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

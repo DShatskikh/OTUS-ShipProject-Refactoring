@@ -30,7 +30,7 @@ namespace Lessons.Architecture.PM
         {
             Container.Bind<UserInfo>().AsSingle().WithArguments(_name, _description, _icon);
             
-            HashSet<CharacterStat> stats = new HashSet<CharacterStat>();
+            var stats = new List<CharacterStat>();
 
             foreach (var stat in _characterStats) 
                 stats.Add(new CharacterStat(stat.Key, stat.Value));
