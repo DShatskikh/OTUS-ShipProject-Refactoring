@@ -12,7 +12,6 @@ namespace Zenject
         SerializedProperty _editorReflectionBakingCoverageModeProperty;
         SerializedProperty _buildsReflectionBakingCoverageModeProperty;
         SerializedProperty _parentNewObjectsUnderContextProperty;
-        SerializedProperty _monoKernelProperty;
 
         public override void OnEnable()
         {
@@ -22,7 +21,6 @@ namespace Zenject
             _editorReflectionBakingCoverageModeProperty = serializedObject.FindProperty("_editorReflectionBakingCoverageMode");
             _buildsReflectionBakingCoverageModeProperty = serializedObject.FindProperty("_buildsReflectionBakingCoverageMode");
             _parentNewObjectsUnderContextProperty = serializedObject.FindProperty("_parentNewObjectsUnderContext");
-            _monoKernelProperty = serializedObject.FindProperty("_monoKernel");
         }
 
         protected override void OnGui()
@@ -33,7 +31,6 @@ namespace Zenject
             EditorGUILayout.PropertyField(_editorReflectionBakingCoverageModeProperty, true);
             EditorGUILayout.PropertyField(_buildsReflectionBakingCoverageModeProperty, true);
             EditorGUILayout.PropertyField(_parentNewObjectsUnderContextProperty);
-            EditorGUILayout.PropertyField(_monoKernelProperty);
         }
     }
 }
