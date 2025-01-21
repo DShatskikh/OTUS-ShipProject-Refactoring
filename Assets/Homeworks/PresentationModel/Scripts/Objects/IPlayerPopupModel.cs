@@ -16,5 +16,6 @@ namespace Lessons.Architecture.PM
         IReadOnlyReactiveProperty<float> CurrentExpProgress { get; }
         IReadOnlyReactiveCollection<CharacterStat> Stats { get; }
         void LevelUp();
+        void Hide();
     }
 }

@@ -11,11 +11,7 @@ namespace Lessons.Architecture.PM
 
         public void Init(CharacterStat stat)
         {
-            stat.Value.Subscribe(value =>
-            {
-                _label.text = $"{stat.Name}: {value}";
-            }).AddTo(this);
+            stat.DisplayStat.SubscribeToText(_label).AddTo(this);
         }
-            
     }
 }

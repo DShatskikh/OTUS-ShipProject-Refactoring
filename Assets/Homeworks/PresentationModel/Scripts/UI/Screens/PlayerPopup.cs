@@ -43,61 +43,24 @@ namespace Lessons.Architecture.PM
         private readonly Dictionary<CharacterStat, CharacterStatView> _statViews = new();
 
         private IPlayerPopupModel _viewModel;
-        private PopupManager _popupManager;
 
         [Inject]
-        private void Construct(IPlayerPopupModel viewModel, PopupManager popupManager)
+        private void Construct(IPlayerPopupModel viewModel)
         {
             _viewModel = viewModel;
-            _popupManager = popupManager;
         }
         
         public override void Show()
         {
-            _viewModel.Icon.Subscribe(icon =>
-            {
-                _icon.sprite = icon;
-            }).AddTo(this);
-            
-            _viewModel.Name.Subscribe(text =>
-            {
-                _nameLabel.text = text;
-            }).AddTo(this);
-            
-            _viewModel.Description.Subscribe(text =>
-            {
-                _descriptionLabel.text = text;
-            }).AddTo(this);
-            
-            _viewModel.Level.Subscribe(level =>
-            {
-                _levelLabel.text = level;
-            }).AddTo(this);
-            
-            _viewModel.CanLevelUp.Subscribe(canLevelUp =>
-            {
-                _levelUpButton.interactable = canLevelUp;
-            }).AddTo(this);
-            
-            _viewModel.LevelProgress.Subscribe(progress =>
-            {
-                _levelProgressLabel.text = progress;
-            }).AddTo(this);
-            
-            _viewModel.MaxExpProgress.Subscribe(maxProgress =>
-            {
-                _levelProgressSlider.maxValue = maxProgress;
-            }).AddTo(this);
-            
-            _viewModel.CurrentExpProgress.Subscribe(currentProgress =>
-            {
-                _levelProgressSlider.value = currentProgress;
-            }).AddTo(this);
-            
-            _viewModel.Stats.ObserveAdd().Subscribe(stat =>
-            {
-                Create(stat.Value);
-            }).AddTo(this);
+            _viewModel.Icon.SubscribeToImage(_icon).AddTo(this);
+            _viewModel.Name.SubscribeToText(_nameLabel).AddTo(this);
+            _viewModel.Description.SubscribeToText(_descriptionLabel).AddTo(this);
+            _viewModel.Level.SubscribeToText(_levelLabel).AddTo(this);
+            _viewModel.CanLevelUp.SubscribeToInteractable(_levelUpButton).AddTo(this);
+            _viewModel.LevelProgress.SubscribeToText(_levelProgressLabel).AddTo(this);
+            _viewModel.MaxExpProgress.Subscribe(maxProgress => _levelProgressSlider.maxValue = maxProgress).AddTo(this);
+            _viewModel.CurrentExpProgress.Subscribe(currentProgress => _levelProgressSlider.value = currentProgress).AddTo(this);
+            _viewModel.Stats.ObserveAdd().Subscribe(stat => Create(stat.Value)).AddTo(this);
             
             _viewModel.Stats.ObserveRemove().Subscribe(stat =>
             {
@@ -127,7 +90,7 @@ namespace Lessons.Architecture.PM
             _viewModel.LevelUp();
 
         private void OnCloseClicked() => 
-            _popupManager.Hide(PopupType.PlayerPopup);
+            _viewModel.Hide();
 
         private void Create(CharacterStat stat)
         {

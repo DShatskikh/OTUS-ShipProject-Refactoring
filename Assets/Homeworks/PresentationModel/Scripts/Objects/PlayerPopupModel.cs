@@ -1,9 +1,10 @@
+using System;
 using UniRx;
 using UnityEngine;
 
 namespace Lessons.Architecture.PM
 {
-    public sealed class PlayerPopupModel : IPlayerPopupModel
+    public sealed class PlayerPopupModel : IPlayerPopupModel, IDisposable
     {
         private readonly PlayerLevel _level;
 
@@ -16,6 +17,7 @@ namespace Lessons.Architecture.PM
         private readonly ReactiveProperty<float> _maxExpProgress = new();
         private readonly ReactiveProperty<float> _currentExpProgress = new();
         private readonly ReactiveCollection<CharacterStat> _stats;
+        private readonly PopupManager _popupManager;
 
         public IReadOnlyReactiveProperty<Sprite> Icon => _icon;
         public IReadOnlyReactiveProperty<string> Name => _name;
@@ -26,31 +28,21 @@ namespace Lessons.Architecture.PM
         public IReadOnlyReactiveProperty<float> MaxExpProgress => _maxExpProgress;
         public IReadOnlyReactiveProperty<float> CurrentExpProgress => _currentExpProgress;
         public IReadOnlyReactiveCollection<CharacterStat> Stats => _stats;
-
-
-        public PlayerPopupModel(UserInfo userInfo, CharacterInfo characterInfo, PlayerLevel playerLevel)
+        
+        public PlayerPopupModel(UserInfo userInfo, CharacterInfo characterInfo, PlayerLevel playerLevel, 
+            PopupManager popupManager)
         {
             _level = playerLevel;
+            _popupManager = popupManager;
 
-            userInfo.Icon.Subscribe(icon =>
-            {
-                _icon.Value = icon;
-            });
-
-            userInfo.Name.Subscribe(namePlayer =>
-            {
-                _name.Value = namePlayer;
-            });
-            
-            userInfo.Description.Subscribe(description =>
-            {
-                _description.Value = description;
-            });
+            userInfo.Icon.SubscribeToReactiveProperty(_icon);
+            userInfo.Name.SubscribeToReactiveProperty(_name);
+            userInfo.Description.SubscribeToReactiveProperty(_description);
             
             _level.Experience.Subscribe(exp =>
             {
-                _currentExpProgress.Value = exp;
                 _maxExpProgress.Value = _level.RequiredExperience;
+                _currentExpProgress.Value = exp;
                 _levelProgress.Value = $"XP: {exp}/{_level.RequiredExperience}";
                 _canLevelUp.Value = _level.CanLevelUp();
             });
@@ -63,18 +55,27 @@ namespace Lessons.Architecture.PM
 
             _stats = new ReactiveCollection<CharacterStat>(characterInfo.Stats);
             
-            characterInfo.Stats.ObserveAdd().Subscribe(stat =>
-            {
-                _stats.Add(stat.Value);
-            });
-            
-            characterInfo.Stats.ObserveRemove().Subscribe(stat =>
-            {
-                _stats.Remove(stat.Value);
-            });
+            characterInfo.Stats.ObserveAdd().Subscribe(stat => _stats.Add(stat.Value));
+            characterInfo.Stats.ObserveRemove().Subscribe(stat => _stats.Remove(stat.Value));
         }
 
         public void LevelUp() => 
             _level.LevelUp();
+
+        public void Hide() => 
+            _popupManager.Hide(PopupType.PlayerPopup);
+
+        public void Dispose()
+        {
+            _icon?.Dispose();
+            _name?.Dispose();
+            _description?.Dispose();
+            _currentLevel?.Dispose();
+            _canLevelUp?.Dispose();
+            _levelProgress?.Dispose();
+            _maxExpProgress?.Dispose();
+            _currentExpProgress?.Dispose();
+            _stats?.Dispose();
+        }
     }
 }
