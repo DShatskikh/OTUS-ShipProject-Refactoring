@@ -1,1 +1,0 @@
-# OTUS-ShipProject-Refactoring
