@@ -18,7 +18,7 @@ namespace ShootEmUp
         private float _positionZ;
         private Transform _myTransform;
 
-        public void OnStartGame()
+        void IGameStartListener.OnStartGame()
         {
             _myTransform = transform;
             var position = _myTransform.position;
@@ -26,7 +26,7 @@ namespace ShootEmUp
             _positionZ = position.z;
         }
 
-        public void FixedTick(float delta)
+        void IGameFixedUpdateListener.FixedTick(float delta)
         {
             if (_myTransform.position.y <= _endPositionY)
                 _myTransform.position = new Vector3(_positionX, _startPositionY, _positionZ);

@@ -1,12 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace GameCycle
 {
-    public sealed class GameStateController
+    public sealed class GameStateController : ITickable, IFixedTickable
     {
         private GameState _gameState;
-        private List<IGameListener> _listeners = new ();
+        
+        private readonly List<IGameListener> _listeners = new ();
+        private readonly List<IGameTickableListener> _tickables = new ();
+        private readonly List<IGameFixedUpdateListener> _fixedTickables = new ();
         
         public GameState GetState => _gameState;
 
@@ -16,13 +20,47 @@ namespace GameCycle
                 return;
 
             _listeners.Add(listener);
+            
+            if (listener is IGameTickableListener tickableListener)
+                _tickables.Add(tickableListener);
+            
+            if (listener is IGameFixedUpdateListener fixedUpdateListener)
+                _fixedTickables.Add(fixedUpdateListener);
         }
 
         public void RemoveListener(IGameListener listener) 
         {
+            if (listener is IGameTickableListener tickableListener)
+                _tickables.Remove(tickableListener);
+            
+            if (listener is IGameFixedUpdateListener fixedUpdateListener)
+                _fixedTickables.Remove(fixedUpdateListener);
+            
             _listeners.Remove(listener);
         }
 
+        public void Tick()
+        {
+            if (_gameState == GameState.PLAYING)
+            {
+                var delta = Time.deltaTime;
+            
+                foreach (var tickable in _tickables) 
+                    tickable.Tick(delta);
+            }
+        }
+
+        public void FixedTick()
+        {
+            if (_gameState == GameState.PLAYING)
+            {
+                var delta = Time.fixedDeltaTime;
+                
+                foreach (var fixedTickable in _fixedTickables)
+                    fixedTickable.FixedTick(delta);
+            }
+        }
+        
         public void StartGame() 
         {
             if (_gameState != GameState.OFF && _gameState != GameState.FINISHED)

@@ -2814,6 +2814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 233189270}
+  _levelBackground: {fileID: 4852396043583267082}
   _bounds: {fileID: 2572952653776768186}
 --- !u!1 &1831741368
 GameObject:
