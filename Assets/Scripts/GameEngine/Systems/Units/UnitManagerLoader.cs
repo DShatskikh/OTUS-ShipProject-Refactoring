@@ -1,49 +1,53 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using SaveSystem;
 using UnityEngine;
 
 namespace GameEngine
 {
-    public sealed class UnitManagerLoader : SaveLoader<UnitManager, UnitData[]>
+    public sealed class UnitManagerLoader : SaveLoader<UnitManager, List<UnitData>>
     {
-        protected override UnitData[] ConvertToData(UnitManager service)
+        protected override List<UnitData> ConvertToData(UnitManager service)
         {
-            var units = service.GetAllUnits().Select(unit => new UnitData()
+            return Object.FindObjectsOfType<Unit>().Select(unit => new UnitData()
             {
-                ID = unit.GetInstanceID(),
                 Type = unit.Type,
                 HitPoints = unit.HitPoints,
                 Position = unit.Position,
                 Rotation = unit.Rotation,
-            }).ToArray();
-            
-            var debugMessage = $"Вы сохранили {service.GetAllUnits().Count()} Юнитов\n";
-
-            foreach (var unit in units)
-            {
-                debugMessage += $"[ID: {unit.ID}, ";
-                debugMessage += $"Type: {unit.Type}, ";
-                debugMessage += $"HitPoints: {unit.HitPoints}]";
-                debugMessage += "\n";
-            }
-
-            Debug.Log(debugMessage);
-            return units;
+            }).ToList();
         }
 
-        protected override void SetupData(UnitManager service, UnitData[] data)
+        protected override void SetupData(UnitManager service, List<UnitData> data)
         {
             var units = Object.FindObjectsOfType<Unit>();
 
-            //Тут можно изменять Юнитов в зависимости от их сохраненного состояния
+            foreach (var sceneUnit in units) 
+                Object.Destroy(sceneUnit.gameObject);
+
+            var allUnits = Resources.LoadAll<Unit>("Test/UnitObjects");
             
+            foreach (var unitData in data)
+            {
+                foreach (var prefab in allUnits)
+                {
+                    if (prefab.Type == unitData.Type)
+                    {
+                        var unit = Object.Instantiate(prefab, unitData.Position, Quaternion.Euler(unitData.Rotation));
+                        unit.HitPoints = unitData.HitPoints;
+                    }
+                }
+            }
+
             service.SetupUnits(units);
         }
 
         protected override void SetupDefaultData(UnitManager service)
         {
-            var units = Object.FindObjectsOfType<Unit>();
-            service.SetupUnits(units);
+            foreach (var unit in Object.FindObjectsOfType<Unit>()) 
+                Object.Destroy(unit.gameObject);
+
+            service.SetupUnits(new Unit[] {});
         }
     }
 }

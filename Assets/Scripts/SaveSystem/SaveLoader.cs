@@ -30,6 +30,7 @@ namespace SaveSystem
         void ISaveLoader.Save(IGameRepository gameRepository)
         {
             var data = ConvertToData(_service);
+            Debug.Log(data);
             gameRepository.Set(typeof(TData).ToString(), data);
         }
 

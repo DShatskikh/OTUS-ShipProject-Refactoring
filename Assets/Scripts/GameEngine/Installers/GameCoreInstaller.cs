@@ -8,6 +8,7 @@ namespace GameEngine
         public override void InstallBindings()
         {
             Container.Bind<SettingService>().AsSingle();
+            Container.Bind<SettingsRepository>().AsSingle();
         }
     }
 }

@@ -1,16 +1,22 @@
-﻿using UniRx;
-using UnityEngine;
+﻿using SaveSystem;
+using UniRx;
 
 namespace GameEngine
 {
     public sealed class SettingService
     {
         private FloatReactiveProperty _volume = new();
+        private readonly SettingsRepository _settingsRepository;
         public IReadOnlyReactiveProperty<float> Volume => _volume;
 
-        public SettingService()
+        public SettingService(SettingsRepository settingsRepository)
         {
-            _volume.Value = PlayerPrefs.GetFloat("Volume", 1f);
+            _settingsRepository = settingsRepository;
+            
+            if (settingsRepository.TryGet("Volume", out float volume))
+                _volume.Value = volume;
+            else
+                _volume.Value = 1;
         }
 
         public void ChangeVolume(float value)
@@ -22,7 +28,8 @@ namespace GameEngine
                 value = 0;
             
             _volume.Value = value;
-            PlayerPrefs.SetFloat("Volume", value);
+            _settingsRepository.Set("Volume", value);
+            _settingsRepository.SaveGame();
         }
     }
 }
