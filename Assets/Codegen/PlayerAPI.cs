@@ -25,6 +25,11 @@ namespace Atomic.Entities
         public const int HitPoints = 12; // ReactiveInt
         public const int Kills = 14; // ReactiveInt
         public const int ShotCooldown = 16; // float
+        public const int IsShotPress = 17; // ReactiveBool
+        public const int SeePoint = 18; // Vector3
+        public const int DamageRequest = 19; // BaseEvent<int>
+        public const int DamageVFX = 20; // ParticleSystem
+        public const int DamageSoundPlayer = 21; // AudioSource
 
 
         ///Extensions
@@ -261,5 +266,95 @@ namespace Atomic.Entities
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetShotCooldown(this IEntity obj, float value) => obj.SetValue(ShotCooldown, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static ReactiveBool GetIsShotPress(this IEntity obj) => obj.GetValue<ReactiveBool>(IsShotPress);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryGetIsShotPress(this IEntity obj, out ReactiveBool value) => obj.TryGetValue(IsShotPress, out value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool AddIsShotPress(this IEntity obj, ReactiveBool value) => obj.AddValue(IsShotPress, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool HasIsShotPress(this IEntity obj) => obj.HasValue(IsShotPress);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool DelIsShotPress(this IEntity obj) => obj.DelValue(IsShotPress);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void SetIsShotPress(this IEntity obj, ReactiveBool value) => obj.SetValue(IsShotPress, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 GetSeePoint(this IEntity obj) => obj.GetValue<Vector3>(SeePoint);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryGetSeePoint(this IEntity obj, out Vector3 value) => obj.TryGetValue(SeePoint, out value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool AddSeePoint(this IEntity obj, Vector3 value) => obj.AddValue(SeePoint, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool HasSeePoint(this IEntity obj) => obj.HasValue(SeePoint);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool DelSeePoint(this IEntity obj) => obj.DelValue(SeePoint);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void SetSeePoint(this IEntity obj, Vector3 value) => obj.SetValue(SeePoint, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static BaseEvent<int> GetDamageRequest(this IEntity obj) => obj.GetValue<BaseEvent<int>>(DamageRequest);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryGetDamageRequest(this IEntity obj, out BaseEvent<int> value) => obj.TryGetValue(DamageRequest, out value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool AddDamageRequest(this IEntity obj, BaseEvent<int> value) => obj.AddValue(DamageRequest, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool HasDamageRequest(this IEntity obj) => obj.HasValue(DamageRequest);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool DelDamageRequest(this IEntity obj) => obj.DelValue(DamageRequest);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void SetDamageRequest(this IEntity obj, BaseEvent<int> value) => obj.SetValue(DamageRequest, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static ParticleSystem GetDamageVFX(this IEntity obj) => obj.GetValue<ParticleSystem>(DamageVFX);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryGetDamageVFX(this IEntity obj, out ParticleSystem value) => obj.TryGetValue(DamageVFX, out value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool AddDamageVFX(this IEntity obj, ParticleSystem value) => obj.AddValue(DamageVFX, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool HasDamageVFX(this IEntity obj) => obj.HasValue(DamageVFX);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool DelDamageVFX(this IEntity obj) => obj.DelValue(DamageVFX);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void SetDamageVFX(this IEntity obj, ParticleSystem value) => obj.SetValue(DamageVFX, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static AudioSource GetDamageSoundPlayer(this IEntity obj) => obj.GetValue<AudioSource>(DamageSoundPlayer);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryGetDamageSoundPlayer(this IEntity obj, out AudioSource value) => obj.TryGetValue(DamageSoundPlayer, out value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool AddDamageSoundPlayer(this IEntity obj, AudioSource value) => obj.AddValue(DamageSoundPlayer, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool HasDamageSoundPlayer(this IEntity obj) => obj.HasValue(DamageSoundPlayer);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool DelDamageSoundPlayer(this IEntity obj) => obj.DelValue(DamageSoundPlayer);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void SetDamageSoundPlayer(this IEntity obj, AudioSource value) => obj.SetValue(DamageSoundPlayer, value);
     }
 }

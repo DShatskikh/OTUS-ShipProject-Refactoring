@@ -1,4 +1,5 @@
 ﻿using Atomic.Contexts;
+using Atomic.Elements;
 using Atomic.Entities;
 using UnityEngine;
 
@@ -10,22 +11,32 @@ namespace Game
 
         public void Init(IEntity entity)
         {
-            var input = SceneContext.Instance.GetPlayerInput();
             var animator = entity.GetAnimator();
             var animatorDispatcher = entity.GetAnimatorDispatcher();
             var rootVisual = entity.GetRootVisual();
+            var isShotPress = entity.GetIsShotPress();
 
-            input.actions["Fire"].started += context =>
+            isShotPress.Subscribe(isPress =>
             {
-                var cooldown = entity.GetShotCooldown();
-                var ammo = entity.GetAmmo();
+                Debug.Log("PressFire " + isPress);
                 
-                if (ammo.Value <= 0 && cooldown <= 0)
-                    return;
+                if (isPress)
+                {
+                    var cooldown = entity.GetShotCooldown();
+                    var ammo = entity.GetAmmo();
                 
-                animator.SetFloat(State, 2);
-                entity.SetIsShot(true);
-            };
+                    if (ammo.Value <= 0 || cooldown > 0)
+                        return;
+                    
+                    animator.SetFloat(State, 2);
+                    entity.SetIsShot(true); 
+                }
+                else
+                {
+                    animator.SetFloat(State, 0);
+                    entity.SetIsShot(false);
+                }
+            });
             
             animatorDispatcher.SubscribeOnEvent("Shot", () =>
             {
@@ -47,7 +58,7 @@ namespace Game
                     {
                         Debug.Log("hit");
                         entity.GetKills().Value += 1;
-                        component.GetHitPoints().Value -= 1;
+                        component.GetDamageRequest()?.Invoke(1);
                     }
                 }
             });
@@ -60,12 +71,6 @@ namespace Game
                 animator.SetFloat(State, 0);
                 entity.SetIsShot(false);
             });
-            
-            input.actions["Fire"].canceled += context =>
-            {
-                animator.SetFloat(State, 0);
-                entity.SetIsShot(false);
-            };
         }
 
         public void OnUpdate(IEntity entity, float deltaTime)

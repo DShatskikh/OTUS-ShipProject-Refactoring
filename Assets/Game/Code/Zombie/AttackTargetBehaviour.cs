@@ -20,7 +20,7 @@ namespace Game
             
             animatorDispatcher.SubscribeOnEvent("Shot", () =>
             {
-                _target.GetComponent<SceneEntity>().Entity.GetHitPoints().Value -= 1;
+                _target.GetComponent<SceneEntity>().Entity.GetDamageRequest()?.Invoke(1);
             });
         }
 
@@ -28,7 +28,7 @@ namespace Game
         {
             var distance = Vector2.Distance(_target.position, _root.position);
             
-            if (distance < 1)
+            if (distance < 0.5f)
             {
                 _animator.SetFloat(State, 2);
             }

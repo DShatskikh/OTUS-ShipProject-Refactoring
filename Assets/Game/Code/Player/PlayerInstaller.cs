@@ -1,4 +1,5 @@
-﻿using Atomic.Entities;
+﻿using Atomic.Elements;
+using Atomic.Entities;
 using UnityEngine;
 
 namespace Game
@@ -22,6 +23,12 @@ namespace Game
 
         [SerializeField]
         private AnimatorDispatcher _animatorDispatcher;
+
+        [SerializeField]
+        private ParticleSystem _damageVFX;
+        
+        [SerializeField]
+        private AudioSource _damageSound;
         
         public override void Install(IEntity entity)
         {
@@ -37,11 +44,30 @@ namespace Game
             entity.AddHitPoints(4);
             entity.AddKills(0);
             entity.AddShotCooldown(0.5f);
+            entity.AddInputDirection(Vector2.zero);
+            entity.AddIsShotPress(false);
+            entity.AddSeePoint(new Vector3());
+            entity.AddDamageRequest(new BaseEvent<int>());
+            entity.AddDamageVFX(_damageVFX);
+            entity.AddDamageSoundPlayer(_damageSound);
             
-            entity.AddBehaviour(new MoveBehaviour());
-            entity.AddBehaviour(new RotateToMouseBehaviour());
+            entity.AddBehaviour(new MoveToInputBehaviour());
+            entity.AddBehaviour(new DamageRequestVFXBehaviour());
+            entity.AddBehaviour(new DamageRequestSoundBehaviour());
+            entity.AddBehaviour(new DamageRequestBehaviour());
+            entity.AddBehaviour(new RotateToSeePointBehaviour());
             entity.AddBehaviour(new ShotBehaviour());
-            entity.AddBehaviour(new AddAmmoToTimerBehaviour());
+
+            var addAmmoTimer = new Timer(0.5f, true);
+            addAmmoTimer.OnEnded += () =>
+            {
+                if (entity.GetAmmo().Value >= entity.GetMaxAmmo())
+                    return;
+                
+                entity.GetAmmo().Value += 1;
+            };
+            entity.WhenUpdate(addAmmoTimer.Tick);
+            addAmmoTimer.Play();
         }
     }
 }

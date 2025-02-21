@@ -17,6 +17,7 @@ namespace Game
                 if (points <= 0)
                 {
                     _gameOver.SetActive(true);
+                    SceneContext.Instance.GetIsPlaying().Value = false;
                     Time.timeScale = 0;
                 }
             });

@@ -1,5 +1,9 @@
-﻿using Atomic.Entities;
+﻿using Atomic.Contexts;
+using Atomic.Elements;
+using Atomic.Entities;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game
 {
@@ -13,10 +17,15 @@ namespace Game
 
         public override void Install(IEntity entity)
         {
-            entity.AddPrefab(_prefab);
-            entity.AddPoints(_points);
-
-            entity.AddBehaviour(new SpawnerBehaviour());
+            var spawnTimer = new Timer(2f, true);
+            spawnTimer.OnEnded += () =>
+            {
+                var point = _points[Random.Range(0, _points.Length)];
+                var zombie = Instantiate(_prefab, point.position, quaternion.identity, point);
+                zombie.AddTarget(SceneContext.Instance.GetPlayer().GetRoot());
+            };
+            entity.WhenUpdate(spawnTimer.Tick);
+            spawnTimer.Play();
         }
     }
 }

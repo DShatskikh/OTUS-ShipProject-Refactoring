@@ -22,9 +22,9 @@ MonoBehaviour:
     - UnityEngine.InputSystem
     - Atomic.Entities
     items:
-    - id: 1
-      name: PlayerInput
-      type: PlayerInput
     - id: 2
       name: Player
       type: SceneEntity
+    - id: 1
+      name: IsPlaying
+      type: BoolSerialize

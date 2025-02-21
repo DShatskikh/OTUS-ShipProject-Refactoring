@@ -60,6 +60,21 @@ MonoBehaviour:
     - id: 16
       name: ShotCooldown
       type: float
+    - id: 17
+      name: IsShotPress
+      type: ReactiveBool
+    - id: 18
+      name: SeePoint
+      type: Vector3
+    - id: 19
+      name: DamageRequest
+      type: BaseEvent<int>
+    - id: 20
+      name: DamageVFX
+      type: ParticleSystem
+    - id: 21
+      name: DamageSoundPlayer
+      type: AudioSource
   - name: Enemy
     indexes:
     - id: 6

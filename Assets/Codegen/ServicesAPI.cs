@@ -13,29 +13,11 @@ namespace Atomic.Contexts
 	public static class ServicesAPI
 	{
 		///Keys
-		public const int PlayerInput = 1; // PlayerInput
 		public const int Player = 2; // SceneEntity
+		public const int IsPlaying = 1; // BoolSerialize
 
 
 		///Extensions
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static PlayerInput GetPlayerInput(this IContext obj) => obj.ResolveValue<PlayerInput>(PlayerInput);
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool TryGetPlayerInput(this IContext obj, out PlayerInput value) => obj.TryResolveValue(PlayerInput, out value);
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool AddPlayerInput(this IContext obj, PlayerInput value) => obj.AddValue(PlayerInput, value);
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool DelPlayerInput(this IContext obj) => obj.DelValue(PlayerInput);
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void SetPlayerInput(this IContext obj, PlayerInput value) => obj.SetValue(PlayerInput, value);
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool HasPlayerInput(this IContext obj) => obj.HasValue(PlayerInput);
-
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static SceneEntity GetPlayer(this IContext obj) => obj.ResolveValue<SceneEntity>(Player);
 
@@ -53,5 +35,23 @@ namespace Atomic.Contexts
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool HasPlayer(this IContext obj) => obj.HasValue(Player);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static BoolSerialize GetIsPlaying(this IContext obj) => obj.ResolveValue<BoolSerialize>(IsPlaying);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static bool TryGetIsPlaying(this IContext obj, out BoolSerialize value) => obj.TryResolveValue(IsPlaying, out value);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static bool AddIsPlaying(this IContext obj, BoolSerialize value) => obj.AddValue(IsPlaying, value);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static bool DelIsPlaying(this IContext obj) => obj.DelValue(IsPlaying);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void SetIsPlaying(this IContext obj, BoolSerialize value) => obj.SetValue(IsPlaying, value);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static bool HasIsPlaying(this IContext obj) => obj.HasValue(IsPlaying);
     }
 }
