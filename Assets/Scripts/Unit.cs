@@ -33,7 +33,6 @@ namespace Game
         public bool GetFreeze => _isFreeze;
         public UnitConfig GetConfig => _config;
         public int GetHealth => _health;
-        public int GetPreviousHealth => _previousHealth;
 
         [Inject]
         private void Construct(UnitsManager unitsManager)

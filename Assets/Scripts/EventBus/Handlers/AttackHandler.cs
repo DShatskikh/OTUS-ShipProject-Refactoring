@@ -21,7 +21,7 @@ namespace Game
             
             var skills = _unitsManager.GetSelectUnit.GetSkills;
 
-            if (skills == null || skills.Count != 0)
+            if (skills == null || skills.Count == 0)
             {
                 _unitsManager.Turn();
                 _visualPipeline.AddTask(
