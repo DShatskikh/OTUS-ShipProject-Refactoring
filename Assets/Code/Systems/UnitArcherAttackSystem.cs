@@ -8,6 +8,7 @@ namespace Game
     public sealed class UnitArcherAttackSystem : IEcsRunSystem
     {
         private readonly EcsFilterInject<Inc<UnitTag, AttackTarget, AttackState, Cooldown, ArrowPrefab, BowPoint, UnitCommand, ArcherTag>, Exc<DeathTag>> _filter;
+        private readonly EcsFilterInject<Inc<ArrowTag, Root, UnitCommand, Inactive>> _arrowsPoolFilter;
         private readonly EcsCustomInject<EntityManager> _entityManager;
         private readonly EcsCustomInject<GameStateController> _gameStateController;
 
@@ -37,8 +38,39 @@ namespace Game
                 if (cooldown.Current > cooldown.Max)
                 {
                     Debug.Log("Атакую башню!!!");
-                    var arrow = _entityManager.Value.Create(prefab, bowPoint.position, bowPoint.rotation);
-                    arrow.AddData(new UnitCommand() { Value = command });
+
+                    bool isTakeFromPool = false;
+                    
+                    EcsPool<Inactive> inactivePool = _arrowsPoolFilter.Pools.Inc4;
+                    EcsPool<UnitCommand> commandPool = _arrowsPoolFilter.Pools.Inc3;
+                    EcsPool<Root> rootPool = _arrowsPoolFilter.Pools.Inc2;
+                        
+                    foreach (var @arrow in _arrowsPoolFilter.Value)
+                    {
+                        if (command == commandPool.Get(@arrow).Value)
+                        {
+                            inactivePool.Del(@arrow);
+                            var arrowTransform = rootPool.Get(@arrow).Value;
+                            arrowTransform.gameObject.SetActive(true);
+                            arrowTransform.position = bowPoint.position;
+                            arrowTransform.rotation = bowPoint.rotation;
+                            Debug.Log("Беру стрелу из пула");
+                            isTakeFromPool = true;
+                            break;
+                        }
+                        else
+                        {
+                            Debug.Log("Команда не подошла");
+                        }
+                    }
+                    
+                    if (!isTakeFromPool)
+                    {
+                        Debug.Log("Создаю стрелу");
+                        var arrow = _entityManager.Value.Create(prefab, bowPoint.position, bowPoint.rotation);
+                        arrow.AddData(new UnitCommand() { Value = command });
+                    }
+
                     cooldown.Current = 0;
                 }
             }

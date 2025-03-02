@@ -10,9 +10,7 @@ namespace Game
         private readonly EcsWorldInject _eventWorld = EcsWorlds.EVENTS;
         private readonly EcsWorldInject _world;
         private readonly EcsCustomInject<EntityManager> _entityManager;
-        
-        private readonly EcsPoolInject<Inactive> _inactivePool;
-        
+
         public void Run(IEcsSystems systems)
         {
             EcsPool<CollisionEnterRequest> sourcePool = _filter.Pools.Inc1;
@@ -25,8 +23,8 @@ namespace Game
                     .Add(new DamageRequest() { Damage = 1, Target = collision.Target });
 
                 collision.Source.GetData<Root>().Value.gameObject.SetActive(false);
-                _inactivePool.Value.Add(@entity);
-                //_entityManager.Value.Destroy(collision.Source.Id);
+                collision.Source.AddData(new Inactive());
+
                 _eventWorld.Value.DelEntity(@entity);
             }
         }

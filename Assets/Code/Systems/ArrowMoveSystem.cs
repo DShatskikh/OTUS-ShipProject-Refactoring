@@ -6,7 +6,7 @@ namespace Game
 {
     public sealed class ArrowMoveSystem : IEcsRunSystem
     {
-        private readonly EcsFilterInject<Inc<ArrowTag, Root, MoveSpeed>> _filter;
+        private readonly EcsFilterInject<Inc<ArrowTag, Root, MoveSpeed>, Exc<Inactive>> _filter;
 
         public void Run(IEcsSystems systems)
         {
