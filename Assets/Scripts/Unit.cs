@@ -25,6 +25,7 @@ namespace Game
         private List<SkillBase> _skills;
         private bool _isFreeze;
         private UnitsManager _unitsManager;
+        private EventBus _eventBus;
 
         public event Action<Unit> Select;
         public int GetAttack => _attack;
@@ -35,9 +36,10 @@ namespace Game
         public int GetHealth => _health;
 
         [Inject]
-        private void Construct(UnitsManager unitsManager)
+        private void Construct(UnitsManager unitsManager, EventBus eventBus)
         {
             _unitsManager = unitsManager;
+            _eventBus = eventBus;
         }
         
         private void Awake()
@@ -57,8 +59,8 @@ namespace Game
         {
             if (value && _config.GetStartTurnSounds.Length != 0)
             {
-                AudioPlayer.Instance
-                    .PlaySound(_config.GetStartTurnSounds[Random.Range(0, _config.GetStartTurnSounds.Length)]); 
+                var startSound = _config.GetStartTurnSounds[Random.Range(0, _config.GetStartTurnSounds.Length)];
+                _eventBus.RaiseEvent(new SoundPlayEvent(startSound));
             }
 
             _view.SetActive(value);
@@ -111,7 +113,7 @@ namespace Game
                 return;
             
             foreach (var ability in _config.GetPassiveAbilities) 
-                ability.Activate(_unitsManager);
+                ability.Activate(_unitsManager, _eventBus);
         }
 
         public void PlayDamageEffect()

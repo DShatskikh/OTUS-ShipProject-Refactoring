@@ -1,4 +1,4 @@
 ﻿namespace Game
 {
-    public class VisualPipeline : Pipeline { }
+    public sealed class VisualPipeline : Pipeline { }
 }

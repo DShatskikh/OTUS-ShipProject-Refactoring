@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Game
 {
-    public class EventHandlerCollection<T> : IEventHandlerCollection
+    public sealed class EventHandlerCollection<T> : IEventHandlerCollection
     {
         private readonly List<Delegate> _handlers = new();
         

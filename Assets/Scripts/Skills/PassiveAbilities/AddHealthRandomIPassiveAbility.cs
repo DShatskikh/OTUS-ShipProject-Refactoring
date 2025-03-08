@@ -11,12 +11,12 @@ namespace Game
         [SerializeField]
         private AudioClip _sound;
         
-        public override void Activate(UnitsManager manager)
+        public override void Activate(UnitsManager manager, EventBus eventBus)
         {
             foreach (var unit in manager.GetTurnUnits) 
                 unit.HealthAdd(_health);
             
-            AudioPlayer.Instance.PlaySound(_sound);
+            eventBus.RaiseEvent(new SoundPlayEvent(_sound));
         }
     }
 }

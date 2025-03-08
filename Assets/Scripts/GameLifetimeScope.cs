@@ -26,11 +26,13 @@ namespace Game
             builder.RegisterEntryPoint<TurnPipelineInstaller>();
             builder.RegisterComponentInHierarchy<TurnPipelineRunner>();
             builder.RegisterComponentInHierarchy<EndGameScreen>();
+            builder.RegisterComponentInHierarchy<AudioPlayer>();
             
             builder.RegisterEntryPoint<AttackHandler>();
             builder.RegisterEntryPoint<PassiveAbilityHandler>();
             builder.RegisterEntryPoint<DamageHandler>();
             builder.RegisterEntryPoint<DestroyHandler>();
+            builder.RegisterEntryPoint<SoundPlayHandler>();
         }
     }
 }

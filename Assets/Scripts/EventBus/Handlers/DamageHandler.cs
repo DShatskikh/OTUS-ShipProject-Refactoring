@@ -1,4 +1,6 @@
-﻿namespace Game
+﻿using UnityEngine;
+
+namespace Game
 {
     public sealed class DamageHandler : BaseHandler<DamageEvent>
     {
@@ -14,12 +16,14 @@
         protected override void OnHandleEvent(DamageEvent evt)
         {
             var unit = evt.Unit;
-            var damage = unit.GetAttack;
+            var damage = evt.Damage;
+            
+            Debug.Log($"DamageEvent: {unit.GetConfig.name}, Attack: {unit.GetAttack}, Damage: {damage}");
             
             unit.HealthSubtract(damage);
             
             if (unit.GetHealth < unit.GetConfig.GetHealth * 0.2f)
-                AudioPlayer.Instance.PlaySound(evt.Unit.GetConfig.GetLowHealthSound);
+                _eventBus.RaiseEvent(new SoundPlayEvent(evt.Unit.GetConfig.GetLowHealthSound));
 
             if (unit.GetConfig.GetHealthSubtractAbilities != null)
             {

@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    public class StartVisualPipelineTask : EventTask
+    public sealed class StartVisualPipelineTask : EventTask
     {
         private readonly VisualPipeline _visualPipeline;
 

@@ -4,7 +4,7 @@ using VContainer;
 
 namespace Game
 {
-    public class TurnPipelineRunner : MonoBehaviour
+    public sealed class TurnPipelineRunner : MonoBehaviour
     {
         private TurnPipeline _pipeline;
         

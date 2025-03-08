@@ -51,14 +51,14 @@ namespace Game
 
         public void Turn()
         {
-            _eventBus.RaiseEvent(new DamageEvent(_selectEnemyUnit, _selectEnemyUnit.GetAttack));
-            _eventBus.RaiseEvent(new DamageEvent(_selectUnit, _selectUnit.GetAttack));
+            _eventBus.RaiseEvent(new DamageEvent(_selectEnemyUnit, _selectUnit.GetAttack));
+            _eventBus.RaiseEvent(new DamageEvent(_selectUnit, _selectEnemyUnit.GetAttack));
         }
 
         public void Turn(Unit enemy)
         {
-            _eventBus.RaiseEvent(new DamageEvent(enemy, enemy.GetAttack));
-            _eventBus.RaiseEvent(new DamageEvent(_selectUnit, _selectUnit.GetAttack));
+            _eventBus.RaiseEvent(new DamageEvent(enemy, _selectUnit.GetAttack));
+            _eventBus.RaiseEvent(new DamageEvent(_selectUnit, enemy.GetAttack));
         }
         
         public UniTask UpgradeVisualAllUnits()

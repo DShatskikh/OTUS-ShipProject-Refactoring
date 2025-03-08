@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class CoroutineRunner : ICoroutineRunner
+    public sealed class CoroutineRunner : ICoroutineRunner
     {
         private readonly MonoBehaviour _monoBehaviour;
 

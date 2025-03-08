@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    public class DamageVisualTask : EventTask
+    public sealed class DamageVisualTask : EventTask
     {
         private readonly Unit _unit;
         private readonly Unit _enemyUnit;

@@ -1,7 +1,4 @@
 ﻿namespace Game
 {
-    public struct AttackEvent : IEvent
-    {
-        
-    }
+    public struct AttackEvent : IEvent { }
 }

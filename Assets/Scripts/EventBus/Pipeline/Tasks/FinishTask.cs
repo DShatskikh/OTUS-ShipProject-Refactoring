@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class FinishTask : EventTask
+    public sealed class FinishTask : EventTask
     {
         private readonly EndGameScreen _endGameScreen;
         private readonly UnitsManager _manager;

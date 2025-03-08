@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class SelectUnitTask : EventTask
+    public sealed class SelectUnitTask : EventTask
     {
         private readonly UnitsManager _unitsManager;
 
