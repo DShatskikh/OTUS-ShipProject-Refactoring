@@ -12,6 +12,12 @@ namespace Game
     }
     
     [Serializable]
+    public struct EntityRoot
+    {
+        public Entity Value;
+    }
+    
+    [Serializable]
     public struct MoveSpeed
     {
         public float Value;
@@ -77,7 +83,7 @@ namespace Game
     [Serializable]
     public struct AttackTarget
     {
-        public Transform Value;
+        public Entity Value;
     }
     
     [Serializable]
@@ -132,6 +138,15 @@ namespace Game
     
     [Serializable]
     public struct DeathTag { }
+    
+    [Serializable]
+    public struct KinematicTag { }
+    
+    [Serializable]
+    public struct RigidbodyRoot
+    {
+        public Rigidbody Value;
+    }
     
     [Serializable]
     public struct AnimatorView

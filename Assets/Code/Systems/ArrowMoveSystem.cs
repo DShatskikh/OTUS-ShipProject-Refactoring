@@ -20,7 +20,7 @@ namespace Game
                 var transform = transformPool.Get(@entity).Value;
                 var speed = speedPool.Get(@entity).Value;
 
-                transform.position += transform.forward * speed * deltaTime;
+                transform.position += transform.forward * (speed * deltaTime);
             }
         }
     }

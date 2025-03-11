@@ -45,6 +45,7 @@ namespace Game
                 .Add(new AnimatorIdleListenerSystem())
                 .Add(new ArrowCollisionRequestSystem())
                 .Add(new DamageRequestSystem())
+                .Add(new UnitEndGameOnKinematicSystem())
                 .Add(new UnitDestroyDeathSystem())
 
 #if UNITY_EDITOR

@@ -23,7 +23,7 @@ namespace Game
             foreach (int @entity in _filter.Value)
             {
                 var transform = transformPool.Get(@entity).Value;
-                var target = targetPool.Get(@entity).Value;
+                var target = targetPool.Get(@entity).Value.transform;
                 var radius = radiusPool.Get(@entity).Value;
 
                 if (Vector3.Distance(transform.position, target.position) > radius)

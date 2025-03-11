@@ -23,30 +23,6 @@
                     var spawnPoint = pool.Get(i).SpawnPoint;
                     var prefab = pool.Get(i).Prefab;
 
-                    // if (prefab.HasData<ArrowTag>())
-                    // {
-                    //     bool isSearch = false;
-                    //     
-                    //     //Логика поиска выключенной стрелы
-                    //     foreach (var @arrowEntity in _arrowfilter.Value)
-                    //     {
-                    //         _inactivePool.Value.Del(@arrowEntity);
-                    //
-                    //         var root = _arrowfilter.Pools.Inc3.Get(@arrowEntity).Value;
-                    //         root.position = spawnPoint.position;
-                    //         root.rotation = spawnPoint.rotation;
-                    //         root.gameObject.SetActive(true);
-                    //         
-                    //         pool.Del(i);
-                    //         isSearch = true;
-                    //         Debug.Log("Взял стрелу из пула");
-                    //         continue; 
-                    //     }
-                    //     
-                    //     if (isSearch)
-                    //         continue;
-                    // }
-                    
                     _entityManager.Value.Create(prefab, spawnPoint.position, spawnPoint.rotation);
                     Debug.Log("Create Unit");
 

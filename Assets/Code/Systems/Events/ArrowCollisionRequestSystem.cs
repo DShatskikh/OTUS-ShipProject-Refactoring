@@ -19,6 +19,9 @@ namespace Game
             {
                 var collision = sourcePool.Get(@entity);
 
+                if (collision.Source.HasData<Inactive>())
+                    continue;
+                
                 EcsStartup.Instance.CreateEntity(EcsWorlds.EVENTS)
                     .Add(new DamageRequest() { Damage = 1, Target = collision.Target });
 

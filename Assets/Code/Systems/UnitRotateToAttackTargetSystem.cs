@@ -23,7 +23,7 @@ namespace Game
             foreach (int entity in _filter.Value)
             {
                 var transform = rootPool.Get(entity).Value;
-                var target = targetPool.Get(entity).Value;
+                var target = targetPool.Get(entity).Value.transform;
                 var rotationSpeed = speedPool.Get(entity).Value;
 
                 var direction = Vector3.Normalize(target.position - transform.position);

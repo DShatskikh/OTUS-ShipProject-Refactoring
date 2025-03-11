@@ -35,6 +35,7 @@ namespace Game
         protected override void Install(Entity entity)
         {
             entity.AddData(new ArcherTag());
+            entity.AddData(new EntityRoot() { Value = entity });
             entity.AddData(new UnitTag());
             entity.AddData(new Root { Value = transform });
             entity.AddData(new MoveSpeed { Value = _moveSpeed });
@@ -48,6 +49,7 @@ namespace Game
             entity.AddData(new BowPoint() { Value = _bowPoint });
             entity.AddData(new AnimatorView { Value = _animator });
             entity.AddData(new DamageParticle { Value = _damageParticle });
+            entity.AddData(new RigidbodyRoot() { Value = GetComponent<Rigidbody>() });
         }
 
         protected override void Dispose(Entity entity)

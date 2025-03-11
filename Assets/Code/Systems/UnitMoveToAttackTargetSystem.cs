@@ -26,7 +26,7 @@ namespace Game
             foreach (int @entity in _filter.Value)
             {
                 var transform = transformPool.Get(@entity).Value;
-                var target = targetPool.Get(@entity).Value;
+                var target = targetPool.Get(@entity).Value.transform;
                 var speed = speedPool.Get(@entity).Value;
                 var radius = radiusPool.Get(@entity).Value;
 
@@ -38,7 +38,7 @@ namespace Game
                 }
 
                 var direction = Vector3.Normalize(target.position - transform.position);
-                transform.position += new Vector3(direction.x, 0, direction.y) * speed * deltaTime;
+                transform.position += new Vector3(direction.x, 0, direction.y) * (speed * deltaTime);
             }
         }
     }

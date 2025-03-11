@@ -32,6 +32,7 @@ namespace Game
         protected override void Install(Entity entity)
         {
             entity.AddData(new UnitTag());
+            entity.AddData(new EntityRoot() { Value = entity });
             entity.AddData(new KnightTag());
             entity.AddData(new Root { Value = transform });
             entity.AddData(new MoveSpeed { Value = _moveSpeed });
@@ -43,6 +44,7 @@ namespace Game
             entity.AddData(new MoveState());
             entity.AddData(new AnimatorView { Value = _animator });
             entity.AddData(new DamageParticle { Value = _damageParticle });
+            entity.AddData(new RigidbodyRoot() { Value = GetComponent<Rigidbody>() });
             
             _sword.Initialize(entity.GetWorld());
             entity.AddData(new Sword() { Value = _sword });
