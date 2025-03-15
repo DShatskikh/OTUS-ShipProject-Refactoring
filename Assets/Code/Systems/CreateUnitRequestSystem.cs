@@ -23,7 +23,7 @@
                     var spawnPoint = pool.Get(i).SpawnPoint;
                     var prefab = pool.Get(i).Prefab;
 
-                    _entityManager.Value.Create(prefab, spawnPoint.position, spawnPoint.rotation);
+                    _entityManager.Value.Get(prefab, spawnPoint.position, spawnPoint.rotation, true);
                     Debug.Log("Create Unit");
 
                     pool.Del(i);

@@ -8,6 +8,7 @@ namespace Leopotam.EcsLite.Entities
         private EcsWorld world;
 
         private readonly Dictionary<int, Entity> entities = new();
+        private readonly ObjectPool _objectPool = new();
         
         public void Initialize(EcsWorld world)
         {
@@ -29,13 +30,35 @@ namespace Leopotam.EcsLite.Entities
             this.entities.Add(entity.Id, entity);
             return entity;
         }
+        
+        public Entity Get(Entity prefab, Vector3 position, Quaternion rotation, bool isPool, Transform parent = null)
+        {
+            if (isPool)
+            {
+                Entity entity = _objectPool.GetObject(prefab.name).GetComponent<Entity>();
+                entity.gameObject.name = prefab.name;
 
+                entity.transform.position = position;
+                entity.transform.rotation = rotation;
+                entity.transform.SetParent(parent);
+            
+                entity.Initialize(this.world);
+                this.entities.Add(entity.Id, entity);
+                
+                return entity;
+            }
+
+            return Create(prefab, position, rotation);
+        }
+        
         public void Destroy(int id)
         {
             if (this.entities.Remove(id, out Entity entity))
             {
                 entity.Dispose();
-                GameObject.Destroy(entity.gameObject);
+                
+                if (!_objectPool.TryReturnObject(entity.name, entity.gameObject))
+                    GameObject.Destroy(entity.gameObject);
             }
         }
 
