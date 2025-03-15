@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bae1cf0fb645f197e54e0bd53a7b2f, type: 3}
+  m_Name: EntityValueSettings
+  m_EditorClassIdentifier: 
+  local: 0
+  namespace: Atomic.Entities
+  directoryPath: Assets/Lessons/II.Gameplay/Lesson_AtomicFramework/Codegen
+  suffix: API
+  imports:
+  - Atomic.Elements
+  - Lessons.Lesson_AtomicFramework
+  categories:
+  - name: Move
+    indexes:
+    - id: 1
+      name: Root
+      type: Transform
+    - id: 2
+      name: MoveSpeed
+      type: ReactiveVariable<float>
+    - id: 3
+      name: MoveDirection
+      type: IReactiveVariable<Vector3>
+  - name: Rotate
+    indexes:
+    - id: 4
+      name: RotateDirection
+      type: ReactiveVariable<Vector3>
+    - id: 5
+      name: RotateSpeed
+      type: ReactiveVariable<float>
+    - id: 6
+      name: VIsualRoot
+      type: Transform
+  - name: Shoot
+    indexes:
+    - id: 7
+      name: ShootAction
+      type: AtomicEvent
+    - id: 8
+      name: DetectRadius
+      type: ReactiveFloat
+    - id: 9
+      name: TargetPoint
+      type: ReactiveVariable<Transform>
+    - id: 15
+      name: ShootRequest
+      type: AtomicEvent
+    - id: 17
+      name: FirePoint
+      type: Transform
+  - name: Life
+    indexes:
+    - id: 10
+      name: HitPoints
+      type: ReactiveInt
+    - id: 11
+      name: Damage
+      type: ReactiveInt
+    - id: 12
+      name: IsDead
+      type: ReactiveBool
+    - id: 13
+      name: TakeDamageAction
+      type: AtomicEvent<int>
+  - name: Visual
+    indexes:
+    - id: 14
+      name: Animator
+      type: Animator
+    - id: 16
+      name: AnimationDispatcher
+      type: AnimationDispatcher

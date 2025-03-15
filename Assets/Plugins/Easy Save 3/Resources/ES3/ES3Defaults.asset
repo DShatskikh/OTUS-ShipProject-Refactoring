@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b340139c9e4d054f904d8b452798652, type: 3}
+  m_Name: ES3Defaults
+  m_EditorClassIdentifier: 
+  settings:
+    _location: 1
+    path: ' MyLittleUniverse.es3'
+    encryptionType: 1
+    compressionType: 0
+    encryptionPassword: 12345
+    directory: 0
+    format: 0
+    prettyPrint: 1
+    bufferSize: 2048
+    saveChildren: 1
+    typeChecking: 1
+    safeReflection: 1
+    memberReferenceMode: 0
+    referenceMode: 2
+    serializationDepthLimit: 64
+    assemblyNames:
+    - ES3
+    - Assembly-CSharp
+    - Assets
+    - UniTask
+    - Atomic.Elements
+    - Cinemachine
+    - Atomic.Entities
+    - PPv2URPConverters
+    - GameSystem
+    - UniTask.Linq
+    - AI
+    - VContainer
+    - Atomic
+    - Products
+    - Lesson_AtomicFramework
+    - Atomic.Elements.Tests.EditMode
+    - Windows
+    - PathFinding
+    - InventorySystem (EditMode)
+    - Polygons
+    - GOAP
+    - SqliteModule
+    - Elementary
+    - Atomic.UI
+    - Asyncoroutine
+    - Atomic.Extensions
+    - GameResources
+    - UniTask.Addressables
+    - Entities
+    - Atomic.Contexts
+    - Blackboards
+    - VContainer.Editor
+    - Iterators
+    - Agents
+    - BehaviourTree
+    - InventorySystem
+    - Atomic.Entities.Stubs
+    - Purchasing.Common
+    - UniTask.TextMeshPro
+    - Atomic.Elements.Tests.Stubs
+    - Atomic.Entities.PlayModeTests
+    - Atomic.Contexts.Tests
+    - BigNumber
+    - Declarative
+    - Input
+    - Purchasing
+    - AICommands
+    - Sirenix.OdinInspector.Modules.Unity.Addressables
+    - Waypoints
+    - NavMeshComponents
+    - GameNodes
+    - Services
+    - Tween
+    - CustomParticles
+    - NavMeshComponentsEditor
+    - Localization
+    - GOAP (EditMode)
+    - Assembly-CSharp-firstpass
+    - LessonCraftingTest
+    - IAPResolver
+    - AITasks
+    - SystemTime
+    - PathSystem
+    - Atomic.UI.Tests.Stubs
+    - Atomic.Elements.Tests.PlayMode
+    - CustomAnimations
+    - UniTask.Editor
+    - Sirenix.OdinInspector.Modules.UnityMathematics
+    - Atomic.Entities.EditModeTests
+    - UniTask.DOTween
+    - Pathfinding (EditMode)
+    - SimpleFolderIcon
+    - Atomic.UI.Tests.Playmode
+    showAdvancedSettings: 1
+  addMgrToSceneAutomatically: 0
+  autoUpdateReferences: 1
+  addAllPrefabsToManager: 1
+  logDebugInfo: 0
+  logWarnings: 1
+  logErrors: 1

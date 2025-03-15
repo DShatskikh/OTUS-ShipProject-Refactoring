@@ -1,0 +1,28 @@
+{
+    "name": "Lesson_AtomicFramework",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f06f28e7a0d24ff18d1b4e4acec49d4d",
+        "GUID:b051b84f8b68460d9199c8d9555c0be9",
+        "GUID:a953053e80bb4f599f6a51d42532f103",
+        "GUID:8fb621b903cf414faece0f643f0b0256",
+        "GUID:4952b087bab564b63a62943b40e61810",
+        "GUID:366e9810bafa2464895a6340ffc50d78"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Sirenix.OdinInspector.Attributes.dll",
+        "Sirenix.Serialization.dll",
+        "Sirenix.Utilities.dll",
+        "Newtonsoft.Json.dll",
+        "Sirenix.OdinInspector.Editor.dll",
+        "Sirenix.Utilities.Editor.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

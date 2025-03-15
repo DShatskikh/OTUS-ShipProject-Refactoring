@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89721dbd6c640898aaae0b6930f405d, type: 3}
+  m_Name: SpeedUpgradeConfig
+  m_EditorClassIdentifier: 
+  Id: speed_up_config
+  MaxLevel: 10
+  PriceTable:
+    basePrice: 10
+    levels: 00000000140000001e00000028000000320000003c00000046000000500000005a00000064000000
+  MoveSpeedTable:
+    startSpeed: 4
+    endSpeed: 10
+    speedStep: 0.67
+    table:
+    - 4
+    - 4.67
+    - 5.34
+    - 6.01
+    - 6.68
+    - 7.35
+    - 8.02
+    - 8.69
+    - 9.36
+    - 10

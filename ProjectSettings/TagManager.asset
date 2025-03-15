@@ -2,8 +2,14 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Wall
+  - Plant
+  - PlantField
+  - GameContext
+  - Ground
+  - Missile
   layers:
   - Default
   - TransparentFX
@@ -13,13 +19,13 @@ TagManager:
   - UI
   - 
   - 
+  - Null
   - 
-  - 
-  - Character
+  - PlayerCollider
+  - NPCCollider
+  - Interactible
   - Enemy
   - 
-  - EnemyBullet
-  - PlayerBullet
   - 
   - 
   - 
@@ -41,3 +47,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Game
+    uniqueID: 3068553397
+    locked: 0
+  - name: WorldCanvas
+    uniqueID: 1447468599
+    locked: 0
+  - name: UI
+    uniqueID: 476679877
+    locked: 0
+  - name: Tutorial
+    uniqueID: 2835718279
+    locked: 0
+  m_RenderingLayers:
+  - Default
+  - Light Layer 1
+  - Light Layer 2
+  - Light Layer 3
+  - Light Layer 4
+  - Light Layer 5
+  - Light Layer 6
+  - Light Layer 7
