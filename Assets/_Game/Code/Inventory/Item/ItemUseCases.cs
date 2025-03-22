@@ -1,0 +1,33 @@
+﻿namespace Game.Inventory
+{
+    public static class ItemUseCases
+    {
+        public static bool CanFlag(InventoryItem item, ItemFlags flag) => 
+            (item.Flags & flag) == flag;
+
+        public static bool CanConsume(InventoryItem item) => 
+            CanFlag(item, ItemFlags.CONSUMABLE);
+
+        public static bool TryGetComponent<T>(InventoryItem item, out T component) where T : IItemComponent
+        {
+            component = default;
+
+            if (item == null)
+                return false;
+
+            if (item.Components == null)
+                return false;
+            
+            foreach (var itemComponent in item.Components)
+            {
+                if (itemComponent.GetType() == typeof(T))
+                {
+                    component = (T)itemComponent;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
+}

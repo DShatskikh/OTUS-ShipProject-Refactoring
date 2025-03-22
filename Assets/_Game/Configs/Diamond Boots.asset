@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2450543bef304c159c2ba958588bc762, type: 3}
+  m_Name: Diamond Boots
+  m_EditorClassIdentifier: 
+  Prototype:
+    Id: Diamond Boots
+    MetaData:
+      Name: "\u0410\u043B\u043C\u0430\u0437\u043D\u044B\u0435 \u0431\u043E\u0442\u0438\u043D\u043A\u0438"
+      Description: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 3 \u0437\u0430\u0449\u0438\u0442\u044B"
+      Icon: {fileID: 21300000, guid: b16a11a613dfb8645b8b292d975206a0, type: 3}
+    Flags: 4
+    Components:
+    - rid: 3324611327784386560
+    - rid: 3324611413141094401
+    - rid: 3324611414867312646
+  references:
+    version: 2
+    RefIds:
+    - rid: 3324611327784386560
+      type: {class: ArmorComponent, ns: Game.Inventory, asm: Game.Inventory}
+      data:
+        Armor: 3
+    - rid: 3324611413141094401
+      type: {class: BootsEquippableItemComponent, ns: Game.Inventory, asm: Game.Inventory}
+    - rid: 3324611414867312646
+      type: {class: SpeedArmorComponent, ns: Game.Inventory, asm: Game.Inventory}
+      data:
+        Speed: 1
