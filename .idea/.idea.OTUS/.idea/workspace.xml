@@ -5,84 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e02de25a-507e-4ff9-a4ee-4b4070096603" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/GameInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/GameInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Armor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Armor/ArmorInventory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Armor/ArmorInventory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Armor/ArmorInventoryUseCases.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Armor/ArmorInventoryUseCases.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Hand.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Hand/HandInventory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Hand/HandInventory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/IInventory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/IInventory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/InventoryUseCases.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/InventoryUseCases.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/ArmorComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/ArmorComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/BootsEquippableItemComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/BootsEquippableItemComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/ChestplateEquippableItemComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/ChestplateEquippableItemComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/HealthArmorComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/HealthArmorComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/HelmetEquippableItemComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/HelmetEquippableItemComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/LeggingsEquippableItemComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/LeggingsEquippableItemComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/SpeedArmorComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/SpeedArmorComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/AttackHandComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/AttackHandComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/HealthConsumedComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/HealthConsumedComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/IItemComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/IItemComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/StackableItemComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/StackableItemComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/InventoryItemConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/InventoryItemConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/InventoryItemMetaData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/InventoryItemMetaData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/ItemFlags.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/ItemFlags.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/ItemUseCases.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/ItemUseCases.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Systems.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Systems/ArmorSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Systems/ArmorSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Systems/AttackSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Systems/AttackSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Systems/HealthSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Systems/HealthSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Systems/SpeedSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Systems/SpeedSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/InventoryDebug.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/InventoryDebug.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/InventoryPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/InventoryPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/InventoryView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/InventoryView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/MoveItemView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/MoveItemView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/SlotPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/SlotPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/SlotView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/SlotView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/ArmorInventoryTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/ArmorInventoryTests.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/InventoryTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/InventoryTests.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/ItemTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/ItemTests.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/AddDiamondChestAction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/AddDiamondChestAction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/AddGoldChestAction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/AddGoldChestAction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/ChestConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/ChestConfig.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/GameScope.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/GameScope.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/IOpenChestAction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/IOpenChestAction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/SaveSessionTimerData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/SaveSessionTimerData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/SessionData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/SessionData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/SessionTimeSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/Services/SessionTimeSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/ChestPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/ChestPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/ChestView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/ChestView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/PastSessionsPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/PastSessionsPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/PastSessionsView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/PastSessionsView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/SessionTimeLabel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/SessionTimeLabel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OTUS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OTUS/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +42,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/956b82cfdef641c6bc6a0e5b19798f0547400/07/70b7caca/TestFixtureAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/34/a7d04f66/IInitializable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Game/Code/Inventory/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventTrigger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventTriggerType.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -129,7 +78,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\s-den\Documents\Unity\OTUS -debugCodeOptimization" />
@@ -146,20 +95,20 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21972">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="21972" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20588">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21972">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="20588" />
+      <option name="pid" value="21972" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -180,6 +129,7 @@
       <workItem from="1742210840494" duration="4172000" />
       <workItem from="1742322067071" duration="12620000" />
       <workItem from="1742650888771" duration="13717000" />
+      <workItem from="1742669735063" duration="12076000" />
     </task>
     <servers />
   </component>
@@ -197,53 +147,25 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Game/Code/Inventory/InventoryUseCases.cs</url>
           <line>102</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\InventoryUseCases.cs" initialLine="101" containingFunctionPresentation="Method 'SwitchItem'">
-            <startOffsets>
-              <option value="4250" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4435" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\InventoryUseCases.cs" initialLine="101" containingFunctionPresentation="Method 'SwitchItem'" />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Game/Code/Inventory/InventoryUseCases.cs</url>
           <line>101</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\InventoryUseCases.cs" initialLine="100" containingFunctionPresentation="Method 'SwitchItem'">
-            <startOffsets>
-              <option value="4078" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4237" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\InventoryUseCases.cs" initialLine="100" containingFunctionPresentation="Method 'SwitchItem'" />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/HealthArmorComponent.cs</url>
           <line>49</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\Components\Armors\HealthArmorComponent.cs" initialLine="49" containingFunctionPresentation="Method 'OnItemAdded'">
-            <startOffsets>
-              <option value="1251" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1283" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\Components\Armors\HealthArmorComponent.cs" initialLine="49" containingFunctionPresentation="Method 'OnItemAdded'" />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/Components/Armors/HealthArmorComponent.cs</url>
           <line>62</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\Components\Armors\HealthArmorComponent.cs" initialLine="62" containingFunctionPresentation="Method 'OnItemRemoved'">
-            <startOffsets>
-              <option value="1600" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1635" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\Components\Armors\HealthArmorComponent.cs" initialLine="62" containingFunctionPresentation="Method 'OnItemRemoved'" />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
