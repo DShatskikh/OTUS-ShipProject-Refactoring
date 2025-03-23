@@ -22,13 +22,23 @@ namespace Game.Inventory
             _handInventory.OnItemRemoved += OnItemRemoved;
         }
 
-        private void OnItemAdded(InventoryItem item) => 
-            _attackSystem.AddAttack(Attack);
-
-        private void OnItemRemoved(InventoryItem item) => 
-            _attackSystem.RemoveAttack(Attack);
-
         public IItemComponent Clone() => 
             new AttackHandComponent() { Attack = Attack };
+
+        private void OnItemAdded(InventoryItem item)
+        {
+            if (!ItemUseCases.CanComponent(item, this))
+                return;
+            
+            _attackSystem.AddAttack(Attack);
+        }
+
+        private void OnItemRemoved(InventoryItem item)
+        {
+            if (!ItemUseCases.CanComponent(item, this))
+                return;
+            
+            _attackSystem.RemoveAttack(Attack);
+        }
     }
 }

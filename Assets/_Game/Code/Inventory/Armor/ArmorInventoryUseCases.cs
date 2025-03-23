@@ -8,7 +8,7 @@
                 return true;
             
             if (ItemUseCases.CanFlag(item, ItemFlags.EQUIPPABLE) 
-                && ItemUseCases.TryGetComponent(item, out HelmetEquippableItemComponent headEquippableItemComponent))
+                && ItemUseCases.TryGetComponent(item, out HelmetComponent headEquippableItemComponent))
                 return true;
 
             return false;
@@ -20,7 +20,7 @@
                 return true;
             
             if (ItemUseCases.CanFlag(item, ItemFlags.EQUIPPABLE) 
-                && ItemUseCases.TryGetComponent(item, out ChestplateEquippableItemComponent chestplateEquippableItemComponent))
+                && ItemUseCases.TryGetComponent(item, out ChestplateComponent chestplateEquippableItemComponent))
                 return true;
 
             return false;
@@ -32,7 +32,7 @@
                 return true;
             
             if (ItemUseCases.CanFlag(item, ItemFlags.EQUIPPABLE) 
-                && ItemUseCases.TryGetComponent(item, out LeggingsEquippableItemComponent leggingsEquippableItemComponent))
+                && ItemUseCases.TryGetComponent(item, out LeggingsComponent leggingsEquippableItemComponent))
                 return true;
 
             return false;
@@ -44,7 +44,7 @@
                 return true;
             
             if (ItemUseCases.CanFlag(item, ItemFlags.EQUIPPABLE) 
-                && ItemUseCases.TryGetComponent(item, out BootsEquippableItemComponent bootsEquippableItemComponent))
+                && ItemUseCases.TryGetComponent(item, out BootsComponent bootsEquippableItemComponent))
                 return true;
 
             return false;

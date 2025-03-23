@@ -20,8 +20,13 @@ namespace Game.Inventory
             Flags = flags;
             Components = new IItemComponent[components.Length];
 
-            for (int i = 0; i < components.Length; i++) 
+            for (int i = 0; i < components.Length; i++)
+            {
+                if ( components[i] == null)
+                    continue;
+                
                 Components[i] = components[i].Clone();
+            }
         }
         
         public InventoryItem Clone() => 

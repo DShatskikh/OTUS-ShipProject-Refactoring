@@ -132,7 +132,8 @@ namespace Game.UI
                 var item = inventory.Items[position.x, position.y];
 
                 if (ItemUseCases.CanFlag(item, ItemFlags.STACKABLE) 
-                    && ItemUseCases.TryGetComponent(item, out StackableItemComponent stackableItemComponent))
+                    && ItemUseCases.TryGetComponent(item, out StackableItemComponent stackableItemComponent) 
+                    && stackableItemComponent.Count > 1)
                 {
                     _view.GetMoveItem.ToggleLabelActive(true);
                     _view.GetMoveItem.SetTextLabel(stackableItemComponent.Count.ToString());

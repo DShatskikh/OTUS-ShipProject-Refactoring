@@ -1,4 +1,6 @@
-﻿namespace Game.Inventory
+﻿using System.Linq;
+
+namespace Game.Inventory
 {
     public static class ItemUseCases
     {
@@ -28,6 +30,17 @@
             }
 
             return false;
+        }
+
+        public static bool CanComponent(InventoryItem item, IItemComponent component)
+        {
+            if (item == null)
+                return false;
+            
+            if (component != item.Components.FirstOrDefault(x => x == component))
+                return false;
+
+            return true;
         }
     }
 }

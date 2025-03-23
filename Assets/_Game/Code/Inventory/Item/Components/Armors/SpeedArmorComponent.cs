@@ -40,12 +40,7 @@ namespace Game.Inventory
 
         private void OnItemAdded(InventoryItem item)
         {
-            if (item == null)
-                return;
-            
-            var component = item.Components.FirstOrDefault(x => x == this);
-            
-            if (component != this)
+            if (!ItemUseCases.CanComponent(item, this))
                 return;
             
             _speedSystem.AddSpeed(Speed);
@@ -53,12 +48,7 @@ namespace Game.Inventory
 
         private void OnItemRemoved(InventoryItem item)
         {
-            if (item == null)
-                return;
-            
-            var component = item.Components.FirstOrDefault(x => x == this);
-            
-            if (component != this)
+            if (!ItemUseCases.CanComponent(item, this))
                 return;
             
             _speedSystem.RemoveSpeed(Speed);

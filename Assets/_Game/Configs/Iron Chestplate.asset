@@ -20,14 +20,17 @@ MonoBehaviour:
       Icon: {fileID: 21300000, guid: 58983de3a27151b4696bebbe0567067b, type: 3}
     Flags: 4
     Components:
-    - rid: 3324611327784386560
-    - rid: 3324611413141094402
+    - rid: 3324611432217837586
+    - rid: 3324611432217837587
   references:
     version: 2
     RefIds:
-    - rid: 3324611327784386560
+    - rid: 3324611432217837586
       type: {class: ArmorComponent, ns: Game.Inventory, asm: Game.Inventory}
       data:
         Armor: 6
-    - rid: 3324611413141094402
-      type: {class: ChestplateEquippableItemComponent, ns: Game.Inventory, asm: Game.Inventory}
+    - rid: 3324611432217837587
+      type: {class: ChestplateComponent, ns: Game.Inventory, asm: Game.Inventory}
+      data:
+        PlayerSprite: {fileID: -1354493092, guid: 3b384a82b77d2d34dba176759656cf1d,
+          type: 3}

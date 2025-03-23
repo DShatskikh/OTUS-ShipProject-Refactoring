@@ -29,8 +29,11 @@ namespace Game.Inventory
             };
         }
 
-        private void OnItemConsumed(InventoryItem obj)
+        private void OnItemConsumed(InventoryItem item)
         {
+            if (!ItemUseCases.CanComponent(item, this))
+                return;
+            
             Debug.Log("Add Health");
         }
     }

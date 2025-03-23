@@ -19,6 +19,9 @@ namespace Game
         
         [SerializeField]
         private SpeedSystem _speedSystem;
+
+        [SerializeField]
+        private MirrorView _mirrorView;
         
         public override void InstallBindings()
         {
@@ -29,6 +32,7 @@ namespace Game
             Container.Bind<AttackSystem>().FromInstance(_attackSystem).AsSingle().NonLazy();
             Container.Bind<HealthSystem>().FromInstance(_healthSystem).AsSingle().NonLazy();
             Container.Bind<SpeedSystem>().FromInstance(_speedSystem).AsSingle().NonLazy();
+            Container.Bind<MirrorPresenter>().AsSingle().WithArguments(_mirrorView).NonLazy();
             Container.BindInterfacesAndSelfTo<InventoryPresenter>().AsCached().WithArguments(_inventoryView).NonLazy();
         }
     }

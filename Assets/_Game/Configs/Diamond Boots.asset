@@ -16,23 +16,27 @@ MonoBehaviour:
     Id: Diamond Boots
     MetaData:
       Name: "\u0410\u043B\u043C\u0430\u0437\u043D\u044B\u0435 \u0431\u043E\u0442\u0438\u043D\u043A\u0438"
-      Description: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 3 \u0437\u0430\u0449\u0438\u0442\u044B"
+      Description: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 3 \u0437\u0430\u0449\u0438\u0442\u044B
+        \u0438 1 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C"
       Icon: {fileID: 21300000, guid: b16a11a613dfb8645b8b292d975206a0, type: 3}
     Flags: 4
     Components:
-    - rid: 3324611327784386560
-    - rid: 3324611413141094401
-    - rid: 3324611414867312646
+    - rid: 3324611432217837577
+    - rid: 3324611432217837578
+    - rid: 3324611432217837579
   references:
     version: 2
     RefIds:
-    - rid: 3324611327784386560
+    - rid: 3324611432217837577
       type: {class: ArmorComponent, ns: Game.Inventory, asm: Game.Inventory}
       data:
         Armor: 3
-    - rid: 3324611413141094401
-      type: {class: BootsEquippableItemComponent, ns: Game.Inventory, asm: Game.Inventory}
-    - rid: 3324611414867312646
+    - rid: 3324611432217837578
+      type: {class: BootsComponent, ns: Game.Inventory, asm: Game.Inventory}
+      data:
+        PlayerSprite: {fileID: -1006124975, guid: 051763cbef587d949bf03ff423592a3c,
+          type: 3}
+    - rid: 3324611432217837579
       type: {class: SpeedArmorComponent, ns: Game.Inventory, asm: Game.Inventory}
       data:
         Speed: 1

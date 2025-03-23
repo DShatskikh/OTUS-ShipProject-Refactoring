@@ -47,7 +47,8 @@ namespace Game.UI
             }
             else
             {
-                if (ItemUseCases.TryGetComponent(item, out StackableItemComponent stackableItemComponent))
+                if (ItemUseCases.TryGetComponent(item, out StackableItemComponent stackableItemComponent) 
+                    && stackableItemComponent.Count > 1)
                 {
                     _view.ToggleCountLabel(true);
                     _view.SetTextCountLabel(stackableItemComponent.Count.ToString());
