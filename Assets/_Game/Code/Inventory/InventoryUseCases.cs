@@ -4,7 +4,7 @@ namespace Game.Inventory
 {
     public static class InventoryUseCases
     {
-        public static void AddItem(Inventory inventory, InventoryItem item)
+        public static void AddItem(IInventory inventory, InventoryItem item)
         {
             var isExit = false;
             var isNotAdd = false;
@@ -74,7 +74,7 @@ namespace Game.Inventory
                 }
             }
 
-            inventory.NotifyAddItem(item);
+            //inventory.NotifyAddItem(item);
         }
 
         public static bool TryRemoveItem(IInventory inventory, InventoryItem item, int removeCount = 1)

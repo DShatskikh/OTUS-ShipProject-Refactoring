@@ -19,7 +19,7 @@ namespace Tests
             // Act:
             var clone = metaData.Clone();
             
-            // Assert
+            // Assert:
             Assert.IsTrue(name == clone.Name);
             Assert.IsTrue(description == clone.Description);
             Assert.IsTrue(icon == clone.Icon);
@@ -41,7 +41,7 @@ namespace Tests
             // Act:
             var clone = item.Clone();
             
-            // Assert
+            // Assert:
             Assert.IsTrue(item.Id == clone.Id);
             Assert.IsTrue(item.Flags == clone.Flags);
             Assert.IsTrue(item.Components.Length == clone.Components.Length);
