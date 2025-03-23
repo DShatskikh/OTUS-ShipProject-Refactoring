@@ -77,30 +77,66 @@ namespace Game.Inventory
             inventory.NotifyAddItem(item);
         }
 
-        public static void RemoveItem(Inventory inventory, InventoryItem item)
+        public static bool TryRemoveItem(IInventory inventory, InventoryItem item, int removeCount = 1)
         {
-            // InventoryItem inventoryItem = inventory.Items.FirstOrDefault(x => x.Id == item.Id);
-            //
-            // if (inventoryItem == null)
-            //     return;
-            //
-            // inventory.Items.Remove(inventoryItem);
-            // inventory.NotifyRemoveItem(item);
+            for (int y = 0; y < inventory.Items.GetLength(1); y++)
+            {
+                for (int x = 0; x < inventory.Items.GetLength(0); x++)
+                {
+                    if (inventory.Items[x, y] != item)
+                        continue;
+
+                    var count = ItemUseCases.GetCount(item);
+
+                    count -= removeCount;
+                    
+                    if (count <= 0)
+                    {
+                        inventory.Items[x, y] = null;
+                        inventory.NotifyChangeSlot(null, item, x, y);
+                    }
+                    else
+                    {
+                        ItemUseCases.TryGetComponent(item, out StackableItemComponent stackableItemComponent);
+                        stackableItemComponent.Count -= removeCount;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public static void ConsumeItem(Inventory inventory, InventoryItem item)
         {
-            RemoveItem(inventory, item);
+            //RemoveItem(inventory, item);
             inventory.NotifyConsumeItem(item);
         }
 
         public static void SwitchItem(IInventory inventory, IInventory selectInventory, Vector3Int position, Vector3Int selectSlotPosition)
         {
-            (inventory.Items[position.x, position.y], selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y])
-                = (selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y], inventory.Items[position.x, position.y]);
-
-            inventory.NotifyChangeSlot(inventory.Items[position.x, position.y], selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y], position.x, position.y);
-            selectInventory.NotifyChangeSlot(selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y], inventory.Items[position.x, position.y], selectSlotPosition.x, selectSlotPosition.y);
+            var item = inventory.Items[position.x, position.y];
+            var selectItem = selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y];
+            
+            if (item != null 
+                && selectItem != null
+                && item.Id == selectItem.Id 
+                && item.TryGetComponent(out StackableItemComponent stackableComponent) 
+                && selectItem.TryGetComponent(out StackableItemComponent selectStackableComponent))
+            {
+                stackableComponent.Count += selectStackableComponent.Count;
+                selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y] = null;
+                
+                inventory.NotifyChangeSlot(inventory.Items[position.x, position.y], inventory.Items[position.x, position.y], position.x, position.y);
+                selectInventory.NotifyChangeSlot(null, selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y], selectSlotPosition.x, selectSlotPosition.y);
+            }
+            else
+            {
+                (inventory.Items[position.x, position.y], selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y])
+                    = (selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y], inventory.Items[position.x, position.y]);
+                
+                inventory.NotifyChangeSlot(inventory.Items[position.x, position.y], selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y], position.x, position.y);
+                selectInventory.NotifyChangeSlot(selectInventory.Items[selectSlotPosition.x, selectSlotPosition.y], inventory.Items[position.x, position.y], selectSlotPosition.x, selectSlotPosition.y);
+            }
         }
 
         public static bool TrySwitchItem(IInventory inventory, IInventory selectedInventory, Vector3Int position, Vector3Int selectSlotPosition)

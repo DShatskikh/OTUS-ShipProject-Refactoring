@@ -22,7 +22,7 @@ namespace Game.Inventory
             InventoryUseCases.AddItem(this, item);
 
         public void Remove(InventoryItem item) => 
-            InventoryUseCases.RemoveItem(this, item);
+            InventoryUseCases.TryRemoveItem(this, item);
 
         public void NotifyAddItem(InventoryItem item) => 
             OnItemAdded?.Invoke(item);

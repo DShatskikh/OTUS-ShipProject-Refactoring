@@ -28,6 +28,9 @@ namespace Game
             Container.Bind<Inventory.Inventory>().AsSingle().WithArguments(new Vector2Int(9, 3)).NonLazy();
             Container.Bind<ArmorInventory>().AsSingle().NonLazy();
             Container.Bind<HandInventory>().AsSingle().NonLazy();
+            Container.Bind<CraftInventory>().AsSingle().NonLazy();
+            Container.Bind<QuickAccessInventory>().AsSingle().NonLazy();
+            Container.Bind<MoveItemInventory>().AsSingle().NonLazy();
             Container.Bind<ArmorSystem>().AsSingle().NonLazy();
             Container.Bind<AttackSystem>().FromInstance(_attackSystem).AsSingle().NonLazy();
             Container.Bind<HealthSystem>().FromInstance(_healthSystem).AsSingle().NonLazy();

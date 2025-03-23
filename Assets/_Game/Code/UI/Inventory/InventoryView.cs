@@ -14,6 +14,12 @@ namespace Game.UI
         private SlotView[] _armorSlots;
 
         [SerializeField]
+        private SlotView[] _quickAccessSlots;
+
+        [SerializeField]
+        private SlotView[] _craftSlots;
+
+        [SerializeField]
         private SlotView _handSlot;
         
         [SerializeField]
@@ -33,6 +39,8 @@ namespace Game.UI
         
         public IEnumerable<SlotView> GetMainSlots => _mainSlots;
         public IEnumerable<SlotView> GetArmorSlots => _armorSlots;
+        public IEnumerable<SlotView> GetQuickAccessSlots => _quickAccessSlots;
+        public IEnumerable<SlotView> GetCraftSlots => _craftSlots;
         public SlotView GetHandSlot => _handSlot;
         public MoveItemView GetMoveItem => _moveItem;
 

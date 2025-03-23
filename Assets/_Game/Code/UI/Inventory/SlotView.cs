@@ -26,7 +26,8 @@ namespace Game.UI
         private Sprite _select;
         
         public EventTrigger GetTriggerEvent => _triggerEvent;
-        
+        public Sprite GetIcon => _icon.sprite;
+
         public void ToggleSelect(bool value) => 
             _frame.sprite = value ? _select : _deselect;
 
