@@ -9,7 +9,7 @@ namespace Game.Inventory
         private readonly SpeedSystem _speedSystem;
 
         [Inject]
-        private ItemSpeedComponentObserver(ArmorInventory armorInventory, SpeedSystem speedSystem)
+        public ItemSpeedComponentObserver(ArmorInventory armorInventory, SpeedSystem speedSystem)
         {
             _armorInventory = armorInventory;
             _speedSystem = speedSystem;

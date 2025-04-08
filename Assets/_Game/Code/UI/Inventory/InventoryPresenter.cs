@@ -62,7 +62,15 @@ namespace Game.UI
                     if (results.Count > 0)
                     {
                         GameObject clickedObject = results[0].gameObject;
-                        Click(clickedObject);
+                        
+                        if (Input.GetKey(KeyCode.LeftShift))
+                        {
+                            TransferQuickly(clickedObject);
+                        }
+                        else
+                        {
+                            Click(clickedObject);  
+                        }
                     }
                 }
                 else
@@ -221,6 +229,25 @@ namespace Game.UI
             }
         }
 
+        private void TransferQuickly(GameObject clickedObject)
+        {
+            if (!clickedObject.TryGetComponent(out SlotView view))
+                return;
+
+            if (!TryGetSlotPresenter(view, out SlotPresenterBase slotPresenter))
+                return;
+
+            var slot = slotPresenter.GetSlot;
+            
+            if (!slot.HasItem)
+                return;
+            
+            if (ItemUseCases.CanFlag(slot.Item, ItemFlags.EQUIPPABLE))
+            {
+                _armorInventory.TryAdd(slot);
+            }
+        }
+        
         private void Click(GameObject clickedObject)
         {
             if (!clickedObject.TryGetComponent(out SlotView view))

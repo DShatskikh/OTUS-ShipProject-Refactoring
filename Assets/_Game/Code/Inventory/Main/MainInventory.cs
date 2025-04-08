@@ -35,10 +35,7 @@ namespace Game.Inventory
         }
 
         public void Add(InventoryItem item) => 
-            InventoryUseCases.AddItem(this, item);
-
-        public void Remove(InventoryItem item) => 
-            InventoryUseCases.TryRemoveItem(this, item);
+            InventoryUseCases.TryAddItem(this, item);
 
         public void NotifyAddItem(InventoryItem item) => 
             OnItemAdded?.Invoke(item);
@@ -57,8 +54,5 @@ namespace Game.Inventory
             OnItemAdded?.Invoke(item);
             OnSlotChange?.Invoke(item, slot);
         }
-
-        public bool TrySwitchItem(IInventory selectedInventory, Vector3Int position, Vector3Int selectSlotPosition) => 
-            InventoryUseCases.TrySwitchItem(this, selectedInventory, position, selectSlotPosition);
     }
 }
