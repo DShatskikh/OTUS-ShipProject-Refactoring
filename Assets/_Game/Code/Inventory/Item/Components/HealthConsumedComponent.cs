@@ -6,11 +6,11 @@ namespace Game.Inventory
     [Serializable]
     public sealed class HealthConsumedComponent : IItemComponent
     {
-        private Inventory _inventory;
+        private MainInventory _inventory;
 
         public int Health;
 
-        public void Construct(Inventory inventory)
+        public void Construct(MainInventory inventory)
         {
             _inventory = inventory;
             inventory.OnItemConsumed += OnItemConsumed;

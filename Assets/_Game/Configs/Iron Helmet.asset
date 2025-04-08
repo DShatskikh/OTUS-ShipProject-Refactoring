@@ -16,12 +16,11 @@ MonoBehaviour:
     Id: Iron Helmet
     MetaData:
       Name: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0448\u043B\u0435\u043C"
-      Description: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 2 \u0437\u0430\u0449\u0438\u0442\u044B"
+      Description: "+2 \u0417\u0410\u0429"
       Icon: {fileID: 21300000, guid: 86e722451a619d0408d07f497003be2e, type: 3}
     Flags: 4
     Components:
     - rid: 3324611432217837588
-    - rid: 3324611432217837589
   references:
     version: 2
     RefIds:
@@ -29,8 +28,6 @@ MonoBehaviour:
       type: {class: ArmorComponent, ns: Game.Inventory, asm: Game.Inventory}
       data:
         Armor: 2
-    - rid: 3324611432217837589
-      type: {class: HelmetComponent, ns: Game.Inventory, asm: Game.Inventory}
-      data:
+        ArmorType: 0
         PlayerSprite: {fileID: 701481528, guid: 3b384a82b77d2d34dba176759656cf1d,
           type: 3}

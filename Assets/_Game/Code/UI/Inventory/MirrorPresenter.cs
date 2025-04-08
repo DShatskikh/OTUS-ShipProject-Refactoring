@@ -11,50 +11,63 @@ namespace Game.UI
         {
             _view = view;
             _armorInventory = armorInventory;
-            
-            _armorInventory.OnItemAdded += OnItemAdded;
-            _armorInventory.OnItemRemoved += OnItemRemoved;
+
+            foreach (var slot in _armorInventory.GetArmorSlots)
+            {
+                slot.OnItemAdded += OnItemAdded;
+                slot.OnItemRemoved += OnItemRemoved;
+            }
         }
 
         private void OnItemAdded(InventoryItem item)
         {
-            if (ItemUseCases.TryGetComponent(item, out HelmetComponent helmetComponent))
+            if (!ItemUseCases.TryGetComponent(item, out ArmorComponent armorComponent))
+                return;
+
+            var armorType = armorComponent.ArmorType;
+            
+            if (armorType == ArmorType.Helmet)
             {
-                _view.SetHelmet(helmetComponent.PlayerSprite);   
+                _view.SetHelmet(armorComponent.PlayerSprite);   
                 _view.ToggleHelmet(true);   
             }
             
-            if (ItemUseCases.TryGetComponent(item, out ChestplateComponent chestplateComponent))
+            if (armorType == ArmorType.Chestplate)
             {
-                _view.SetChestplate(chestplateComponent.PlayerSprite);   
+                _view.SetChestplate(armorComponent.PlayerSprite);   
                 _view.ToggleChestplate(true);   
             }
             
-            if (ItemUseCases.TryGetComponent(item, out LeggingsComponent leggingsComponent))
+            if (armorType == ArmorType.Leggings)
             {
-                _view.SetLeggings(leggingsComponent.PlayerSprite);   
+                _view.SetLeggings(armorComponent.PlayerSprite);   
                 _view.ToggleLeggings(true);   
             }
             
-            if (ItemUseCases.TryGetComponent(item, out BootsComponent bootsComponent))
+            if (armorType == ArmorType.Boots)
             {
-                _view.SetBoots(bootsComponent.PlayerSprite);   
+                _view.SetBoots(armorComponent.PlayerSprite);   
                 _view.ToggleBoots(true);   
             }
         }
 
         private void OnItemRemoved(InventoryItem item)
         {
-            if (ItemUseCases.TryGetComponent(item, out HelmetComponent helmetComponent)) 
+            if (!ItemUseCases.TryGetComponent(item, out ArmorComponent armorComponent))
+                return;
+
+            var armorType = armorComponent.ArmorType;
+            
+            if (armorType == ArmorType.Helmet) 
                 _view.ToggleHelmet(false);
             
-            if (ItemUseCases.TryGetComponent(item, out ChestplateComponent chestplateComponent)) 
+            if (armorType == ArmorType.Chestplate) 
                 _view.ToggleChestplate(false);
             
-            if (ItemUseCases.TryGetComponent(item, out LeggingsComponent leggingsComponent)) 
+            if (armorType == ArmorType.Leggings) 
                 _view.ToggleLeggings(false);
             
-            if (ItemUseCases.TryGetComponent(item, out BootsComponent bootsComponent)) 
+            if (armorType == ArmorType.Boots) 
                 _view.ToggleBoots(false);
         }
     }

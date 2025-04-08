@@ -1,6 +1,5 @@
 ﻿using System;
-using Game.Systems;
-using Zenject;
+using UnityEngine;
 
 namespace Game.Inventory
 {
@@ -8,37 +7,18 @@ namespace Game.Inventory
     public sealed class ArmorComponent : IItemComponent
     {
         public int Armor;
-        
-        private ArmorSystem _armorSystem;
-        private ArmorInventory _armorInventory;
+        public ArmorType ArmorType;
+        public Sprite PlayerSprite;
 
-        [Inject]
-        public void Construct(ArmorInventory armorInventory, ArmorSystem armorSystem)
-        {
-            _armorInventory = armorInventory;
-            _armorSystem = armorSystem;
-            
-            _armorInventory.OnItemAdded += OnItemAdded;
-            _armorInventory.OnItemRemoved += OnItemRemoved;
-        }
-        
         public IItemComponent Clone() => 
-            new ArmorComponent() { Armor = Armor };
+            new ArmorComponent() { Armor = Armor, ArmorType = ArmorType, PlayerSprite = PlayerSprite };
+    }
 
-        public void OnItemAdded(InventoryItem item)
-        {
-            if (!ItemUseCases.CanComponent(item, this))
-                return;
-
-            _armorSystem.AddArmor(Armor);
-        }
-
-        public void OnItemRemoved(InventoryItem item)
-        {
-            if (!ItemUseCases.CanComponent(item, this))
-                return;
-            
-            _armorSystem.RemoveArmor(Armor);
-        }
+    public enum ArmorType
+    {
+        Helmet,
+        Chestplate,
+        Leggings,
+        Boots
     }
 }

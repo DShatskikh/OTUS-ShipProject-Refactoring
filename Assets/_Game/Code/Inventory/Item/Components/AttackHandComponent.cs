@@ -10,16 +10,16 @@ namespace Game.Inventory
         public int Attack;
         
         private AttackSystem _attackSystem;
-        private HandInventory _handInventory;
+        private ArmorInventory _armorInventory;
 
         [Inject]
-        public void Construct(AttackSystem attackSystem, HandInventory handInventory)
+        public void Construct(AttackSystem attackSystem, ArmorInventory armorInventory)
         {
             _attackSystem = attackSystem;
-            _handInventory = handInventory;
+            _armorInventory = armorInventory;
             
-            _handInventory.OnItemAdded += OnItemAdded;
-            _handInventory.OnItemRemoved += OnItemRemoved;
+            _armorInventory.HandSlot.OnItemAdded += OnItemAdded;
+            _armorInventory.HandSlot.OnItemRemoved += OnItemRemoved;
         }
 
         public IItemComponent Clone() => 

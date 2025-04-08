@@ -16,7 +16,7 @@ MonoBehaviour:
     Id: Picure
     MetaData:
       Name: "\u041A\u0430\u0440\u0442\u0438\u043D\u0430"
-      Description: "\u041F\u0440\u043E\u0438\u0437\u0432\u0435\u0434\u0435\u043D\u0438\u0435
+      Description: "\u0411\u0435\u0441\u0446\u0435\u043D\u043D\u043E\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0434\u0435\u043D\u0438\u0435
         \u0438\u0441\u0441\u043A\u0443\u0441\u0442\u0432\u0430"
       Icon: {fileID: 21300000, guid: 4e5ae7321b544aa40a4decc98e35b75a, type: 3}
     Flags: 1

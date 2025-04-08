@@ -10,13 +10,13 @@ namespace Game.UI
         [SerializeField]
         private InventoryItemConfig[] _initConfigs;
         
-        private Inventory.Inventory _inventory;
+        private MainInventory _mainInventory;
         private DiContainer _container;
 
         [Inject]
-        private void Construct(Inventory.Inventory inventory, DiContainer container)
+        private void Construct(MainInventory mainInventory, DiContainer container)
         {
-            _inventory = inventory;
+            _mainInventory = mainInventory;
             _container = container;
         }
 
@@ -34,7 +34,7 @@ namespace Game.UI
             foreach (var component in item.Components) 
                 _container.Inject(component);
 
-            _inventory.Add(item);
+            _mainInventory.Add(item);
         }
     }
 }

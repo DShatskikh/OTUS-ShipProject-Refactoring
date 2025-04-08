@@ -1,23 +1,33 @@
 ﻿using System;
-using UnityEngine;
+using Zenject;
 
 namespace Game.Inventory
 {
     public class CraftInventory : IInventory
     {
-        public InventoryItem[,] Items { set; get; } = new InventoryItem[2, 2];
+        private const int SizeX = 2;
+        private const int SizeY = 2;
         
-        public event Action<InventoryItem, int, int> OnSlotChange;
+        public Slot[,] Slots { get; set; } = new Slot[SizeX, SizeY];
+        public Slot ResultSlot { get; set; } = new();
         
-        public void NotifyChangeSlot(InventoryItem item, InventoryItem previousItem, int x, int y)
+        public event Action<InventoryItem, Slot> OnSlotChange;
+        
+        [Inject]
+        public void Construct()
         {
-            OnSlotChange?.Invoke(item, x, y);
+            Slots = new Slot[SizeX, SizeY];
+
+            for (int x = 0; x < SizeX; x++)
+            {
+                for (int y = 0; y < SizeY; y++)
+                {
+                    Slots[x, y] = new Slot();
+                }  
+            }
         }
-
-        public bool TrySwitchItem(IInventory selectedInventory, Vector3Int position, Vector3Int selectSlotPosition) => 
-            InventoryUseCases.TrySwitchItem(this, selectedInventory, position, selectSlotPosition);
-
-        public bool CanSetItem(Vector3Int position, InventoryItem item) => 
-            true;
+        
+        public void NotifyChangeSlot(InventoryItem item, InventoryItem previousItem, Slot slot) => 
+            OnSlotChange?.Invoke(item, slot);
     }
 }

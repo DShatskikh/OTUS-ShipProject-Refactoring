@@ -7,6 +7,7 @@ namespace Game.Inventory
     public sealed class InventoryItemMetaData
     {
         public string Name;
+        [TextArea]
         public string Description;
         public Sprite Icon;
 

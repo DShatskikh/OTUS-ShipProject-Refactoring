@@ -16,12 +16,11 @@ MonoBehaviour:
     Id: Iron Chestplate
     MetaData:
       Name: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u043D\u0430\u0433\u0440\u0443\u0434\u043D\u0438\u043A"
-      Description: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 6 \u0437\u0430\u0449\u0438\u0442\u044B"
+      Description: "+6 \u0417\u0410\u0429"
       Icon: {fileID: 21300000, guid: 58983de3a27151b4696bebbe0567067b, type: 3}
     Flags: 4
     Components:
     - rid: 3324611432217837586
-    - rid: 3324611432217837587
   references:
     version: 2
     RefIds:
@@ -29,8 +28,6 @@ MonoBehaviour:
       type: {class: ArmorComponent, ns: Game.Inventory, asm: Game.Inventory}
       data:
         Armor: 6
-    - rid: 3324611432217837587
-      type: {class: ChestplateComponent, ns: Game.Inventory, asm: Game.Inventory}
-      data:
+        ArmorType: 1
         PlayerSprite: {fileID: -1354493092, guid: 3b384a82b77d2d34dba176759656cf1d,
           type: 3}
