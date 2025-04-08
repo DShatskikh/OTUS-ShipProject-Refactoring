@@ -215,29 +215,9 @@ namespace Game.UI
 
         private void DropOne()
         {
-            var item = _moveSlot.Item;
-            
-            if (item != null)
+            if (IsMoveItem)
             {
-                SlotUseCases.TryRemoveItem(_moveSlot, item, 1);
-
-                item = _moveSlot.Item;
-                
-                if (item != null)
-                {
-                    if (ItemUseCases.GetCount(item) > 1)
-                    {
-                        _view.GetMoveItem.SetTextLabel(ItemUseCases.GetCount(item).ToString());
-                    }
-                    else
-                    {
-                        _view.GetMoveItem.ToggleLabelActive(false);
-                    }
-                }
-                else
-                {
-                    _view.GetMoveItem.ToggleActive(false);
-                }
+                SlotUseCases.TryRemoveOneItem(_moveSlot);
             }
         }
 
@@ -278,12 +258,6 @@ namespace Game.UI
             }
         }
 
-        private bool TryGetSlotPresenter(SlotView view, out SlotPresenterBase result)
-        {
-            result = GetAllSlotPresenters().FirstOrDefault(x => x.GetView == view);
-            return result != null;
-        }
-        
         private void OnDoubleClick()
         {
             var allSlots = new List<Slot>();
@@ -293,6 +267,12 @@ namespace Game.UI
 
             if (IsMoveItem)
                 SlotUseCases.PutAllItem(_moveSlot, allSlots);
+        }
+
+        private bool TryGetSlotPresenter(SlotView view, out SlotPresenterBase result)
+        {
+            result = GetAllSlotPresenters().FirstOrDefault(x => x.GetView == view);
+            return result != null;
         }
 
         private List<SlotPresenterBase> GetAllSlotPresenters()

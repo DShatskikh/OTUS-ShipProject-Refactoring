@@ -4,9 +4,30 @@ namespace Game.Inventory
 {
     public static class SlotUseCases
     {
-        public static bool TryRemoveItem(Slot slot, InventoryItem item, int count)
+        public static bool TryRemoveOneItem(Slot slot)
         {
-            throw new System.NotImplementedException();
+            var previousItem = slot.Item;
+            
+            if (!ItemUseCases.CanFlag(slot.Item, ItemFlags.STACKABLE))
+            {
+                slot.Item = null;
+                slot.NotifyChange(slot.Item, previousItem);
+                return true;
+            }
+            else if (ItemUseCases.TryGetComponent(slot.Item, out StackableItemComponent stackableItemComponent))
+            {
+                stackableItemComponent.Count -= 1;
+
+                if (stackableItemComponent.Count <= 0)
+                {
+                    slot.Item = null;
+                }
+                
+                slot.NotifyChange(slot.Item, previousItem);
+                return true;
+            }
+            
+            return false;
         }
 
         public static bool TrySwitch(Slot slot, Slot addedSlot)
