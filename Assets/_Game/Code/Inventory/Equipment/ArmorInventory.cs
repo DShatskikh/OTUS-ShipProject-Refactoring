@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Game.Inventory
 {
@@ -19,20 +18,7 @@ namespace Game.Inventory
             LeggingsSlot,
             BootsSlot
         };
-
-        public event Action<InventoryItem, Slot> OnSlotChange;
-        public event Action<InventoryItem> OnItemAdded;
-        public event Action<InventoryItem> OnItemRemoved;
-
-        public void NotifyChangeSlot(InventoryItem item, InventoryItem previousItem, Slot slot)
-        {
-            if (previousItem != null)
-                OnItemRemoved?.Invoke(previousItem);
-            
-            OnItemAdded?.Invoke(item);
-            OnSlotChange?.Invoke(item, slot);
-        }
-
+        
         public bool TryAdd(Slot slot)
         {
             var item = slot.Item;

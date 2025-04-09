@@ -14,8 +14,11 @@ namespace Game.Inventory
             _armorInventory = armorInventory;
             _speedSystem = speedSystem;
             
-            _armorInventory.OnItemAdded += OnItemAdded;
-            _armorInventory.OnItemRemoved += OnItemRemoved;
+            foreach (var slot in _armorInventory.GetArmorSlots)
+            {
+                slot.OnItemAdded += OnItemAdded;
+                slot.OnItemRemoved += OnItemRemoved;
+            }
         }
 
         private void OnItemAdded(InventoryItem item)

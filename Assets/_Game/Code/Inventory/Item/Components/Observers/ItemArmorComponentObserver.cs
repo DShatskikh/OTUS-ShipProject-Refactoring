@@ -9,7 +9,7 @@ namespace Game.Inventory
         private readonly ArmorSystem _armorSystem;
 
         [Inject]
-        private ItemArmorComponentObserver(ArmorInventory armorInventory, ArmorSystem armorSystem)
+        public ItemArmorComponentObserver(ArmorInventory armorInventory, ArmorSystem armorSystem)
         {
             _armorInventory = armorInventory;
             _armorSystem = armorSystem;

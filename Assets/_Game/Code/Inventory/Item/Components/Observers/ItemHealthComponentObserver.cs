@@ -9,13 +9,16 @@ namespace Game.Inventory
         private readonly HealthSystem _healthSystem;
 
         [Inject]
-        private ItemHealthComponentObserver(ArmorInventory armorInventory, HealthSystem healthSystem)
+        public ItemHealthComponentObserver(ArmorInventory armorInventory, HealthSystem healthSystem)
         {
             _armorInventory = armorInventory;
             _healthSystem = healthSystem;
             
-            _armorInventory.OnItemAdded += OnItemAdded;
-            _armorInventory.OnItemRemoved += OnItemRemoved;
+            foreach (var slot in _armorInventory.GetArmorSlots)
+            {
+                slot.OnItemAdded += OnItemAdded;
+                slot.OnItemRemoved += OnItemRemoved;
+            }
         }
 
         private void OnItemAdded(InventoryItem item)
