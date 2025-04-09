@@ -16,7 +16,7 @@ namespace Tests
             var speedSystem = new SpeedSystem();
             var observer = new ItemSpeedComponentObserver(armorInventory, speedSystem);
             
-            var item1 = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
+            var item = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
                 ItemFlags.EQUIPPABLE, new IItemComponent[]
             {
                 new ArmorComponent() { Armor = 4 },
@@ -24,8 +24,8 @@ namespace Tests
             });
 
             // Act:
-            armorInventory.HelmetSlot.Item = item1;
-            armorInventory.HelmetSlot.NotifyChange(item1, null);
+            armorInventory.HelmetSlot.Item = item;
+            armorInventory.HelmetSlot.NotifyChange(item, null);
 
             // Assert:
             Assert.AreEqual(speedSystem.Speed, 1);
@@ -40,7 +40,7 @@ namespace Tests
             var speedSystem = new SpeedSystem();
             var observer = new ItemSpeedComponentObserver(armorInventory, speedSystem);
             
-            var item1 = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
+            var item = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
                 ItemFlags.EQUIPPABLE, new IItemComponent[]
                 {
                     new ArmorComponent() { Armor = 4 },
@@ -48,11 +48,11 @@ namespace Tests
                 });
 
             // Act:
-            armorInventory.HelmetSlot.Item = item1;
-            armorInventory.HelmetSlot.NotifyChange(item1, null);
+            armorInventory.HelmetSlot.Item = item;
+            armorInventory.HelmetSlot.NotifyChange(item, null);
             
             armorInventory.HelmetSlot.Item = null;
-            armorInventory.HelmetSlot.NotifyChange(null, item1);
+            armorInventory.HelmetSlot.NotifyChange(null, item);
 
             // Assert:
             Assert.AreEqual(speedSystem.Speed, 0);
@@ -67,7 +67,7 @@ namespace Tests
             var healthSystem = new HealthSystem();
             var observer = new ItemHealthComponentObserver(armorInventory, healthSystem);
             
-            var item1 = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
+            var item = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
                 ItemFlags.EQUIPPABLE, new IItemComponent[]
                 {
                     new ArmorComponent() { Armor = 4 },
@@ -75,8 +75,8 @@ namespace Tests
                 });
 
             // Act:
-            armorInventory.HelmetSlot.Item = item1;
-            armorInventory.HelmetSlot.NotifyChange(item1, null);
+            armorInventory.HelmetSlot.Item = item;
+            armorInventory.HelmetSlot.NotifyChange(item, null);
 
             // Assert:
             Assert.AreEqual(healthSystem.Health, 1);
@@ -91,7 +91,7 @@ namespace Tests
             var healthSystem = new HealthSystem();
             var observer = new ItemHealthComponentObserver(armorInventory, healthSystem);
             
-            var item1 = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
+            var item = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
                 ItemFlags.EQUIPPABLE, new IItemComponent[]
                 {
                     new ArmorComponent() { Armor = 4 },
@@ -99,11 +99,11 @@ namespace Tests
                 });
 
             // Act:
-            armorInventory.HelmetSlot.Item = item1;
-            armorInventory.HelmetSlot.NotifyChange(item1, null);
+            armorInventory.HelmetSlot.Item = item;
+            armorInventory.HelmetSlot.NotifyChange(item, null);
 
             armorInventory.HelmetSlot.Item = null;
-            armorInventory.HelmetSlot.NotifyChange(null, item1);
+            armorInventory.HelmetSlot.NotifyChange(null, item);
             
             // Assert:
             Assert.AreEqual(healthSystem.Health, 0);
@@ -118,15 +118,15 @@ namespace Tests
             var armorSystem = new ArmorSystem();
             var observer = new ItemArmorComponentObserver(armorInventory, armorSystem);
             
-            var item1 = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
+            var item = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
                 ItemFlags.EQUIPPABLE, new IItemComponent[]
                 {
                     new ArmorComponent() { Armor = 1 },
                 });
 
             // Act:
-            armorInventory.HelmetSlot.Item = item1;
-            armorInventory.HelmetSlot.NotifyChange(item1, null);
+            armorInventory.HelmetSlot.Item = item;
+            armorInventory.HelmetSlot.NotifyChange(item, null);
 
             // Assert:
             Assert.AreEqual(armorSystem.Armor, 1);
@@ -141,18 +141,18 @@ namespace Tests
             var armorSystem = new ArmorSystem();
             var observer = new ItemArmorComponentObserver(armorInventory, armorSystem);
             
-            var item1 = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
+            var item = new InventoryItem("Helmet", new InventoryItemMetaData("Тестовый шлем", "Добавь описание...", null), 
                 ItemFlags.EQUIPPABLE, new IItemComponent[]
                 {
                     new ArmorComponent() { Armor = 1 },
                 });
 
             // Act:
-            armorInventory.HelmetSlot.Item = item1;
-            armorInventory.HelmetSlot.NotifyChange(item1, null);
+            armorInventory.HelmetSlot.Item = item;
+            armorInventory.HelmetSlot.NotifyChange(item, null);
 
             armorInventory.HelmetSlot.Item = null;
-            armorInventory.HelmetSlot.NotifyChange(null, item1);
+            armorInventory.HelmetSlot.NotifyChange(null, item);
             
             // Assert:
             Assert.AreEqual(armorSystem.Armor, 0);

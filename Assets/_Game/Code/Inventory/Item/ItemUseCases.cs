@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace Game.Inventory
+﻿namespace Game.Inventory
 {
     public static class ItemUseCases
     {
@@ -33,16 +31,16 @@ namespace Game.Inventory
         {
             if (item == null)
                 return false;
-            
-            if (component != item.Components.FirstOrDefault(x => x == component))
-                return false;
 
-            return true;
+            foreach (var currentComponent in item.Components)
+            {
+                if (currentComponent == component)
+                    return true;
+            }
+
+            return false;
         }
 
-        public static void RemoveItem(Slot slot)
-        {
-            slot.Item = null;
-        }
+        
     }
 }

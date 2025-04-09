@@ -216,7 +216,7 @@ namespace Game.UI
 
         private void Drop()
         {
-            ItemUseCases.RemoveItem(_moveSlot);
+            SlotUseCases.RemoveItem(_moveSlot);
             _view.GetMoveItem.ToggleActive(false);
             _view.GetMoveItem.ToggleLabelActive(false);
         }

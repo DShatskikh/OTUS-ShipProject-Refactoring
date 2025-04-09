@@ -81,10 +81,17 @@ namespace Game.Inventory
                             && ItemUseCases.TryGetComponent(addedItem, out StackableItemComponent addedStackableItemComponent))
                         {
                             stackableItemComponent.Count += addedStackableItemComponent.Count;
-                            addedStackableItemComponent.Count =
-                                stackableItemComponent.Count % stackableItemComponent.MaxCount;
-                            stackableItemComponent.Count -= stackableItemComponent.Count % stackableItemComponent.MaxCount;
 
+                            if (stackableItemComponent.Count > stackableItemComponent.MaxCount)
+                            {
+                                addedStackableItemComponent.Count = stackableItemComponent.Count % stackableItemComponent.MaxCount;
+                                stackableItemComponent.Count = stackableItemComponent.MaxCount;
+                            }
+                            else
+                            {
+                                addedStackableItemComponent.Count = 0;
+                            }
+                            
                             remains = addedStackableItemComponent.Count;
                             slot.NotifyChange(slot.Item, slot.Item);
                             return true;
@@ -205,6 +212,11 @@ namespace Game.Inventory
                         return;
                 }
             }
+        }
+
+        public static void RemoveItem(Slot slot)
+        {
+            slot.Item = null;
         }
     }
 }
