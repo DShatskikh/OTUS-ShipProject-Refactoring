@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e46df9c-1ded-4a24-8b0e-3e3c50cc29b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/ItemUseCasesTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/ItemUseCasesTests.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/SlotUseCasesTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/SlotUseCasesTests.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/ItemUseCases.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/ItemUseCases.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/SlotUseCases.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Code/Inventory/SlotUseCases.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/InventoryPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Code/UI/Inventory/InventoryPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Tests/Inventory/InventoryUseCasesTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/InventoryUseCasesTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Tests/Inventory/ItemObserverTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Tests/Inventory/ItemObserverTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/CraftTable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/CraftTable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Item.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Item.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Ore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Ore.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Steve.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Steve.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OTUS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OTUS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/boot.config" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +31,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6afd1274f120405096bc1ad9e2010ba6157a00/9a/61f340ee/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/84f0d810adef4e6c8deab33e4ae93f7c1dec00/fa/6d5a180a/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/BreakOreAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/DropItemsAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/RotateToTargetAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/SearchNearestOreAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/SteveFullInventoryCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@9aa96a37293c/Runtime/Execution/Node.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -57,7 +73,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.35f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\s-den\Documents\Unity\OTUS -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\s-den\Documents\Unity\OTUS" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -65,7 +81,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.35f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\s-den\Documents\Unity\OTUS -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\s-den\Documents\Unity\OTUS" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -82,10 +98,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17652">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17652" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -110,6 +126,7 @@
       <workItem from="1744105445327" duration="9235000" />
       <workItem from="1744137498859" duration="1800000" />
       <workItem from="1744182869522" duration="7381000" />
+      <workItem from="1744277886231" duration="7354000" />
     </task>
     <servers />
   </component>
@@ -151,79 +168,37 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Tests/Inventory/ItemUseCasesTests.cs</url>
           <line>115</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Tests\Inventory\ItemUseCasesTests.cs" initialLine="115" containingFunctionPresentation="Method 'WhenCanComponentStackable_ThenTrue'">
-            <startOffsets>
-              <option value="4136" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4205" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Tests\Inventory\ItemUseCasesTests.cs" initialLine="115" containingFunctionPresentation="Method 'WhenCanComponentStackable_ThenTrue'" />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Tests/Inventory/ItemUseCasesTests.cs</url>
           <line>110</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Tests\Inventory\ItemUseCasesTests.cs" initialLine="110" containingFunctionPresentation="Method 'WhenCanComponentStackable_ThenTrue'">
-            <startOffsets>
-              <option value="3820" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3906" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Tests\Inventory\ItemUseCasesTests.cs" initialLine="110" containingFunctionPresentation="Method 'WhenCanComponentStackable_ThenTrue'" />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Tests/Inventory/ItemUseCasesTests.cs</url>
           <line>118</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Tests\Inventory\ItemUseCasesTests.cs" initialLine="118" containingFunctionPresentation="Method 'WhenCanComponentStackable_ThenTrue'">
-            <startOffsets>
-              <option value="4242" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4262" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Tests\Inventory\ItemUseCasesTests.cs" initialLine="118" containingFunctionPresentation="Method 'WhenCanComponentStackable_ThenTrue'" />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/ItemUseCases.cs</url>
           <line>37</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\ItemUseCases.cs" initialLine="37" containingFunctionPresentation="Method 'CanComponent'">
-            <startOffsets>
-              <option value="1081" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1094" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\ItemUseCases.cs" initialLine="37" containingFunctionPresentation="Method 'CanComponent'" />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/ItemUseCases.cs</url>
           <line>39</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\ItemUseCases.cs" initialLine="39" containingFunctionPresentation="Method 'CanComponent'">
-            <startOffsets>
-              <option value="1108" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1120" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\ItemUseCases.cs" initialLine="39" containingFunctionPresentation="Method 'CanComponent'" />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Game/Code/Inventory/Item/ItemUseCases.cs</url>
           <line>34</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\ItemUseCases.cs" initialLine="34" containingFunctionPresentation="Method 'CanComponent'">
-            <startOffsets>
-              <option value="956" />
-            </startOffsets>
-            <endOffsets>
-              <option value="969" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\ItemUseCases.cs" initialLine="34" containingFunctionPresentation="Method 'CanComponent'" />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>

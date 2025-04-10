@@ -1,0 +1,11 @@
+Model Information:
+* title:	3500 Blocks Special
+* source:	https://sketchfab.com/3d-models/3500-blocks-special-4746d82ff1f54ec0b8fd11c42c7ef9a1
+* author:	theredvboss (https://sketchfab.com/theredvboss)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "3500 Blocks Special" (https://sketchfab.com/3d-models/3500-blocks-special-4746d82ff1f54ec0b8fd11c42c7ef9a1) by theredvboss (https://sketchfab.com/theredvboss) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
