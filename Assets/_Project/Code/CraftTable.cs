@@ -15,7 +15,8 @@ namespace _Project.Code
         public void AddItem(Item item)
         {
             _items.Add(item);
-            _countLabel.text = _items.Count.ToString();
+            _countLabel.gameObject.SetActive(true);
+            _countLabel.text = $"Руды {_items.Count}";
         }
     }
 }

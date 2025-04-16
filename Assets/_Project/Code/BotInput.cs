@@ -27,6 +27,12 @@ namespace _Project.Code
                 if (_rangeDetector.TryUpdateDetector(out Ore ore))
                     _steve.TryMining(ore);
             }
+
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                _steve.StopMining();
+                _steve.StopDropToCraftTable();
+            }
         }
     }
 }

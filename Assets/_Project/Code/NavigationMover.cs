@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -25,7 +24,7 @@ namespace _Project.Code
         public bool GetIsMove => _isMove;
         public bool GetIsRotate => _isRotate;
         
-        private void Start()
+        private void Awake()
         {
             _path = new NavMeshPath();
             _elapsed = 0.0f;
@@ -42,16 +41,7 @@ namespace _Project.Code
             {
                 CreatePath();
             }
-
-            string message = _path.corners.Length + " : ";
             
-            foreach (var corner in _path.corners)
-            {
-                message += corner + ", ";
-            }
-            
-            //Debug.Log(message);
-
             Move();
         }
 

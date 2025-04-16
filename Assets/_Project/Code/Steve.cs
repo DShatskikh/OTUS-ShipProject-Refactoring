@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using TMPro;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,12 +20,20 @@ namespace _Project.Code
         [SerializeField]
         private TMP_Text _countLabel;
         
+        [SerializeField]
+        private NavMeshSurface _navMeshSurface;
+        
         private Coroutine _miningProcess;
         private Coroutine _dropToCraftTableProcess;
         
         public bool IsMining => _miningProcess != null;
         public bool IsDropToCraftTable => _dropToCraftTableProcess != null;
         public bool IsMove => NavigationMover.GetIsMove;
+
+        private void Start()
+        {
+            _countLabel.text = $"Руды [{Inventory.GetItems.Count} из 2]";
+        }
 
         private void Update()
         {
@@ -32,6 +42,7 @@ namespace _Project.Code
 
         public void MoveTo(Vector3 point)
         {
+            StopAllActions();
             NavigationMover.StartMove(point);
         }
         
@@ -51,6 +62,7 @@ namespace _Project.Code
             if (distance / 2 > RangeDetector.GetDetectionRadius)
                 return false;
 
+            StopAllActions();
             _miningProcess = StartCoroutine(AwaitMining(ore));
             return true;
         }
@@ -66,10 +78,33 @@ namespace _Project.Code
             if (distance / 2 > RangeDetector.GetDetectionRadius)
                 return false;
             
+            StopAllActions();
             _dropToCraftTableProcess = StartCoroutine(AwaitDropToCraftTable(craftTable));
             return true;
         }
 
+        public void StopMining()
+        {
+            if (!IsMining)
+                return;
+            
+            Animator.CrossFade("idle", 0);
+            _slider.gameObject.SetActive(false);
+            StopCoroutine(_miningProcess);
+            _miningProcess = null;
+        }
+        
+        public void StopDropToCraftTable()
+        {
+            if (!IsDropToCraftTable)
+                return;
+            
+            Animator.CrossFade("idle", 0);
+            _slider.gameObject.SetActive(false);
+            StopCoroutine(_dropToCraftTableProcess);
+            _dropToCraftTableProcess = null;
+        }
+        
         private IEnumerator AwaitDropToCraftTable(CraftTable craftTable)
         {
             yield return AwaitRotate(craftTable.transform);
@@ -91,7 +126,7 @@ namespace _Project.Code
 
             Inventory.RemoveAllItems();
             _countLabel.gameObject.SetActive(true);
-            _countLabel.text = Inventory.GetItems.Count.ToString();
+            _countLabel.text = $"Руды [{Inventory.GetItems.Count} из 2]";
             _dropToCraftTableProcess = null;
         }
         
@@ -117,7 +152,11 @@ namespace _Project.Code
             Destroy(ore.gameObject);
             Animator.CrossFade("idle", 0);
             _countLabel.gameObject.SetActive(true);
-            _countLabel.text = Inventory.GetItems.Count.ToString();
+            _countLabel.text = $"Руды [{Inventory.GetItems.Count} из 2]";
+
+            yield return null;
+            _navMeshSurface.BuildNavMesh();
+            
             _miningProcess = null;
         }
 
@@ -140,6 +179,13 @@ namespace _Project.Code
                     yield return null;
                 }  
             }
+        }
+
+        private void StopAllActions()
+        {
+            StopMove();
+            StopMining();
+            StopDropToCraftTable();
         }
     }
 }
