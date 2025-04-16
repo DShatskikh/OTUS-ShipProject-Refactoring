@@ -5,24 +5,716 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e46df9c-1ded-4a24-8b0e-3e3c50cc29b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/CraftTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/CraftTable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Item.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Item.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Ore.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Ore.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Steve.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/Steve.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/CustomNavAgent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/CustomNavAgent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/NavMeshUpdater.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/NavMeshUpdater.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/NavigationMover.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/NavigationMover.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/SteveInventory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Code/SteveInventory.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OTUS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OTUS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/boot.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Agent.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Agent.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Agent.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Agent.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Agent.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Agent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/ChooseTargetPosition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/ChooseTargetPosition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Ground.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Ground.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Serialization.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/Serialization.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/SerializationExampleSceneController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Runtime Serialization/SerializationExampleSceneController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Actions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Actions/SetRandomTargetAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Actions/SetRandomTargetAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Actions/TalkAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Actions/TalkAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Example Behavior Graph.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Example Behavior Graph.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/Green.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/Green.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/Grey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/Grey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/Red.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/Red.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/White.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Materials/White.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Resources/TextMesh Speech Preset.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/Resources/TextMesh Speech Preset.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Behavior/1.0.8/Unity Behavior Example/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene/Global Volume Profile.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene/Global Volume Profile.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene/NavMesh-Ground.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene/NavMesh-Ground.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene/NavMesh-NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene/NavMesh-NavMesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene/NavMesh-Plane.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AI Scene/NavMesh-Plane.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/AI/BreakOreAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/AI/BreakOreAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/AI/DropItemsAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Code/AI/DropItemsAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/AI/Steve.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Code/AI/Steve.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/AI/SteveFullInventoryCondition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Code/AI/SteveFullInventoryCondition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/Steve.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Code/Steve.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Ore Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Ore Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Game/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Game/NavMesh-NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Animations/EnemyAnimatorOverride.overrideController" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Animations/EnemyAnimatorOverride.overrideController.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Animations/PlayerAnimator.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Animations/PlayerAnimator.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/DustMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/DustMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/Glow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/Glow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/Grass.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/Grass.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/Marker.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/Marker.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/Skybox.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/Skybox.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/SparkMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/SparkMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/knight_texture.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/knight_texture.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/prototype_texture 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/prototype_texture 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/prototype_texture obstacles.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/prototype_texture obstacles.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/prototype_texture.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/prototype_texture.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/skeleton.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Materials/skeleton.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/arrow.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/arrow.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/arrow_bundle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/arrow_bundle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/axe_1handed.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/axe_1handed.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/axe_2handed.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/axe_2handed.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/barbarian_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/barbarian_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/crossbow_1handed.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/crossbow_1handed.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/crossbow_2handed.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/crossbow_2handed.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/dagger.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/dagger.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/knight_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/knight_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/mage_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/mage_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/mug_empty.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/mug_empty.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/mug_full.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/mug_full.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/quiver.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/quiver.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/rogue_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/rogue_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_badge.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_badge.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_badge_color.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_badge_color.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_round.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_round.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_round_barbarian.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_round_barbarian.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_round_color.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_round_color.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_spikes.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_spikes.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_spikes_color.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_spikes_color.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_square.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_square.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_square_color.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/shield_square_color.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/smokebomb.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/smokebomb.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/spellbook_closed.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/spellbook_closed.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/spellbook_open.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/spellbook_open.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/staff.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/staff.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/sword_1handed.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/sword_1handed.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/sword_2handed.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/sword_2handed.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/sword_2handed_color.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/sword_2handed_color.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/wand.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/fbx/wand.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/arrow.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/arrow.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/arrow.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/arrow.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/arrow_bundle.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/arrow_bundle.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/arrow_bundle.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/arrow_bundle.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/axe_1handed.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/axe_1handed.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/axe_1handed.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/axe_1handed.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/axe_2handed.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/axe_2handed.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/axe_2handed.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/axe_2handed.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/barbarian_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/barbarian_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/crossbow_1handed.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/crossbow_1handed.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/crossbow_1handed.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/crossbow_1handed.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/crossbow_2handed.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/crossbow_2handed.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/crossbow_2handed.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/crossbow_2handed.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/dagger.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/dagger.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/dagger.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/dagger.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/knight_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/knight_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mage_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mage_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mug_empty.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mug_empty.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mug_empty.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mug_empty.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mug_full.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mug_full.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mug_full.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/mug_full.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/quiver.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/quiver.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/quiver.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/quiver.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/rogue_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/rogue_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_badge.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_badge.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_badge.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_badge.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_badge_color.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_badge_color.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_badge_color.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_badge_color.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round_barbarian.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round_barbarian.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round_barbarian.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round_barbarian.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round_color.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round_color.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round_color.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_round_color.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_spikes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_spikes.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_spikes.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_spikes.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_spikes_color.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_spikes_color.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_spikes_color.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_spikes_color.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_square.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_square.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_square.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_square.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_square_color.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_square_color.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_square_color.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/shield_square_color.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/smokebomb.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/smokebomb.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/smokebomb.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/smokebomb.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/spellbook_closed.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/spellbook_closed.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/spellbook_closed.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/spellbook_closed.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/spellbook_open.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/spellbook_open.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/spellbook_open.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/spellbook_open.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/staff.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/staff.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/staff.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/staff.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_1handed.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_1handed.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_1handed.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_1handed.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_2handed.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_2handed.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_2handed.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_2handed.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_2handed_color.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_2handed_color.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_2handed_color.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/sword_2handed_color.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/wand.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/wand.bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/wand.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Assets/gltf/wand.gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/Barbarian.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/Barbarian.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/Knight.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/Knight.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/Mage.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/Mage.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/Rogue.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/Rogue.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/RogueHooded.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/RogueHooded.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/barbarian_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/barbarian_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/knight_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/knight_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/mage_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/mage_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/rogue_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/fbx/rogue_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Barbarian.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Barbarian.glb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Knight.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Knight.glb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Mage.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Mage.glb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue.glb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue_Hooded.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue_Hooded.glb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/barbarian_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/barbarian_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/knight_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/knight_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/mage_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/mage_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/rogue_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Characters/gltf/rogue_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/License.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/More KayKit Assets.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/More KayKit Assets.url.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Patreon.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Patreon.url.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Textures/barbarian_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Textures/barbarian_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Textures/knight_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Textures/knight_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Textures/mage_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Textures/mage_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Textures/rogue_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/Textures/rogue_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/contents.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Adventurers_1.0_FREE/contents.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity).meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Barrel_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Barrel_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Barrel_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Barrel_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Barrel_C.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Barrel_C.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Box_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Box_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Box_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Box_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Box_C.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Box_C.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Can_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Can_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Can_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Can_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Coin_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Coin_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Coin_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Coin_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Coin_C.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Coin_C.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Cube_Prototype_Large_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Cube_Prototype_Large_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Cube_Prototype_Large_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Cube_Prototype_Large_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Cube_Prototype_Small.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Cube_Prototype_Small.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Door_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Door_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Door_A_Decorated.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Door_A_Decorated.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Door_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Door_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Dummy_Base.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Dummy_Base.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Floor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Floor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Floor_Dirt.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Floor_Dirt.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Floor_Prototype.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Floor_Prototype.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pallet_Large.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pallet_Large.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pallet_Small.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pallet_Small.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pallet_Small_Decorated_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pallet_Small_Decorated_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pallet_Small_Decorated_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pallet_Small_Decorated_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pillar_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pillar_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pillar_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Pillar_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Beam.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Beam.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Cube.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Cube.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Cube_Small.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Cube_Small.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Doorway.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Doorway.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Floor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Floor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Floor_Hole.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Floor_Hole.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Pillar.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Pillar.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_Half.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_Half.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_Half_InnerCorner.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_Half_InnerCorner.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_Half_OuterCorner.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_Half_OuterCorner.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_InnerCorner.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_InnerCorner.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_OuterCorner.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Slope_OuterCorner.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Stairs.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Stairs.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Stairs_Half.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Stairs_Half.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall_Half.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall_Half.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall_OpenCorner.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall_OpenCorner.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall_Short.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall_Short.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall_Slope.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Wall_Slope.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Window.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Primitive_Window.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Decorated.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Decorated.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Doorway.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Doorway.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Half.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Half.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Target.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Target.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Window_Closed.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Window_Closed.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Window_Open.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Wall_Window_Open.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/prototypebits_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/prototypebits_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/table_medium.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/table_medium.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/table_medium_Decorated.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/table_medium_Decorated.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/table_medium_long.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/table_medium_long.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_C.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_C.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_D.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_D.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_E.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_E.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_F.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_pieces_F.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_small.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_small.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_stand_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_stand_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_stand_A_Decorated.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_stand_A_Decorated.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_stand_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_stand_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_wall_large_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_wall_large_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_wall_large_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_wall_large_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_wall_small.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/target_wall_small.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/textures/prototypebits_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Assets/textures/prototypebits_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/License.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/More KayKit Assets.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/More KayKit Assets.url.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Patreon.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/Patreon.url.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/contents.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/contents.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/sample.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Prototype_Bits_1.0_FREE/sample.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/License.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/More KayKit Assets.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/More KayKit Assets.url.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/Patreon.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/Patreon.url.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity).meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Arrow.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Arrow.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Arrow_Broken.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Arrow_Broken.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Arrow_Broken_Half.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Arrow_Broken_Half.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Arrow_Half.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Arrow_Half.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Axe.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Axe.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Blade.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Blade.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Crossbow.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Crossbow.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Quiver.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Quiver.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Shield_Large_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Shield_Large_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Shield_Large_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Shield_Large_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Shield_Small_A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Shield_Small_A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Shield_Small_B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Shield_Small_B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Staff.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/Skeleton_Staff.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/skeleton_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/fbx(unity)/skeleton_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Broken.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Broken.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Broken.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Broken.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Broken_Half.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Broken_Half.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Broken_Half.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Broken_Half.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Half.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Half.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Half.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Arrow_Half.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Axe.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Axe.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Axe.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Axe.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Blade.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Blade.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Blade.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Blade.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Crossbow.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Crossbow.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Crossbow.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Crossbow.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Quiver.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Quiver.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Quiver.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Quiver.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Large_A.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Large_A.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Large_A.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Large_A.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Large_B.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Large_B.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Large_B.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Large_B.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Small_A.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Small_A.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Small_A.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Small_A.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Small_B.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Small_B.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Small_B.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Shield_Small_B.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Staff.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Staff.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Staff.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/Skeleton_Staff.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/skeleton_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/assets/obj/skeleton_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/Skeleton_Mage.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/Skeleton_Mage.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/Skeleton_Minion.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/Skeleton_Minion.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/Skeleton_Rogue.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/Skeleton_Rogue.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/Skeleton_Warrior.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/Skeleton_Warrior.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/skeleton_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/fbx/skeleton_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Mage.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Mage.glb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Minion.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Minion.glb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Rogue.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Rogue.glb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Warrior.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/Skeleton_Warrior.glb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/skeleton_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/characters/gltf/skeleton_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/contents.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/contents.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/texture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/texture/skeleton_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Models/KayKit/KayKit_Skeletons_1.0_FREE/texture/skeleton_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Particles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Particles/DustParticle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Particles/DustParticle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Particles/Impact.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Particles/Impact.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Cube_Prototype_Large_B.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Cube_Prototype_Large_B.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Door_B.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Door_B.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Floor_Dirt.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Floor_Dirt.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Floor_Prototype.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Floor_Prototype.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Pallet_Small_Decorated_A.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Pallet_Small_Decorated_A.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Point.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Point.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Primitive_Cube.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Primitive_Cube.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Primitive_Floor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Primitive_Floor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Primitive_Wall.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/Primitive_Wall.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/target_wall_large_B.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Environment/target_wall_large_B.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/ExclamationMark.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/ExclamationMark.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Knight.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Knight.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Skeleton_Blade.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Skeleton_Blade.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Skeleton_Minion.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Prefabs/Skeleton_Minion.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/CameraShakeEffect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/CameraShakeEffect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/EnemyController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/EnemyController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/ExclamationMark.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/ExclamationMark.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/ExclamationMarkTrigger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/ExclamationMarkTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/FootStepSounds.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/FootStepSounds.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/HitHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/HitHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/HitTarget.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/HitTarget.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/PlayerMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/HelperScripts/PlayerMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/LineOfSightDetector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/LineOfSightDetector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/RangeDetector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Scripts/RangeDetector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/8 shield.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/8 shield.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/Footstep Random Container.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/Footstep Random Container.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/Licence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/Licence.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/leaves01.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/leaves01.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/leaves02.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/leaves02.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/wood01.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/wood01.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/wood02.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/wood02.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/wood03.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/Footsteps/wood03.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/woosh-2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Sounds/woosh-2.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Textures/dust_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Textures/dust_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Textures/prototypebits_texture_exclamation_mark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Textures/prototypebits_texture_exclamation_mark.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Textures/spark_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Tutorial/_Textures/spark_texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,14 +722,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e9f695a951346e38d4cecce88bfb58b11200/2d/051b61d4/NavMesh.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0e9f695a951346e38d4cecce88bfb58b11200/f4/6edf70ca/NavMeshPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6afd1274f120405096bc1ad9e2010ba6157a00/9a/61f340ee/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/84f0d810adef4e6c8deab33e4ae93f7c1dec00/fa/6d5a180a/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/BreakOreAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/DropItemsAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/MiningOreAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/RotateToTargetAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/SearchNearestOreAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/SteveFullInventoryCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/SteveMoveToPointAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Code/AI/StevePatrolAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@9aa96a37293c/Authoring/UI/AssetEditor/BehaviorGraphEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@9aa96a37293c/Runtime/Execution/Node.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.behavior@9aa96a37293c/Runtime/Execution/Nodes/Composites/BranchingConditionComposite.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -98,10 +796,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12296">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="12296" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -127,6 +825,11 @@
       <workItem from="1744137498859" duration="1800000" />
       <workItem from="1744182869522" duration="7381000" />
       <workItem from="1744277886231" duration="7354000" />
+      <workItem from="1744597231294" duration="478000" />
+      <workItem from="1744642822123" duration="705000" />
+      <workItem from="1744686699046" duration="2053000" />
+      <workItem from="1744736370926" duration="3720000" />
+      <workItem from="1744740269941" duration="7483000" />
     </task>
     <servers />
   </component>
@@ -200,6 +903,58 @@
           <line>34</line>
           <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\ItemUseCases.cs" initialLine="34" containingFunctionPresentation="Method 'CanComponent'" />
           <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Project/Code/AI/MiningOreAction.cs</url>
+          <line>27</line>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Project\Code\AI\MiningOreAction.cs" initialLine="27" containingFunctionPresentation="Method 'OnUpdate'">
+            <startOffsets>
+              <option value="729" />
+            </startOffsets>
+            <endOffsets>
+              <option value="791" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Project/Code/AI/MiningOreAction.cs</url>
+          <line>22</line>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Project\Code\AI\MiningOreAction.cs" initialLine="22" containingFunctionPresentation="Method 'OnStart'">
+            <startOffsets>
+              <option value="644" />
+            </startOffsets>
+            <endOffsets>
+              <option value="666" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Project/Code/NavigationMover.cs</url>
+          <line>46</line>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Project\Code\NavigationMover.cs" initialLine="48" containingFunctionPresentation="Method 'SearchPath'">
+            <startOffsets>
+              <option value="1041" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1129" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Project/Code/NavigationMover.cs</url>
+          <line>48</line>
+          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Project\Code\NavigationMover.cs" initialLine="50" containingFunctionPresentation="Method 'SearchPath'">
+            <startOffsets>
+              <option value="1160" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1189" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

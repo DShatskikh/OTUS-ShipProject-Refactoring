@@ -3,17 +3,24 @@ using UnityEngine;
 public class RangeDetector : MonoBehaviour
 {
     [Header("Detection Settings")]
-    [SerializeField] private float detectionRadius = 10f;
-    [SerializeField] private LayerMask detectionMask;
-    [SerializeField] private bool showDebugVisuals = true;
+    [SerializeField]
+    private float detectionRadius = 10f;
+    
+    [SerializeField]
+    private LayerMask detectionMask;
+    
+    [SerializeField]
+    private bool showDebugVisuals = true;
 
+    public float GetDetectionRadius => detectionRadius;
+    
     public GameObject DetectedTarget
     {
         get;
         set;
     }
 
-    public bool UpdateDetector<T>(out T result) where T : MonoBehaviour
+    public bool TryUpdateDetector<T>(out T result) where T : MonoBehaviour
     {
         DetectedTarget = null;
         result = default;

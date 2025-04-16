@@ -1,40 +1,145 @@
-using System.Collections.Generic;
+using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Project.Code
 {
     public sealed class Steve : MonoBehaviour
     {
-        private const int SIZE_INVENTORY = 2;
-        
+        public SteveInventory Inventory;
+        public NavigationMover NavigationMover;
+        public Animator Animator;
+        public RangeDetector RangeDetector;
+
         [SerializeField]
-        private List<Item> _items = new();
+        private Slider _slider;
+
+        [SerializeField]
+        private TMP_Text _countLabel;
         
-        public List<Item> GetItems => _items;
+        private Coroutine _miningProcess;
+        private Coroutine _dropToCraftTableProcess;
         
-        public bool GetIsFullInventory =>
-            _items.Count == SIZE_INVENTORY;
-        
-        public void AddItem(Item item)
+        public bool IsMining => _miningProcess != null;
+        public bool IsDropToCraftTable => _dropToCraftTableProcess != null;
+        public bool IsMove => NavigationMover.GetIsMove;
+
+        private void Update()
         {
-            _items.Add(item);
+            Animator.SetFloat("SpeedMagnitude", IsMove && !NavigationMover.GetIsRotate ? 1 : 0);
         }
 
-        public void RemoveItem(string id)
+        public void MoveTo(Vector3 point)
         {
-            foreach (var item in _items)
+            NavigationMover.StartMove(point);
+        }
+        
+        public void StopMove()
+        {
+            NavigationMover.StopMove();
+        }
+        
+        public bool TryMining(Ore ore)
+        {
+            if (IsMining)
+                return false;
+
+            var distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z),
+                new Vector3(ore.transform.position.x, 0, ore.transform.position.z));
+            
+            if (distance / 2 > RangeDetector.GetDetectionRadius)
+                return false;
+
+            _miningProcess = StartCoroutine(AwaitMining(ore));
+            return true;
+        }
+
+        public bool TryDropToCraftTable(CraftTable craftTable)
+        {
+            if (IsDropToCraftTable)
+                return false;
+            
+            var distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z),
+                new Vector3(craftTable.transform.position.x, 0, craftTable.transform.position.z));
+            
+            if (distance / 2 > RangeDetector.GetDetectionRadius)
+                return false;
+            
+            _dropToCraftTableProcess = StartCoroutine(AwaitDropToCraftTable(craftTable));
+            return true;
+        }
+
+        private IEnumerator AwaitDropToCraftTable(CraftTable craftTable)
+        {
+            yield return AwaitRotate(craftTable.transform);
+            
+            var timer = 2f;
+            _slider.maxValue = 2f;
+            _slider.gameObject.SetActive(true);
+            
+            while (timer > 0)
             {
-                if (item.ID == id)
-                {
-                    _items.Remove(item);
-                    return;
-                }
+                timer -= Time.deltaTime;
+                _slider.value = 2 - timer;
+                yield return null;
             }
+            _slider.gameObject.SetActive(false);
+            
+            foreach (var item in Inventory.GetItems) 
+                craftTable.AddItem(item);
+
+            Inventory.RemoveAllItems();
+            _countLabel.gameObject.SetActive(true);
+            _countLabel.text = Inventory.GetItems.Count.ToString();
+            _dropToCraftTableProcess = null;
+        }
+        
+        private IEnumerator AwaitMining(Ore ore)
+        {
+            yield return AwaitRotate(ore.transform);
+            Animator.CrossFade("mining", 0);
+
+            var timer = 2f;
+            _slider.maxValue = 2f;
+            _slider.gameObject.SetActive(true);
+            
+            while (timer > 0)
+            {
+                timer -= Time.deltaTime;
+                _slider.value = 2 - timer;
+                yield return null;
+            }
+            
+            _slider.gameObject.SetActive(false);
+            
+            Inventory.Add(ore.Item);
+            Destroy(ore.gameObject);
+            Animator.CrossFade("idle", 0);
+            _countLabel.gameObject.SetActive(true);
+            _countLabel.text = Inventory.GetItems.Count.ToString();
+            _miningProcess = null;
         }
 
-        public void RemoveAllItems()
+        private IEnumerator AwaitRotate(Transform target)
         {
-            _items = new List<Item>();
+            Vector3 currentWaypoint = target.position;
+            Vector3 direction = currentWaypoint - transform.position;
+            direction.y = 0;
+            
+            if (direction != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                
+                while (transform.rotation != targetRotation)
+                {
+                    transform.rotation = Quaternion.RotateTowards(
+                        transform.rotation,
+                        targetRotation,
+                        200 * Time.deltaTime);
+                    yield return null;
+                }  
+            }
         }
     }
 }

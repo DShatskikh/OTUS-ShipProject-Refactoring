@@ -17,7 +17,7 @@ public partial class SearchNearestOreAction : Action
 
     protected override Status OnUpdate()
     {
-        var status = RangeDetector.Value.UpdateDetector(out Ore result);
+        var status = RangeDetector.Value.TryUpdateDetector(out Ore result);
         NearestOre.Value = result;
         return status ? Status.Success : Status.Failure;
     }

@@ -11,5 +11,5 @@ public partial class SteveFullInventoryCondition : Condition
     public BlackboardVariable<Steve> Steve;
 
     public override bool IsTrue() => 
-        Steve.Value.GetIsFullInventory;
+        Steve.Value.Inventory.GetIsFullInventory;
 }
