@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8e46df9c-1ded-4a24-8b0e-3e3c50cc29b1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OTUS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OTUS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/BotInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Code/BotInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/CraftTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Code/CraftTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/NavMeshUpdater.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/NavMeshUpdater.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/NavigationMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Code/NavigationMover.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Code/Steve.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Code/Steve.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Game.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,10 +88,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="44760">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="44760" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -129,6 +122,8 @@
       <workItem from="1744686699046" duration="2053000" />
       <workItem from="1744736370926" duration="3720000" />
       <workItem from="1744740269941" duration="18394000" />
+      <workItem from="1744915772244" duration="6929000" />
+      <workItem from="1745017978227" duration="208000" />
     </task>
     <servers />
   </component>
@@ -202,45 +197,6 @@
           <line>34</line>
           <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Game\Code\Inventory\Item\ItemUseCases.cs" initialLine="34" containingFunctionPresentation="Method 'CanComponent'" />
           <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Code/AI/StevePatrolAction.cs</url>
-          <line>22</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Project\Code\AI\StevePatrolAction.cs" initialLine="22" containingFunctionPresentation="Method 'OnStart'">
-            <startOffsets>
-              <option value="646" />
-            </startOffsets>
-            <endOffsets>
-              <option value="714" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Code/AI/StevePatrolAction.cs</url>
-          <line>21</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Project\Code\AI\StevePatrolAction.cs" initialLine="21" containingFunctionPresentation="Method 'OnStart'">
-            <startOffsets>
-              <option value="636" />
-            </startOffsets>
-            <endOffsets>
-              <option value="637" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Code/AI/StevePatrolAction.cs</url>
-          <line>24</line>
-          <properties documentPath="C:\Users\s-den\Documents\Unity\OTUS\Assets\_Project\Code\AI\StevePatrolAction.cs" initialLine="24" containingFunctionPresentation="Method 'OnStart'">
-            <startOffsets>
-              <option value="732" />
-            </startOffsets>
-            <endOffsets>
-              <option value="746" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
