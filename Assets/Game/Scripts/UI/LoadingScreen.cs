@@ -23,13 +23,10 @@ namespace SampleGame
         public async UniTask<SceneInstance> LoadScene(string sceneKey)
         {
             gameObject.SetActive(true);
-            
-            // Загружаем сцену
             var operation = Addressables.LoadSceneAsync(sceneKey, LoadSceneMode.Single, false);
 
             while (!operation.IsDone)
             {
-                // Обновляем прогресс загрузки
                 if (progressBar != null)
                     progressBar.value = operation.PercentComplete;
 
@@ -38,11 +35,9 @@ namespace SampleGame
             }
 
             Destroy(gameObject);
-            
-            // Проверяем на ошибки
+
             if (operation.Status == AsyncOperationStatus.Succeeded)
             {
-                // Когда загрузка завершена, активируем сцену
                 operation.Result.ActivateAsync();
                 return operation.Result;
             }
