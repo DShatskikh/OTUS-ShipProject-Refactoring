@@ -1,0 +1,74 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+namespace _Tutorial
+{
+    public sealed class BuyTutorialStepController : MonoBehaviour
+    {
+        [SerializeField]
+        private Button _closeButton;
+
+        [SerializeField]
+        private GameObject _arrow;
+
+        [SerializeField]
+        private GameObject _arrowClose;
+        
+        [SerializeField]
+        private Button _buyButton;
+
+        [SerializeField]
+        private GameObject _hint;
+
+        [SerializeField]
+        private GameObject _tutorialShop;
+        
+        private TutorialState _tutorialState;
+
+        private void Awake()
+        {
+            _tutorialState = ServiceLocator.Get<TutorialState>();
+            _tutorialState.OnStepStarted += OnStart;
+            _tutorialState.OnStepFinished += OnFinish;
+        }
+
+        private void OnDestroy()
+        {
+            _tutorialState.OnStepStarted -= OnStart;
+            _tutorialState.OnStepFinished -= OnFinish;
+        }
+
+        private void OnStart(TutorialStep step)
+        {
+            if (step != TutorialStep.BUY_TUTORIAL)
+                return;
+
+            _tutorialShop.SetActive(true);
+            _buyButton.onClick.AddListener(Next);
+            _hint.SetActive(true);
+        }
+
+        private void OnFinish(TutorialStep step)
+        {
+            if (step != TutorialStep.BUY_TUTORIAL)
+                return;
+
+            _closeButton.interactable = true;
+            _closeButton.onClick.AddListener(OnClose);
+            _buyButton.interactable = false;
+            _arrow.SetActive(false);
+            _arrowClose.SetActive(true);
+            _hint.SetActive(false);
+        }
+
+        private void Next()
+        {
+            _tutorialState.FinishStep(false);
+        }
+
+        private void OnClose()
+        {
+            _tutorialState.NextStep();
+        }
+    }
+}
