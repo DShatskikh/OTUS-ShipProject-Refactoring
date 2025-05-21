@@ -24,10 +24,12 @@ namespace _Tutorial
         private GameObject _tutorialShop;
         
         private TutorialState _tutorialState;
+        private Player _player;
 
         private void Awake()
         {
             _tutorialState = ServiceLocator.Get<TutorialState>();
+            _player = ServiceLocator.Get<Player>();
             _tutorialState.OnStepStarted += OnStart;
             _tutorialState.OnStepFinished += OnFinish;
         }
@@ -56,6 +58,7 @@ namespace _Tutorial
             _closeButton.interactable = true;
             _closeButton.onClick.AddListener(OnClose);
             _buyButton.interactable = false;
+            _player.AddMoney(-33000);
             _arrow.SetActive(false);
             _arrowClose.SetActive(true);
             _hint.SetActive(false);

@@ -1,17 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using TMPro;
+using UnityEngine;
 
 namespace _Tutorial
 {
-    public sealed class MoveToBeerStepController : MonoBehaviour
+    public sealed class WaitingNewMoneyStepController : MonoBehaviour
     {
         [SerializeField]
-        private GameObject _hint;
-
-        [SerializeField]
-        private ActionTrigger _openShopTrigger;
+        private TMP_Text _timerLabel;
         
         [SerializeField]
-        private ActionTrigger _openTutorialShopTrigger;
+        private GameObject _hint;
         
         private TutorialState _tutorialState;
 
@@ -26,31 +25,37 @@ namespace _Tutorial
         {
             _tutorialState.OnStepStarted -= OnStart;
             _tutorialState.OnStepFinished -= OnFinish;
-            _openTutorialShopTrigger.GetAction.RemoveListener(Next);
         }
 
         private void OnStart(TutorialStep step)
         {
-            if (step != TutorialStep.MOVE_TO_BEER)
+            if (step != TutorialStep.WAITING_NEW_MONEY)
                 return;
 
+            StartCoroutine(AwaitTimer());
+            
             _hint.SetActive(true);
-            _openShopTrigger.gameObject.SetActive(false);
-            _openTutorialShopTrigger.gameObject.SetActive(true);
-            _openTutorialShopTrigger.GetAction.AddListener(Next);
         }
 
         private void OnFinish(TutorialStep step)
         {
-            if (step != TutorialStep.MOVE_TO_BEER)
+            if (step != TutorialStep.WAITING_NEW_MONEY)
                 return;
             
-            _openTutorialShopTrigger.gameObject.SetActive(false);
             _hint.SetActive(false);
         }
 
-        private void Next()
+        private IEnumerator AwaitTimer()
         {
+            var timer = 5;
+            
+            while (timer > 0)
+            {
+                timer -= 1;
+                _timerLabel.text = $"Времени до ЗП {timer} сек";
+                yield return new WaitForSeconds(1);
+            }
+            
             _tutorialState.FinishStep();
         }
     }

@@ -3,6 +3,9 @@ using UnityEngine;
 
 public sealed class Startup : MonoBehaviour
 {
+    [SerializeField]
+    private Player _player;
+
     private TutorialState _tutorial;
 
     private void Awake()
@@ -10,6 +13,7 @@ public sealed class Startup : MonoBehaviour
         _tutorial = new TutorialState();
         
         ServiceLocator.Register(_tutorial);
+        ServiceLocator.Register(_player);
     }
 
     private void Start()

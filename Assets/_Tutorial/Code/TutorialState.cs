@@ -39,6 +39,7 @@ namespace _Tutorial
             if (CurrentStep == TutorialStep.START)
             {
                 NextStep();
+                return;
             }
             
             OnStepStarted?.Invoke(CurrentStep);
@@ -48,6 +49,8 @@ namespace _Tutorial
         {
             CurrentStep++;
 
+            Debug.Log("NextStep " + CurrentStep);
+            
             if (CurrentStep == TutorialStep.END)
             {
                 IsCompleted = true;

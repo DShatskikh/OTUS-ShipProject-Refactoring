@@ -2,11 +2,14 @@
 
 namespace _Tutorial
 {
-    public sealed class MoveToOTUSStepController : MonoBehaviour
+    public sealed class MoveToPizzaStepController : MonoBehaviour
     {
         [SerializeField]
         private GameObject _hint;
 
+        [SerializeField]
+        private GameObject _arrow;
+        
         [SerializeField]
         private ActionTrigger _openShopTrigger;
         
@@ -31,10 +34,11 @@ namespace _Tutorial
 
         private void OnStart(TutorialStep step)
         {
-            if (step != TutorialStep.MOVE_TO_OTUS)
+            if (step != TutorialStep.MOVE_TO_PIZZA)
                 return;
 
             _hint.SetActive(true);
+            _arrow.SetActive(true);
             _openShopTrigger.gameObject.SetActive(false);
             _openTutorialShopTrigger.gameObject.SetActive(true);
             _openTutorialShopTrigger.GetAction.AddListener(Next);
@@ -42,10 +46,11 @@ namespace _Tutorial
 
         private void OnFinish(TutorialStep step)
         {
-            if (step != TutorialStep.MOVE_TO_OTUS)
+            if (step != TutorialStep.MOVE_TO_PIZZA)
                 return;
             
             _openTutorialShopTrigger.gameObject.SetActive(false);
+            _arrow.SetActive(false);
             _hint.SetActive(false);
         }
 
