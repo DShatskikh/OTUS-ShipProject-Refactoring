@@ -23,6 +23,18 @@ namespace _Tutorial
         [SerializeField]
         private GameObject _tutorialShop;
         
+        [SerializeField]
+        private GameObject _hint2;
+
+        [SerializeField]
+        private GameObject _arrow2;
+        
+        [SerializeField]
+        private ActionTrigger _openShopTrigger;
+        
+        [SerializeField]
+        private ActionTrigger _openTutorialShopTrigger;
+        
         private TutorialState _tutorialState;
         private Player _player;
 
@@ -45,9 +57,11 @@ namespace _Tutorial
             if (step != TutorialStep.BUY_TUTORIAL)
                 return;
 
-            _tutorialShop.SetActive(true);
-            _buyButton.onClick.AddListener(Next);
-            _hint.SetActive(true);
+            _hint2.SetActive(true);
+            _arrow2.SetActive(true);
+            _openShopTrigger.gameObject.SetActive(false);
+            _openTutorialShopTrigger.gameObject.SetActive(true);
+            _openTutorialShopTrigger.GetAction.AddListener(OnTriggerOTUS);
         }
 
         private void OnFinish(TutorialStep step)
@@ -64,6 +78,17 @@ namespace _Tutorial
             _hint.SetActive(false);
         }
 
+        private void OnTriggerOTUS()
+        {
+            _openTutorialShopTrigger.gameObject.SetActive(false);
+            _hint2.SetActive(false);
+            _arrow2.SetActive(false);
+            
+            _tutorialShop.SetActive(true);
+            _buyButton.onClick.AddListener(Next);
+            _hint.SetActive(true);
+        }
+        
         private void Next()
         {
             _tutorialState.FinishStep(false);

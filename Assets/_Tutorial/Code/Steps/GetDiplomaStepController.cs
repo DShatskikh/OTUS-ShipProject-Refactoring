@@ -26,6 +26,18 @@ namespace _Tutorial
         [SerializeField]
         private Button _closeButton;
         
+        [SerializeField]
+        private GameObject _hint2;
+
+        [SerializeField]
+        private GameObject _arrow2;
+        
+        [SerializeField]
+        private ActionTrigger _openShopTrigger;
+        
+        [SerializeField]
+        private ActionTrigger _openTutorialShopTrigger;
+        
         private TutorialState _tutorialState;
         private Player _player;
 
@@ -48,15 +60,21 @@ namespace _Tutorial
             if (step != TutorialStep.GET_DIPLOMA)
                 return;
 
-            _tutorialShop.SetActive(true);
-            _buyButton.onClick.AddListener(Next);
-            _hint.SetActive(true);
+            _hint2.SetActive(true);
+            _arrow2.SetActive(true);
+            _openShopTrigger.gameObject.SetActive(false);
+            _openTutorialShopTrigger.gameObject.SetActive(true);
+            _openTutorialShopTrigger.GetAction.AddListener(Next);
         }
 
         private void OnFinish(TutorialStep step)
         {
             if (step != TutorialStep.GET_DIPLOMA)
                 return;
+            
+            _openTutorialShopTrigger.gameObject.SetActive(false);
+            _hint2.SetActive(false);
+            _arrow2.SetActive(false);
             
             _buyButton.interactable = false;
             _player.AddMoney(-33000);
@@ -67,6 +85,13 @@ namespace _Tutorial
             _endScreen.SetActive(true);
         }
 
+        private void OnTrigger()
+        {
+            _tutorialShop.SetActive(true);
+            _buyButton.onClick.AddListener(Next);
+            _hint.SetActive(true);
+        }
+        
         private void Next()
         {
             _closeButton.onClick.AddListener(OnClose);
