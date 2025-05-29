@@ -14,9 +14,10 @@ namespace SampleGame
         
         public override void InstallBindings()
         {
-            this.Container.Bind<ApplicationExiter>().AsSingle().NonLazy();
-            this.Container.Bind<GameLoader>().AsSingle().WithArguments(_loadingScreenPrefab).NonLazy();
-            this.Container.Bind<MenuLoader>().AsSingle().WithArguments(_loadingScreenPrefab).NonLazy();
+            Container.Bind<ApplicationExiter>().AsSingle().NonLazy();
+            Container.Bind<GameLoader>().AsSingle().WithArguments(_loadingScreenPrefab).NonLazy();
+            Container.Bind<MenuLoader>().AsSingle().WithArguments(_loadingScreenPrefab).NonLazy();
+            Container.Bind<AddressablesManager>().AsSingle().NonLazy();
         }
     }
 }
