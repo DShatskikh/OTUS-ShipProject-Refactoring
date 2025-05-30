@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
+using UnityEngine.SceneManagement;
 
 namespace SampleGame
 {
@@ -54,6 +56,12 @@ namespace SampleGame
 
             Debug.LogError($"Failed to load asset at address: {address}");
             return null;
+        }
+
+        public AsyncOperationHandle<SceneInstance> LoadSceneAsync(string address, LoadSceneMode loadMode = LoadSceneMode.Single,
+            bool activateOnLoad = true, int priority = 100)
+        {
+            return Addressables.LoadSceneAsync(address, loadMode, activateOnLoad, priority);
         }
 
         public void ReleaseAsset(string address)

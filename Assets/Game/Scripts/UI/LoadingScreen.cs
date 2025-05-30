@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -9,6 +7,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 namespace SampleGame
 {
@@ -19,11 +18,19 @@ namespace SampleGame
 
         [SerializeField]
         private TMP_Text label;
+
+        private IAssetLoader _assetLoader;
+
+        [Inject]
+        private void Construct(IAssetLoader assetLoader)
+        {
+            _assetLoader = assetLoader;
+        }
         
         public async UniTask<SceneInstance> LoadScene(string sceneKey)
         {
             gameObject.SetActive(true);
-            var operation = Addressables.LoadSceneAsync(sceneKey, LoadSceneMode.Single, false);
+            var operation = _assetLoader.LoadSceneAsync(sceneKey, LoadSceneMode.Single, false);
 
             while (!operation.IsDone)
             {

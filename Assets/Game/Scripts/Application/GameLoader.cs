@@ -11,7 +11,10 @@ namespace SampleGame
     {
         [Inject]
         private readonly LoadingScreen loadingScreenPrefab;
-
+        
+        [Inject]
+        private readonly DiContainer container;
+        
         private SceneInstance sceneHandle;
 
         //TODO: Сделать через Addressables
@@ -36,6 +39,7 @@ namespace SampleGame
         private async UniTask AsyncLoadGame()
         {
             var loadingScreen = Object.Instantiate(loadingScreenPrefab);
+            container.Inject(loadingScreen);
             sceneHandle = await loadingScreen.LoadScene("Assets/Game/Scenes/Game.unity");
         }
     }
