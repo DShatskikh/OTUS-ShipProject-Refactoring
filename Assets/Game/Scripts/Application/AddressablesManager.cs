@@ -6,7 +6,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace SampleGame
 {
-    public sealed class AddressablesManager
+    public sealed class AddressablesManager : IAssetLoader
     {
         private Dictionary<string, AsyncOperationHandle<GameObject>> _loadedAssets = new();
 

@@ -17,7 +17,7 @@ namespace SampleGame
             Container.Bind<ApplicationExiter>().AsSingle().NonLazy();
             Container.Bind<GameLoader>().AsSingle().WithArguments(_loadingScreenPrefab).NonLazy();
             Container.Bind<MenuLoader>().AsSingle().WithArguments(_loadingScreenPrefab).NonLazy();
-            Container.Bind<AddressablesManager>().AsSingle().NonLazy();
+            Container.Bind<IAssetLoader>().To<AddressablesManager>().AsSingle().NonLazy();
         }
     }
 }

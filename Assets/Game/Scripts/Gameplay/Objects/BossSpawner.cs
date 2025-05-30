@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
@@ -12,19 +13,32 @@ namespace SampleGame
         [SerializeField]
         private Transform _spawnPoint;
         
-        private AddressablesManager _addressablesManager;
+        private IAssetLoader _assetLoader;
 
         [Inject]
-        private void Construct(AddressablesManager addressablesManager)
+        private void Construct(IAssetLoader assetLoader)
         {
-            _addressablesManager = addressablesManager;
+            _assetLoader = assetLoader;
         }
 
         private GameObject _spawnedObject;
 
-        private async void Start()
+        private void Start()
         {
-            _spawnedObject = await _addressablesManager.InstantiateAsync(
+            CreateBoss().Forget();
+        }
+
+        private void OnDestroy()
+        {
+            if (_spawnedObject != null)
+            {
+                RemoveBoss().Forget();
+            }
+        }
+
+        private async UniTask CreateBoss()
+        {
+            _spawnedObject = await _assetLoader.InstantiateAsync(
                 _prefabAddress, 
                 _spawnPoint);
 
@@ -34,16 +48,13 @@ namespace SampleGame
             }
         }
 
-        private async void OnDestroy()
+        private async UniTask RemoveBoss()
         {
-            if (_spawnedObject != null)
-            {
-                Destroy(_spawnedObject);
-                await Task.Yield();
-                _addressablesManager.ReleaseAsset(_prefabAddress);
+            Destroy(_spawnedObject);
+            await Task.Yield();
+            _assetLoader.ReleaseAsset(_prefabAddress);
                 
-                Debug.Log("Выгрузили босса из памяти");
-            }
+            Debug.Log("Выгрузили босса из памяти");
         }
     }
 }
