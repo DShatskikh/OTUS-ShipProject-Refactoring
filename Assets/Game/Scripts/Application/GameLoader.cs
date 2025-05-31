@@ -1,7 +1,5 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using Zenject;
 
@@ -14,6 +12,9 @@ namespace SampleGame
         
         [Inject]
         private readonly DiContainer container;
+
+        [Inject]
+        private IAssetLoader assetLoader;
         
         private SceneInstance sceneHandle;
 
@@ -22,11 +23,7 @@ namespace SampleGame
         {
             if (sceneHandle.Scene.IsValid())
             {
-                Addressables.UnloadSceneAsync(sceneHandle).Completed += op =>
-                {
-                    if (op.Status == AsyncOperationStatus.Succeeded)
-                        Debug.Log("Scene unloaded successfully");
-                };
+                assetLoader.ReleaseAsset("Assets/Game/Scenes/Menu.unity");
             }
         }
         
